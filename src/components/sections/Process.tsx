@@ -70,14 +70,14 @@ export default function Process() {
                     {/* Connecting Line - Desktop */}
                     <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {steps.map((step, index) => (
                             <motion.div
                                 key={index}
                                 variants={staggerItem}
                                 className="relative"
                             >
-                                <div className="glass-card p-6 h-full text-center group hover:bg-white/10 transition-all duration-300">
+                                <div className="glass-card p-6 md:h-full text-center group hover:bg-white/10 transition-all duration-300">
                                     {/* Step Number */}
                                     <div className="relative z-10 mb-6">
                                         <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
@@ -99,7 +99,7 @@ export default function Process() {
 
                                 {/* Arrow for mobile */}
                                 {index < steps.length - 1 && (
-                                    <div className="lg:hidden flex justify-center my-4">
+                                    <div className="lg:hidden flex justify-center mt-6 mb-0">
                                         <motion.div
                                             animate={{ y: [0, 5, 0] }}
                                             transition={{ duration: 1.5, repeat: Infinity }}

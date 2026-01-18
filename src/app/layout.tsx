@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import CookieConsent from "@/components/ui/CookieConsent";
+
+export const viewport: Viewport = {
+    themeColor: "#0A1628",
+};
 
 export const metadata: Metadata = {
     title: "Pénzügyi Tanácsadás | Hitel és Biztosítás Közvetítés",

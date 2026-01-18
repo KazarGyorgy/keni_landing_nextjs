@@ -93,7 +93,7 @@ export default function CookieConsent() {
                         className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
                     >
                         <div className="container-custom mx-auto">
-                            <div className="glass-card p-6 md:p-8 border-accent-500/20">
+                            <div className="bg-primary-900 border border-white/10 rounded-2xl shadow-xl p-6 md:p-8 border-accent-500/20">
                                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
                                     {/* Text Content */}
                                     <div className="flex-1">
@@ -141,13 +141,13 @@ export default function CookieConsent() {
                     <AnimatePresence>
                         {showSettings && (
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                                initial={{ opacity: 0, y: "100%" }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: "100%" }}
                                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                                className="fixed inset-x-4 top-1/2 -translate-y-1/2 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-lg z-[70]"
+                                className="fixed inset-x-0 bottom-0 top-auto z-[70] md:top-1/2 md:bottom-auto md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg md:inset-x-auto"
                             >
-                                <div className="glass-card p-6 md:p-8 border-accent-500/20 max-h-[80vh] overflow-y-auto">
+                                <div className="bg-primary-900 border border-white/10 shadow-xl border-accent-500/20 max-h-[85vh] overflow-y-auto safe-area-pb rounded-t-2xl rounded-b-none border-b-0 md:rounded-2xl md:border-b md:p-8 p-6 pb-8">
                                     {/* Header */}
                                     <div className="flex items-center justify-between mb-6">
                                         <h3 className="font-display font-semibold text-white text-xl">

@@ -10,7 +10,7 @@
   --color-primary-light: #1F3047;
   --color-accent: #D4AF37;
   --color-accent-light: #E4BC2A;
-  
+
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #0A1628;
 }
 
 body {
@@ -95,6 +96,10 @@ body {
 
   .text-gradient-gold {
     @apply bg-gradient-to-r from-accent-400 via-accent-300 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .safe-area-pb {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 
