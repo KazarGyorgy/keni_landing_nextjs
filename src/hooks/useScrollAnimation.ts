@@ -51,14 +51,14 @@ export function useAnimatedCounter(
     startOnView: boolean = true
 ) {
     const [count, setCount] = useState(0);
-    const [hasStarted, setHasStarted] = useState(false);
+    const hasStarted = useRef(false);
     const { ref, isInView } = useScrollAnimation({ triggerOnce: true });
 
     useEffect(() => {
         if (startOnView && !isInView) return;
-        if (hasStarted) return;
+        if (hasStarted.current) return;
 
-        setHasStarted(true);
+        hasStarted.current = true;
 
         let startTime: number;
         let animationFrame: number;
@@ -80,7 +80,7 @@ export function useAnimatedCounter(
         animationFrame = requestAnimationFrame(animate);
 
         return () => cancelAnimationFrame(animationFrame);
-    }, [end, duration, startOnView, isInView, hasStarted]);
+    }, [end, duration, startOnView, isInView]);
 
     return { ref, count };
 }
