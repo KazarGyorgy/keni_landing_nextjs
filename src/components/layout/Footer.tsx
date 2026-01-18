@@ -15,14 +15,11 @@ const footerLinks = {
     informaciok: [
         { label: "Rólunk", href: "#rolunk" },
         { label: "Gyakori kérdések", href: "#gyik" },
-        { label: "Blog", href: "#" },
-        { label: "Karrier", href: "#" },
     ],
     jogi: [
-        { label: "Adatvédelem", href: "#" },
-        { label: "ÁSZF", href: "#" },
-        { label: "Cookie szabályzat", href: "#" },
-        { label: "Panaszkezelés", href: "#" },
+        { label: "Adatvédelem", href: "/adatvedelem" },
+        { label: "ÁSZF", href: "/aszf" },
+        { label: "Cookie szabályzat", href: "/sutik" },
     ],
 };
 
