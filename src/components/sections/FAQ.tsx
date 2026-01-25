@@ -4,33 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
-
-const faqs = [
-    {
-        question: "Mennyibe kerül a tanácsadás?",
-        answer: "Az első konzultáció teljesen ingyenes és kötelezettségmentes. A hitel- és biztosítás közvetítés díját a pénzintézetek fizetik, így Önnek semmilyen extra költsége nem merül fel szolgáltatásaink igénybevételekor.",
-    },
-    {
-        question: "Mennyi idő alatt intéződik egy hitelügy?",
-        answer: "A folyamat általában 2-4 hét, de ez nagyban függ a szükséges dokumentumok rendelkezésre állásától és a bank aktuális leterheltségétől. Sürgős esetben gyorsított ügyintézést is tudunk biztosítani.",
-    },
-    {
-        question: "Milyen dokumentumokra van szükség?",
-        answer: "Az alapvető dokumentumok: személyi igazolvány, lakcímkártya, jövedelemigazolás (munkáltatói igazolás vagy NAV jövedelemigazolás), valamint az ingatlannal kapcsolatos iratok lakáshitel esetén. Az első konzultáción részletesen átbeszéljük, mi szükséges az Ön esetében.",
-    },
-    {
-        question: "Hogyan garantálják, hogy a legjobb ajánlatot kapom?",
-        answer: "Független tanácsadóként több mint 30 pénzintézettel állunk kapcsolatban. Minden esetben összehasonlítjuk az összes elérhető ajánlatot, és objektíven bemutatjuk azok előnyeit és hátrányait. A döntés mindig az Öné.",
-    },
-    {
-        question: "Mi történik, ha elutasítják a hitelkérelmemet?",
-        answer: "Ha egy banknál elutasítás történik, azonnal keresünk alternatív megoldást. Gyakran más banknál vagy módosított feltételekkel sikeres lehet az igénylés. Tapasztalatunk segít elkerülni a felesleges elutasításokat.",
-    },
-    {
-        question: "Tudnak segíteni BAR listásoknak is?",
-        answer: "Igen, bizonyos esetekben igen. Az első konzultáción feltérképezzük a helyzetet, és ha van reális lehetőség, megtaláljuk a megoldást. Őszintén tájékoztatjuk, ha nincs járható út.",
-    },
-];
+import { useTranslations } from "next-intl";
 
 function FAQItem({ question, answer, isOpen, onClick }: {
     question: string;
@@ -79,7 +53,35 @@ function FAQItem({ question, answer, isOpen, onClick }: {
 }
 
 export default function FAQ() {
+    const t = useTranslations("FAQ");
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const faqs = [
+        {
+            question: t("items.cost.q"),
+            answer: t("items.cost.a"),
+        },
+        {
+            question: t("items.time.q"),
+            answer: t("items.time.a"),
+        },
+        {
+            question: t("items.docs.q"),
+            answer: t("items.docs.a"),
+        },
+        {
+            question: t("items.guarantee.q"),
+            answer: t("items.guarantee.a"),
+        },
+        {
+            question: t("items.rejected.q"),
+            answer: t("items.rejected.a"),
+        },
+        {
+            question: t("items.bar.q"),
+            answer: t("items.bar.a"),
+        },
+    ];
 
     return (
         <section id="gyik" className="section-padding">
@@ -93,15 +95,14 @@ export default function FAQ() {
                     className="text-center mb-16"
                 >
                     <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        GYIK
+                        {t("subtitle")}
                     </span>
                     <h2 className="heading-lg text-white mb-6">
-                        Gyakran ismételt{" "}
-                        <span className="text-gradient-gold">kérdések</span>
+                        {t("title_start")}{" "}
+                        <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Összegyűjtöttük a leggyakrabban feltett kérdéseket.
-                        Ha nem találod a választ, keress minket bátran!
+                        {t("description")}
                     </p>
                 </motion.div>
 

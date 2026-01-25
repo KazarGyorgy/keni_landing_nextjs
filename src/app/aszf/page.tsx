@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
+import { useTranslations } from "next-intl";
 
 export default function TermsAndConditions() {
+    const t = useTranslations("Legal");
+
     return (
         <main className="min-h-screen bg-primary-900 text-white">
             <section className="section-padding pt-32">
@@ -12,11 +15,11 @@ export default function TermsAndConditions() {
                         className="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors mb-8"
                     >
                         <HiArrowLeft className="w-5 h-5" />
-                        Vissza a főoldalra
+                        {t("back_home")}
                     </Link>
 
                     <div className="glass-card max-w-4xl mx-auto p-8 md:p-12 border-accent-500/20">
-                        <h1 className="heading-lg mb-8 text-gradient-gold text-center">Általános Szerződési Feltételek</h1>
+                        <h1 className="heading-lg mb-8 text-gradient-gold text-center">{t("terms.title")}</h1>
 
                         <div className="prose prose-invert prose-lg max-w-none text-gray-300">
                             <p className="lead text-xl text-white mb-8">
@@ -50,7 +53,7 @@ export default function TermsAndConditions() {
 
                             <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
                                 <p className="text-sm text-gray-400 italic">
-                                    Hatályos: {new Date().toLocaleDateString('hu-HU')}-től visszavonásig
+                                    {t("effective_date", { date: new Date().toLocaleDateString('hu-HU') })}
                                 </p>
                             </div>
                         </div>

@@ -1,0 +1,296 @@
+{
+    "Meta": {
+        "title": "Pénzügyi Tanácsadás | Hitel és Biztosítás Közvetítés",
+        "description": "Professzionális pénzügyi tanácsadás, hitelközvetítés és biztosítási megoldások. Személyre szabott ajánlatok, átlátható feltételek, megbízható partnerség."
+    },
+    "Header": {
+        "logo_text": "FinanceHub",
+        "nav": {
+            "szolgaltatasok": "Szolgáltatások",
+            "rolunk": "Rólunk",
+            "folyamat": "Hogyan működik",
+            "velemenyek": "Vélemények",
+            "gyik": "GYIK",
+            "kapcsolat": "Kapcsolat"
+        },
+        "cta": "Ingyenes Konzultáció"
+    },
+    "Hero": {
+        "badge": "Független Pénzügyi Tanácsadás",
+        "title_start": "Pénzügyi döntéseid",
+        "title_highlight": "megbízható partnere",
+        "subtitle": "Személyre szabott hitel- és biztosítási megoldások, amelyek valóban az érdekedben állnak. Átlátható feltételek, tiszta kommunikáció.",
+        "cta": {
+            "consultation": "Ingyenes Konzultáció",
+            "services": "Szolgáltatásaink"
+        },
+        "trust_badges": {
+            "independent": "Független tanácsadás",
+            "experience": "10+ év tapasztalat",
+            "clients": "500+ elégedett ügyfél"
+        }
+    },
+    "Services": {
+        "subtitle": "Szolgáltatásaink",
+        "title": "Hogyan segíthetünk?",
+        "description": "Független tanácsadóként a Te érdekeidet képviseljük. Több tucat pénzintézet ajánlatából választjuk ki a számodra legjobbat.",
+        "items": {
+            "lakashitel": {
+                "title": "Lakáshitel & Jelzáloghitel",
+                "description": "Segítünk megtalálni a legjobb lakáshitel ajánlatot, legyen szó vásárlásról, építkezésről vagy felújításról.",
+                "features": {
+                    "bank_offers": "Akár 30 bank ajánlata",
+                    "rates": "Kedvező kamatok",
+                    "csok": "CSOK integráció"
+                }
+            },
+            "szemelyi_kolcson": {
+                "title": "Személyi Kölcsön",
+                "description": "Gyors és egyszerű személyi kölcsön igénylés, versenyképes kamatokkal és rugalmas futamidővel.",
+                "features": {
+                    "fast": "Gyors ügyintézés",
+                    "no_collateral": "Fedezet nélkül",
+                    "online": "Online igénylés"
+                }
+            },
+            "biztositasok": {
+                "title": "Biztosítások",
+                "description": "Átfogó biztosítási megoldások családod és vagyonod védelmére, a legmegbízhatóbb biztosítóktól.",
+                "features": {
+                    "life": "Életbiztosítás",
+                    "home": "Lakásbiztosítás",
+                    "casco": "CASCO & Kötelező"
+                }
+            },
+            "csok": {
+                "title": "CSOK & Lakástámogatás",
+                "description": "Teljes körű segítség a CSOK és egyéb állami lakástámogatások igénylésében.",
+                "features": {
+                    "baby": "Babaváró hitel",
+                    "village": "Falusi CSOK",
+                    "renovation": "Otthonfelújítási támogatás"
+                }
+            }
+        },
+        "learn_more": "Tudj meg többet"
+    },
+    "WhyUs": {
+        "subtitle": "Miért mi?",
+        "title_start": "A különbség, ami",
+        "title_highlight": "számít",
+        "description": "Évek óta segítjük ügyfeleinket a legjobb pénzügyi döntések meghozatalában.",
+        "features": {
+            "independent": {
+                "title": "100% Független",
+                "description": "Nem vagyunk egyetlen bankhoz sem kötve. Az Ön érdekeit képviseljük, nem a pénzintézetekét."
+            },
+            "personalized": {
+                "title": "Személyre Szabott",
+                "description": "Minden ügyfél egyedi. Az Ön helyzetét és céljait figyelembe véve dolgozunk."
+            },
+            "best_terms": {
+                "title": "Legjobb Feltételek",
+                "description": "Több tucat ajánlatot hasonlítunk össze, hogy Ön a lehető legjobb kondíciókat kapja."
+            },
+            "support": {
+                "title": "Folyamatos Támogatás",
+                "description": "Az ügyintézés során végig melletted állunk, és a szerződéskötés után is számíthatsz ránk."
+            }
+        },
+        "stats": {
+            "clients": "Elégedett ügyfél",
+            "success": "Sikeres ügyintézés",
+            "experience": "Év tapasztalat",
+            "partners": "Partner bank"
+        }
+    },
+    "Process": {
+        "subtitle": "Hogyan működik?",
+        "title_start": "Egyszerű folyamat,",
+        "title_highlight": "garantált eredmény",
+        "description": "Négy egyszerű lépésben jutunk el a célhoz. Mi intézzük a bonyolult részeket, Te csak a döntést hozod meg.",
+        "steps": {
+            "contact": {
+                "title": "Kapcsolatfelvétel",
+                "description": "Hívj fel vagy töltsd ki az űrlapot, és egyeztetünk egy ingyenes konzultációs időpontot."
+            },
+            "assessment": {
+                "title": "Igényfelmérés",
+                "description": "Megismerjük a pénzügyi helyzetedet és céljaidat, hogy a legjobb megoldást találjuk."
+            },
+            "comparison": {
+                "title": "Ajánlatok Összehasonlítása",
+                "description": "Több tucat bank ajánlatát hasonlítjuk össze és bemutatjuk a legjobb opciókat."
+            },
+            "contract": {
+                "title": "Szerződéskötés",
+                "description": "Segítünk az ügyintézésben és végigkísérünk a teljes folyamaton a sikeres lezárásig."
+            }
+        }
+    },
+    "Testimonials": {
+        "subtitle": "Vélemények",
+        "title_start": "Amit ügyfeleink",
+        "title_highlight": "mondanak rólunk",
+        "description": "Büszkék vagyunk az ügyfeleink elégedettségére. Íme néhány vélemény azok közül, akiknek már segíthettünk.",
+        "aria": {
+            "prev": "Előző vélemény",
+            "next": "Következő vélemény",
+            "dot": "Vélemény {n}"
+        },
+        "items": {
+            "1": {
+                "name": "Kovács Anna",
+                "title": "Lakásvásárló",
+                "content": "Fantasztikus segítséget kaptam a lakáshitel ügyintézésben. Minden kérdésemre azonnal válaszoltak, és a végén sokkal jobb kamatot értem el, mint amire számítottam."
+            },
+            "2": {
+                "name": "Nagy Péter",
+                "title": "Családapa, 3 gyermek",
+                "content": "A CSOK igénylés bonyolultnak tűnt, de a FinanceHub csapata végigvezetett a teljes folyamaton. Professzionális és megbízható partner voltak."
+            },
+            "3": {
+                "name": "Szabó Márta",
+                "title": "Vállalkozó",
+                "content": "Biztosítási és hitelügyekben is számíthatok rájuk. Mindig elérhetőek, és valóban az ügyfél érdekeit nézik. Csak ajánlani tudom!"
+            },
+            "4": {
+                "name": "Tóth Gergő",
+                "title": "Első lakásvásárló",
+                "content": "Első lakásomat vettem, és fogalmam sem volt mit kell csinálni. A FinanceHub mindent elintézett, nekem csak aláírnom kellett. Köszönöm!"
+            }
+        }
+    },
+    "FAQ": {
+        "subtitle": "GYIK",
+        "title_start": "Gyakran ismételt",
+        "title_highlight": "kérdések",
+        "description": "Összegyűjtöttük a leggyakrabban feltett kérdéseket. Ha nem találod a választ, keress minket bátran!",
+        "items": {
+            "cost": {
+                "q": "Mennyibe kerül a tanácsadás?",
+                "a": "Az első konzultáció teljesen ingyenes és kötelezettségmentes. A hitel- és biztosítás közvetítés díját a pénzintézetek fizetik, így Önnek semmilyen extra költsége nem merül fel szolgáltatásaink igénybevételekor."
+            },
+            "time": {
+                "q": "Mennyi idő alatt intéződik egy hitelügy?",
+                "a": "A folyamat általában 2-4 hét, de ez nagyban függ a szükséges dokumentumok rendelkezésre állásától és a bank aktuális leterheltségétől. Sürgős esetben gyorsított ügyintézést is tudunk biztosítani."
+            },
+            "docs": {
+                "q": "Milyen dokumentumokra van szükség?",
+                "a": "Az alapvető dokumentumok: személyi igazolvány, lakcímkártya, jövedelemigazolás (munkáltatói igazolás vagy NAV jövedelemigazolás), valamint az ingatlannal kapcsolatos iratok lakáshitel esetén. Az első konzultáción részletesen átbeszéljük, mi szükséges az Ön esetében."
+            },
+            "guarantee": {
+                "q": "Hogyan garantálják, hogy a legjobb ajánlatot kapom?",
+                "a": "Független tanácsadóként több mint 30 pénzintézettel állunk kapcsolatban. Minden esetben összehasonlítjuk az összes elérhető ajánlatot, és objektíven bemutatjuk azok előnyeit és hátrányait. A döntés mindig az Öné."
+            },
+            "rejected": {
+                "q": "Mi történik, ha elutasítják a hitelkérelmemet?",
+                "a": "Ha egy banknál elutasítás történik, azonnal keresünk alternatív megoldást. Gyakran más banknál vagy módosított feltételekkel sikeres lehet az igénylés. Tapasztalatunk segít elkerülni a felesleges elutasításokat."
+            },
+            "bar": {
+                "q": "Tudnak segíteni BAR listásoknak is?",
+                "a": "Igen, bizonyos esetekben igen. Az első konzultáción feltérképezzük a helyzetet, és ha van reális lehetőség, megtaláljuk a megoldást. Őszintén tájékoztatjuk, ha nincs járható út."
+            }
+        }
+    },
+    "Contact": {
+        "subtitle": "Kapcsolat",
+        "title_start": "Beszéljünk a",
+        "title_highlight": "lehetőségekről",
+        "description": "Vedd fel velünk a kapcsolatot, és ingyenes konzultáció keretében segítünk megtalálni a számodra legjobb megoldást!",
+        "success": {
+            "title": "Köszönjük megkeresését!",
+            "message": "Hamarosan felvesszük Önnel a kapcsolatot.",
+            "new_message": "Új üzenet küldése"
+        },
+        "form": {
+            "name": "Név *",
+            "name_placeholder": "Az Ön neve",
+            "phone": "Telefon *",
+            "phone_placeholder": "+36 30 123 4567",
+            "email": "E-mail",
+            "email_placeholder": "pelda@email.com",
+            "subject": "Téma *",
+            "subject_placeholder": "Válasszon témát...",
+            "subjects": {
+                "lakas": "Lakáshitel",
+                "szemelyi": "Személyi kölcsön",
+                "csok": "CSOK / Lakástámogatás",
+                "biztositas": "Biztosítás",
+                "egyeb": "Egyéb kérdés"
+            },
+            "message": "Üzenet",
+            "message_placeholder": "Írja le röviden, miben segíthetünk...",
+            "submit": "Üzenet Küldése",
+            "submitting": "Küldés..."
+        },
+        "info": {
+            "title": "Lépj kapcsolatba velünk",
+            "description": "Hívj fel, vagy küldj üzenetet, és ingyenes konzultáció keretében megbeszéljük az igényeidet. Nincs rejtett költség, nincs kötelezettség.",
+            "labels": {
+                "phone": "Telefon",
+                "email": "E-mail",
+                "office": "Iroda"
+            }
+        },
+        "hours": {
+            "title": "Nyitvatartás",
+            "days": {
+                "week": "Hétfő - Péntek",
+                "saturday": "Szombat",
+                "sunday": "Vasárnap"
+            },
+            "closed": "Zárva"
+        }
+    },
+    "Metadata": {
+        "title": "Pénzügyi Tanácsadás | Hitel és Biztosítás Közvetítés",
+        "description": "Professzionális pénzügyi tanácsadás, hitelközvetítés és biztosítási megoldások. Személyre szabott ajánlatok, átlátható feltételek, megbízható partnerség.",
+        "og": {
+            "title": "Pénzügyi Tanácsadás | Hitel és Biztosítás Közvetítés",
+            "description": "Professzionális pénzügyi tanácsadás és közvetítés"
+        }
+    },
+    "Legal": {
+        "back_home": "Vissza a főoldalra",
+        "last_updated": "Utolsó frissítés: {date}",
+        "effective_date": "Hatályos: {date}-től visszavonásig",
+        "privacy": {
+            "title": "Adatkezelési Tájékoztató"
+        },
+        "terms": {
+            "title": "Általános Szerződési Feltételek"
+        },
+        "cookies": {
+            "title": "Süti (Cookie) Szabályzat"
+        }
+    },
+    "Footer": {
+        "brand_description": "Segítünk megtalálni a legjobb pénzügyi megoldásokat személyre szabott tanácsadással és átlátható folyamatokkal.",
+        "contact": {
+            "address": "1051 Budapest, Példa utca 1."
+        },
+        "headings": {
+            "szolgaltatasok": "Szolgáltatások",
+            "informaciok": "Információk",
+            "jogi": "Jogi"
+        },
+        "links": {
+            "lakashitel": "Lakáshitel",
+            "szemelyi_kolcson": "Személyi kölcsön",
+            "csok": "CSOK",
+            "biztositasok": "Biztosítások",
+            "rolunk": "Rólunk",
+            "gyakori_kerdesek": "Gyakori kérdések",
+            "adatvedelem": "Adatvédelem",
+            "aszf": "ÁSZF",
+            "cookie_szabalyzat": "Cookie szabályzat"
+        },
+        "copyright": "© {year} FinanceHub. Minden jog fenntartva.",
+        "social": {
+            "facebook": "Facebook",
+            "linkedin": "LinkedIn",
+            "instagram": "Instagram"
+        }
+    }
+}

@@ -3,35 +3,38 @@
 import { motion } from "framer-motion";
 import { HiPhone, HiClipboardCheck, HiDocumentSearch, HiCheckCircle } from "react-icons/hi";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
-
-const steps = [
-    {
-        number: "01",
-        icon: HiPhone,
-        title: "Kapcsolatfelvétel",
-        description: "Hívj fel vagy töltsd ki az űrlapot, és egyeztetünk egy ingyenes konzultációs időpontot.",
-    },
-    {
-        number: "02",
-        icon: HiClipboardCheck,
-        title: "Igényfelmérés",
-        description: "Megismerjük a pénzügyi helyzetedet és céljaidat, hogy a legjobb megoldást találjuk.",
-    },
-    {
-        number: "03",
-        icon: HiDocumentSearch,
-        title: "Ajánlatok Összehasonlítása",
-        description: "Több tucat bank ajánlatát hasonlítjuk össze és bemutatjuk a legjobb opciókat.",
-    },
-    {
-        number: "04",
-        icon: HiCheckCircle,
-        title: "Szerződéskötés",
-        description: "Segítünk az ügyintézésben és végigkísérünk a teljes folyamaton a sikeres lezárásig.",
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function Process() {
+    const t = useTranslations("Process");
+
+    const steps = [
+        {
+            number: "01",
+            icon: HiPhone,
+            title: t("steps.contact.title"),
+            description: t("steps.contact.description"),
+        },
+        {
+            number: "02",
+            icon: HiClipboardCheck,
+            title: t("steps.assessment.title"),
+            description: t("steps.assessment.description"),
+        },
+        {
+            number: "03",
+            icon: HiDocumentSearch,
+            title: t("steps.comparison.title"),
+            description: t("steps.comparison.description"),
+        },
+        {
+            number: "04",
+            icon: HiCheckCircle,
+            title: t("steps.contract.title"),
+            description: t("steps.contract.description"),
+        },
+    ];
+
     return (
         <section id="folyamat" className="section-padding relative">
             {/* Background Gradient */}
@@ -47,15 +50,14 @@ export default function Process() {
                     className="text-center mb-16"
                 >
                     <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        Hogyan működik?
+                        {t("subtitle")}
                     </span>
                     <h2 className="heading-lg text-white mb-6">
-                        Egyszerű folyamat,{" "}
-                        <span className="text-gradient-gold">garantált eredmény</span>
+                        {t("title_start")}{" "}
+                        <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Négy egyszerű lépésben jutunk el a célhoz.
-                        Mi intézzük a bonyolult részeket, Te csak a döntést hozod meg.
+                        {t("description")}
                     </p>
                 </motion.div>
 

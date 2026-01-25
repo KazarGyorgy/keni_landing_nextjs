@@ -4,18 +4,22 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { fadeIn } from "@/lib/animations";
-
-const navLinks = [
-    { href: "#szolgaltatasok", label: "Szolgáltatások" },
-    { href: "#rolunk", label: "Rólunk" },
-    { href: "#folyamat", label: "Hogyan működik" },
-    { href: "#velemenyek", label: "Vélemények" },
-    { href: "#gyik", label: "GYIK" },
-];
+import { useTranslations } from "next-intl";
+import { SHOW_LANGUAGE_SWITCHER } from "@/lib/config";
 
 export default function Header() {
+    const t = useTranslations("Header");
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const navLinks = [
+        { href: "#szolgaltatasok", label: t("nav.szolgaltatasok") },
+        { href: "#rolunk", label: t("nav.rolunk") },
+        { href: "#folyamat", label: t("nav.folyamat") },
+        { href: "#velemenyek", label: t("nav.velemenyek") },
+        { href: "#gyik", label: t("nav.gyik") },
+        { href: "#kapcsolat", label: t("nav.kapcsolat") },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,8 +41,8 @@ export default function Header() {
                 animate="visible"
                 variants={fadeIn}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                        ? "bg-primary-900/90 backdrop-blur-lg shadow-lg"
-                        : "bg-transparent"
+                    ? "bg-primary-900/90 backdrop-blur-lg shadow-lg"
+                    : "bg-transparent"
                     }`}
             >
                 <nav className="container-custom mx-auto px-4 md:px-8">
@@ -49,7 +53,7 @@ export default function Header() {
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white group-hover:text-accent-400 transition-colors">
-                                FinanceHub
+                                {t("logo_text")}
                             </span>
                         </a>
 
@@ -66,10 +70,15 @@ export default function Header() {
                             ))}
                         </div>
 
-                        {/* CTA Button */}
+                        {/* CTA Button and Language Switcher Placeholder */}
                         <div className="hidden lg:flex items-center gap-4">
+                            {SHOW_LANGUAGE_SWITCHER && (
+                                <div className="text-white text-sm border border-white/20 px-2 py-1 rounded">
+                                    HU | EN
+                                </div>
+                            )}
                             <a href="#kapcsolat" className="btn-primary text-sm">
-                                Ingyenes Konzultáció
+                                {t("cta")}
                             </a>
                         </div>
 
@@ -112,7 +121,7 @@ export default function Header() {
                                     onClick={handleNavClick}
                                     className="btn-primary text-center mt-4"
                                 >
-                                    Ingyenes Konzultáció
+                                    {t("cta")}
                                 </a>
                             </nav>
                         </div>

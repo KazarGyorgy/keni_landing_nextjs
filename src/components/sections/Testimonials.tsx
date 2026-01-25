@@ -4,44 +4,42 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronLeft, HiChevronRight, HiStar } from "react-icons/hi";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
-
-const testimonials = [
-    {
-        id: 1,
-        name: "Kovács Anna",
-        title: "Lakásvásárló",
-        content: "Fantasztikus segítséget kaptam a lakáshitel ügyintézésben. Minden kérdésemre azonnal válaszoltak, és a végén sokkal jobb kamatot értem el, mint amire számítottam.",
-        rating: 5,
-        image: null,
-    },
-    {
-        id: 2,
-        name: "Nagy Péter",
-        title: "Családapa, 3 gyermek",
-        content: "A CSOK igénylés bonyolultnak tűnt, de a FinanceHub csapata végigvezetett a teljes folyamaton. Professzionális és megbízható partner voltak.",
-        rating: 5,
-        image: null,
-    },
-    {
-        id: 3,
-        name: "Szabó Márta",
-        title: "Vállalkozó",
-        content: "Biztosítási és hitelügyekben is számíthatok rájuk. Mindig elérhetőek, és valóban az ügyfél érdekeit nézik. Csak ajánlani tudom!",
-        rating: 5,
-        image: null,
-    },
-    {
-        id: 4,
-        name: "Tóth Gergő",
-        title: "Első lakásvásárló",
-        content: "Első lakásomat vettem, és fogalmam sem volt mit kell csinálni. A FinanceHub mindent elintézett, nekem csak aláírnom kellett. Köszönöm!",
-        rating: 5,
-        image: null,
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
+    const t = useTranslations("Testimonials");
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const testimonials = [
+        {
+            id: 1,
+            name: t("items.1.name"),
+            title: t("items.1.title"),
+            content: t("items.1.content"),
+            rating: 5,
+        },
+        {
+            id: 2,
+            name: t("items.2.name"),
+            title: t("items.2.title"),
+            content: t("items.2.content"),
+            rating: 5,
+        },
+        {
+            id: 3,
+            name: t("items.3.name"),
+            title: t("items.3.title"),
+            content: t("items.3.content"),
+            rating: 5,
+        },
+        {
+            id: 4,
+            name: t("items.4.name"),
+            title: t("items.4.title"),
+            content: t("items.4.content"),
+            rating: 5,
+        },
+    ];
 
     const nextTestimonial = () => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -68,15 +66,14 @@ export default function Testimonials() {
                     className="text-center mb-16"
                 >
                     <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        Vélemények
+                        {t("subtitle")}
                     </span>
                     <h2 className="heading-lg text-white mb-6">
-                        Amit ügyfeleink{" "}
-                        <span className="text-gradient-gold">mondanak rólunk</span>
+                        {t("title_start")}{" "}
+                        <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Büszkék vagyunk az ügyfeleink elégedettségére.
-                        Íme néhány vélemény azok közül, akiknek már segíthettünk.
+                        {t("description")}
                     </p>
                 </motion.div>
 
@@ -142,7 +139,7 @@ export default function Testimonials() {
                             <button
                                 onClick={prevTestimonial}
                                 className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
-                                aria-label="Előző vélemény"
+                                aria-label={t("aria.prev")}
                             >
                                 <HiChevronLeft className="w-6 h-6" />
                             </button>
@@ -154,10 +151,10 @@ export default function Testimonials() {
                                         key={index}
                                         onClick={() => setCurrentIndex(index)}
                                         className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                                                ? "bg-accent-400 w-8"
-                                                : "bg-white/20 hover:bg-white/40"
+                                            ? "bg-accent-400 w-8"
+                                            : "bg-white/20 hover:bg-white/40"
                                             }`}
-                                        aria-label={`Vélemény ${index + 1}`}
+                                        aria-label={t("aria.dot", { n: index + 1 })}
                                     />
                                 ))}
                             </div>
@@ -165,7 +162,7 @@ export default function Testimonials() {
                             <button
                                 onClick={nextTestimonial}
                                 className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
-                                aria-label="Következő vélemény"
+                                aria-label={t("aria.next")}
                             >
                                 <HiChevronRight className="w-6 h-6" />
                             </button>
