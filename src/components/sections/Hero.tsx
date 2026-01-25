@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { HiArrowRight, HiShieldCheck, HiClock, HiUserGroup } from "react-icons/hi";
 import { fadeInUp, staggerContainer, staggerItem, heroText } from "@/lib/animations";
-
-const trustBadges = [
-    { icon: HiShieldCheck, text: "Független tanácsadás" },
-    { icon: HiClock, text: "10+ év tapasztalat" },
-    { icon: HiUserGroup, text: "500+ elégedett ügyfél" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+    const t = useTranslations("Hero");
+
+    const trustBadges = [
+        { icon: HiShieldCheck, text: t("trust_badges.independent") },
+        { icon: HiClock, text: t("trust_badges.experience") },
+        { icon: HiUserGroup, text: t("trust_badges.clients") },
+    ];
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Animated Background */}
@@ -58,7 +61,7 @@ export default function Hero() {
                     <motion.div variants={fadeInUp} className="mb-8">
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium">
                             <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" />
-                            Független Pénzügyi Tanácsadás
+                            {t("badge")}
                         </span>
                     </motion.div>
 
@@ -67,8 +70,8 @@ export default function Hero() {
                         variants={heroText}
                         className="heading-xl text-white mb-6"
                     >
-                        Pénzügyi döntéseid{" "}
-                        <span className="text-gradient-gold">megbízható partnere</span>
+                        {t("title_start")}{" "}
+                        <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </motion.h1>
 
                     {/* Subtitle */}
@@ -76,8 +79,7 @@ export default function Hero() {
                         variants={fadeInUp}
                         className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
                     >
-                        Személyre szabott hitel- és biztosítási megoldások, amelyek valóban
-                        az érdekedben állnak. Átlátható feltételek, tiszta kommunikáció.
+                        {t("subtitle")}
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -86,11 +88,11 @@ export default function Hero() {
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
                     >
                         <a href="#kapcsolat" className="btn-primary flex items-center gap-2 group">
-                            Ingyenes Konzultáció
+                            {t("cta.consultation")}
                             <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="#szolgaltatasok" className="btn-secondary">
-                            Szolgáltatásaink
+                            {t("cta.services")}
                         </a>
                     </motion.div>
 

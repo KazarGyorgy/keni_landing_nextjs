@@ -3,35 +3,54 @@
 import { motion } from "framer-motion";
 import { HiHome, HiCreditCard, HiShieldCheck, HiDocumentText, HiArrowRight } from "react-icons/hi";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
-
-const services = [
-    {
-        icon: HiHome,
-        title: "Lakáshitel & Jelzáloghitel",
-        description: "Segítünk megtalálni a legjobb lakáshitel ajánlatot, legyen szó vásárlásról, építkezésről vagy felújításról.",
-        features: ["Akár 30 bank ajánlata", "Kedvező kamatok", "CSOK integráció"],
-    },
-    {
-        icon: HiCreditCard,
-        title: "Személyi Kölcsön",
-        description: "Gyors és egyszerű személyi kölcsön igénylés, versenykpes kamatokkal és rugalmas futamidővel.",
-        features: ["Gyors ügyintézés", "Fedezet nélkül", "Online igénylés"],
-    },
-    {
-        icon: HiShieldCheck,
-        title: "Biztosítások",
-        description: "Átfogó biztosítási megoldások családod és vagyonod védelmére, a legmegbízhatóbb biztosítóktól.",
-        features: ["Életbiztosítás", "Lakásbiztosítás", "CASCO & Kötelező"],
-    },
-    {
-        icon: HiDocumentText,
-        title: "CSOK & Lakástámogatás",
-        description: "Teljes körű segítség a CSOK és egyéb állami lakástámogatások igénylésében.",
-        features: ["Babaváró hitel", "Falusi CSOK", "Otthonfelújítási támogatás"],
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function Services() {
+    const t = useTranslations("Services");
+
+    const services = [
+        {
+            icon: HiHome,
+            title: t("items.lakashitel.title"),
+            description: t("items.lakashitel.description"),
+            features: [
+                t("items.lakashitel.features.bank_offers"),
+                t("items.lakashitel.features.rates"),
+                t("items.lakashitel.features.csok")
+            ],
+        },
+        {
+            icon: HiCreditCard,
+            title: t("items.szemelyi_kolcson.title"),
+            description: t("items.szemelyi_kolcson.description"),
+            features: [
+                t("items.szemelyi_kolcson.features.fast"),
+                t("items.szemelyi_kolcson.features.no_collateral"),
+                t("items.szemelyi_kolcson.features.online")
+            ],
+        },
+        {
+            icon: HiShieldCheck,
+            title: t("items.biztositasok.title"),
+            description: t("items.biztositasok.description"),
+            features: [
+                t("items.biztositasok.features.life"),
+                t("items.biztositasok.features.home"),
+                t("items.biztositasok.features.casco")
+            ],
+        },
+        {
+            icon: HiDocumentText,
+            title: t("items.csok.title"),
+            description: t("items.csok.description"),
+            features: [
+                t("items.csok.features.baby"),
+                t("items.csok.features.village"),
+                t("items.csok.features.renovation")
+            ],
+        },
+    ];
+
     return (
         <section id="szolgaltatasok" className="section-padding relative">
             {/* Background decoration */}
@@ -49,14 +68,13 @@ export default function Services() {
                     className="text-center mb-16"
                 >
                     <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        Szolgáltatásaink
+                        {t("subtitle")}
                     </span>
                     <h2 className="heading-lg text-white mb-6">
-                        Hogyan segíthetünk?
+                        {t("title")}
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Független tanácsadóként a Te érdekeidet képviseljük.
-                        Több tucat pénzintézet ajánlatából választjuk ki a számodra legjobbat.
+                        {t("description")}
                     </p>
                 </motion.div>
 
@@ -106,7 +124,7 @@ export default function Services() {
                                         href="#kapcsolat"
                                         className="inline-flex items-center gap-2 text-accent-400 font-medium text-sm hover:gap-3 transition-all"
                                     >
-                                        Tudj meg többet
+                                        {t("learn_more")}
                                         <HiArrowRight className="w-4 h-4" />
                                     </a>
                                 </div>

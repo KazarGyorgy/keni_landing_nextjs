@@ -4,36 +4,7 @@ import { motion } from "framer-motion";
 import { HiCheckCircle, HiLightBulb, HiTrendingUp, HiChat } from "react-icons/hi";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useAnimatedCounter } from "@/hooks/useScrollAnimation";
-
-const features = [
-    {
-        icon: HiCheckCircle,
-        title: "100% Független",
-        description: "Nem vagyunk egyetlen bankhoz sem kötve. Az Ön érdekeit képviseljük, nem a pénzintézetekét.",
-    },
-    {
-        icon: HiLightBulb,
-        title: "Személyre Szabott",
-        description: "Minden ügyfél egyedi. Az Ön helyzetét és céljait figyelembe véve dolgozunk.",
-    },
-    {
-        icon: HiTrendingUp,
-        title: "Legjobb Feltételek",
-        description: "Több tucat ajánlatot hasonlítunk össze, hogy Ön a lehető legjobb kondíciókat kapja.",
-    },
-    {
-        icon: HiChat,
-        title: "Folyamatos Támogatás",
-        description: "Az ügyintézés során végig melletted állunk, és a szerződéskötés után is számíthatsz ránk.",
-    },
-];
-
-const stats = [
-    { value: 500, suffix: "+", label: "Elégedett ügyfél" },
-    { value: 98, suffix: "%", label: "Sikeres ügyintézés" },
-    { value: 10, suffix: "+", label: "Év tapasztalat" },
-    { value: 30, suffix: "+", label: "Partner bank" },
-];
+import { useTranslations } from "next-intl";
 
 function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
     const { ref, count } = useAnimatedCounter(value, 2000);
@@ -49,6 +20,38 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 }
 
 export default function WhyUs() {
+    const t = useTranslations("WhyUs");
+
+    const features = [
+        {
+            icon: HiCheckCircle,
+            title: t("features.independent.title"),
+            description: t("features.independent.description"),
+        },
+        {
+            icon: HiLightBulb,
+            title: t("features.personalized.title"),
+            description: t("features.personalized.description"),
+        },
+        {
+            icon: HiTrendingUp,
+            title: t("features.best_terms.title"),
+            description: t("features.best_terms.description"),
+        },
+        {
+            icon: HiChat,
+            title: t("features.support.title"),
+            description: t("features.support.description"),
+        },
+    ];
+
+    const stats = [
+        { value: 500, suffix: "+", label: t("stats.clients") },
+        { value: 98, suffix: "%", label: t("stats.success") },
+        { value: 10, suffix: "+", label: t("stats.experience") },
+        { value: 30, suffix: "+", label: t("stats.partners") },
+    ];
+
     return (
         <section id="rolunk" className="section-padding relative overflow-hidden">
             {/* Background Elements */}
@@ -75,14 +78,14 @@ export default function WhyUs() {
                     className="text-center mb-16"
                 >
                     <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        Miért mi?
+                        {t("subtitle")}
                     </span>
                     <h2 className="heading-lg text-white mb-6">
-                        A különbség, ami{" "}
-                        <span className="text-gradient-gold">számít</span>
+                        {t("title_start")}{" "}
+                        <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Évek óta segítjük ügyfeleinket a legjobb pénzügyi döntések meghozatalában.
+                        {t("description")}
                     </p>
                 </motion.div>
 
