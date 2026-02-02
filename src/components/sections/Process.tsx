@@ -36,7 +36,7 @@ export default function Process() {
     ];
 
     return (
-        <section id="folyamat" className="section-padding relative">
+        <section id="folyamat" className="section-padding relative content-visibility-auto">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-800/20 to-transparent" aria-hidden="true" />
 
@@ -77,7 +77,7 @@ export default function Process() {
                             <motion.li
                                 key={index}
                                 variants={staggerItem}
-                                className="relative list-none"
+                                className="relative list-none gpu-optimized"
                             >
                                 <article className="glass-card p-6 md:h-full text-center group hover:bg-white/10 transition-all duration-300">
                                     {/* Step Number */}

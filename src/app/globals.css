@@ -37,8 +37,20 @@ body {
 /* Glassmorphism kartyák */
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+    @apply bg-white/5 border border-white/10 rounded-2xl;
+    /* Reduced blur for mobile performance */
+    backdrop-filter: blur(4px);
     box-shadow: var(--glass-shadow);
+    /* GPU optimization */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Increase blur for larger screens where GPU is likely better */
+  @media (min-width: 768px) {
+    .glass-card {
+      backdrop-filter: blur(12px);
+    }
   }
 
   .glass-card-hover {
@@ -183,4 +195,17 @@ body {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Performance Utilities */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+  /* Approximate section height */
+}
+
+.gpu-optimized {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
