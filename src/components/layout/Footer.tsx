@@ -62,7 +62,7 @@ export default function Footer() {
                         </p>
 
                         {/* Contact Info */}
-                        <div className="space-y-3">
+                        <address className="space-y-3 not-italic">
                             <a href="tel:+36301234567" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
                                 <HiPhone className="w-5 h-5" aria-hidden="true" />
                                 <span>+36 30 123 4567</span>
@@ -75,7 +75,7 @@ export default function Footer() {
                                 <HiLocationMarker className="w-5 h-5" aria-hidden="true" />
                                 <span>{t("contact.address")}</span>
                             </div>
-                        </div>
+                        </address>
                     </motion.div>
 
                     {/* Links Columns */}
@@ -141,18 +141,19 @@ export default function Footer() {
                     </p>
 
                     {/* Social Links */}
-                    <div className="flex items-center gap-4">
+                    <ul className="flex items-center gap-4">
                         {socialLinks.map((social) => (
-                            <a
-                                key={social.label}
-                                href={social.href}
-                                aria-label={t(`social.${social.label}`)}
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-primary-900 transition-all duration-300"
-                            >
-                                <social.icon className="w-4 h-4" aria-hidden="true" />
-                            </a>
+                            <li key={social.label}>
+                                <a
+                                    href={social.href}
+                                    aria-label={t(`social.${social.label}`)}
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-primary-900 transition-all duration-300"
+                                >
+                                    <social.icon className="w-4 h-4" aria-hidden="true" />
+                                </a>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </motion.div>
             </div>
         </footer>

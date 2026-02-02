@@ -64,12 +64,13 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Trust Badges */}
-                    <motion.div
+                    {/* Trust Badges */}
+                    <motion.ul
                         variants={staggerContainer}
                         className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
                     >
                         {trustBadges.map((badge, index) => (
-                            <motion.div
+                            <motion.li
                                 key={index}
                                 variants={staggerItem}
                                 className="flex items-center gap-3 text-gray-400"
@@ -78,9 +79,9 @@ export default function Hero() {
                                     <badge.icon className="w-5 h-5 text-accent-400" aria-hidden="true" />
                                 </div>
                                 <span className="text-sm font-medium">{badge.text}</span>
-                            </motion.div>
+                            </motion.li>
                         ))}
-                    </motion.div>
+                    </motion.ul>
                 </motion.div>
 
                 {/* Scroll Indicator */}
