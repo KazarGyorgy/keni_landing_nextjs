@@ -19,7 +19,8 @@ const nextConfig = {
 
     // Optimalizált bundle
     experimental: {
-        optimizeCss: true,
+        // optimizeCss: true, // Kikapcsolva, mert blokkolja a fontok előtöltését (dependency chain issue)
+        optimizePackageImports: ['react-icons', 'framer-motion'],
     },
 };
 
