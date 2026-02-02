@@ -42,17 +42,18 @@ export default function Hero() {
                     </h1>
 
                     {/* Subtitle */}
-                    <motion.p
-                        variants={fadeInUp}
-                        className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+                    {/* Subtitle */}
+                    <p
+                        className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
+                        style={{ animationDelay: "0.1s", animationFillMode: "both" }}
                     >
                         {t("subtitle")}
-                    </motion.p>
+                    </p>
 
                     {/* CTA Buttons */}
-                    <motion.div
-                        variants={fadeInUp}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+                    <div
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up"
+                        style={{ animationDelay: "0.2s", animationFillMode: "both" }}
                     >
                         <a href="#kapcsolat" className="btn-primary flex items-center gap-2 group">
                             {t("cta.consultation")}
@@ -61,7 +62,7 @@ export default function Hero() {
                         <a href="#szolgaltatasok" className="btn-secondary">
                             {t("cta.services")}
                         </a>
-                    </motion.div>
+                    </div>
 
                     {/* Trust Badges */}
                     {/* Trust Badges */}
