@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
@@ -30,6 +31,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     };
 }
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
+
 export default async function RootLayout({
     children,
 }: {
@@ -39,8 +43,8 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className="scroll-smooth">
-            <body className="antialiased">
+        <html lang={locale} className={`scroll-smooth ${inter.variable} ${outfit.variable}`}>
+            <body className="antialiased font-sans">
                 <NextIntlClientProvider messages={messages}>
                     {children}
                     <CookieConsent />

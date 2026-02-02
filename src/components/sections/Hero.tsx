@@ -36,13 +36,10 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Heading */}
-                    <motion.h1
-                        variants={heroText}
-                        className="heading-xl text-white mb-6"
-                    >
+                    <h1 className="heading-xl text-white mb-6 animate-fade-in-up">
                         {t("title_start")}{" "}
                         <span className="text-gradient-gold">{t("title_highlight")}</span>
-                    </motion.h1>
+                    </h1>
 
                     {/* Subtitle */}
                     <motion.p
