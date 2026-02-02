@@ -31,8 +31,21 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     };
 }
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap",
+    preload: true,
+    adjustFontFallback: true
+});
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    variable: "--font-outfit",
+    display: "swap",
+    preload: true,
+    adjustFontFallback: true
+});
 
 export default async function RootLayout({
     children,
