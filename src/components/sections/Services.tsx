@@ -54,7 +54,7 @@ export default function Services() {
     return (
         <section id="szolgaltatasok" className="section-padding relative">
             {/* Background decoration */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/20 to-transparent" />
             </div>
 
@@ -87,7 +87,7 @@ export default function Services() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
                 >
                     {services.map((service, index) => (
-                        <motion.div
+                        <motion.article
                             key={index}
                             variants={staggerItem}
                             className="group glass-card-hover p-8"
@@ -95,7 +95,7 @@ export default function Services() {
                             <div className="flex items-start gap-5">
                                 {/* Icon */}
                                 <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
-                                    <service.icon className="w-7 h-7 text-accent-400" />
+                                    <service.icon className="w-7 h-7 text-accent-400" aria-hidden="true" />
                                 </div>
 
                                 {/* Content */}
@@ -129,7 +129,7 @@ export default function Services() {
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </motion.div>
             </div>

@@ -37,7 +37,7 @@ export default function Footer() {
     return (
         <footer className="relative bg-primary-900 border-t border-white/5">
             {/* Decorative gradient */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" aria-hidden="true" />
 
             <div className="container-custom mx-auto section-padding pb-8">
                 <motion.div
@@ -50,7 +50,7 @@ export default function Footer() {
                     {/* Brand Column */}
                     <motion.div variants={staggerItem} className="lg:col-span-2">
                         <a href="#" className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white">
@@ -64,15 +64,15 @@ export default function Footer() {
                         {/* Contact Info */}
                         <div className="space-y-3">
                             <a href="tel:+36301234567" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
-                                <HiPhone className="w-5 h-5" />
+                                <HiPhone className="w-5 h-5" aria-hidden="true" />
                                 <span>+36 30 123 4567</span>
                             </a>
                             <a href="mailto:info@financehub.hu" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
-                                <HiMail className="w-5 h-5" />
+                                <HiMail className="w-5 h-5" aria-hidden="true" />
                                 <span>info@financehub.hu</span>
                             </a>
                             <div className="flex items-center gap-3 text-gray-400">
-                                <HiLocationMarker className="w-5 h-5" />
+                                <HiLocationMarker className="w-5 h-5" aria-hidden="true" />
                                 <span>{t("contact.address")}</span>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ export default function Footer() {
                                 aria-label={t(`social.${social.label}`)}
                                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-primary-900 transition-all duration-300"
                             >
-                                <social.icon className="w-4 h-4" />
+                                <social.icon className="w-4 h-4" aria-hidden="true" />
                             </a>
                         ))}
                     </div>

@@ -49,7 +49,7 @@ export default function Header() {
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
                         <a href="#" className="flex items-center gap-3 group">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white group-hover:text-accent-400 transition-colors">
@@ -59,15 +59,18 @@ export default function Header() {
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-8">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    className="text-gray-300 hover:text-accent-400 transition-colors font-medium text-sm tracking-wide"
-                                >
-                                    {link.label}
-                                </a>
-                            ))}
+                            <ul className="flex items-center gap-8 list-none">
+                                {navLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <a
+                                            href={link.href}
+                                            className="text-gray-300 hover:text-accent-400 transition-colors font-medium text-sm tracking-wide"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* CTA Button and Language Switcher Placeholder */}
@@ -87,8 +90,10 @@ export default function Header() {
                             className="lg:hidden p-2 text-white hover:text-accent-400 transition-colors"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             aria-label="Toggle menu"
+                            aria-expanded={isMobileMenuOpen}
+                            aria-controls="mobile-menu"
                         >
-                            {isMobileMenuOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
+                            {isMobileMenuOpen ? <HiX size={28} aria-hidden="true" /> : <HiMenuAlt3 size={28} aria-hidden="true" />}
                         </button>
                     </div>
                 </nav>
@@ -105,17 +110,20 @@ export default function Header() {
                         className="fixed inset-x-0 top-20 z-40 lg:hidden"
                     >
                         <div className="mx-4 p-6 rounded-2xl bg-primary-800/95 backdrop-blur-xl border border-white/10 shadow-2xl">
-                            <nav className="flex flex-col gap-4">
-                                {navLinks.map((link) => (
-                                    <a
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={handleNavClick}
-                                        className="text-gray-200 hover:text-accent-400 transition-colors font-medium py-2 border-b border-white/5 last:border-0"
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
+                            <nav className="flex flex-col gap-4" id="mobile-menu">
+                                <ul className="flex flex-col gap-4 list-none p-0 m-0">
+                                    {navLinks.map((link) => (
+                                        <li key={link.href}>
+                                            <a
+                                                href={link.href}
+                                                onClick={handleNavClick}
+                                                className="block text-gray-200 hover:text-accent-400 transition-colors font-medium py-2 border-b border-white/5 last:border-0"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
                                 <a
                                     href="#kapcsolat"
                                     onClick={handleNavClick}

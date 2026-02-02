@@ -13,7 +13,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
     onClick: () => void;
 }) {
     return (
-        <motion.div
+        <motion.article
             variants={staggerItem}
             className="glass-card overflow-hidden"
         >
@@ -30,7 +30,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
                     transition={{ duration: 0.2 }}
                     className="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"
                 >
-                    <HiChevronDown className="w-5 h-5 text-accent-400" />
+                    <HiChevronDown className="w-5 h-5 text-accent-400" aria-hidden="true" />
                 </motion.div>
             </button>
 
@@ -48,7 +48,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.div>
+        </motion.article>
     );
 }
 

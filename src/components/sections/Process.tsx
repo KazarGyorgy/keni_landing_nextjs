@@ -38,7 +38,7 @@ export default function Process() {
     return (
         <section id="folyamat" className="section-padding relative">
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-800/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-800/20 to-transparent" aria-hidden="true" />
 
             <div className="container-custom mx-auto relative z-10">
                 {/* Section Header */}
@@ -70,23 +70,23 @@ export default function Process() {
                     className="relative"
                 >
                     {/* Connecting Line - Desktop */}
-                    <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20" />
+                    <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20" aria-hidden="true" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {steps.map((step, index) => (
-                            <motion.div
+                            <motion.li
                                 key={index}
                                 variants={staggerItem}
-                                className="relative"
+                                className="relative list-none"
                             >
-                                <div className="glass-card p-6 md:h-full text-center group hover:bg-white/10 transition-all duration-300">
+                                <article className="glass-card p-6 md:h-full text-center group hover:bg-white/10 transition-all duration-300">
                                     {/* Step Number */}
                                     <div className="relative z-10 mb-6">
                                         <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
-                                            <step.icon className="w-7 h-7 text-primary-900" />
+                                            <step.icon className="w-7 h-7 text-primary-900" aria-hidden="true" />
                                         </div>
                                         {/* Number badge */}
-                                        <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary-800 border-2 border-accent-500 flex items-center justify-center text-accent-400 text-xs font-bold">
+                                        <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary-800 border-2 border-accent-500 flex items-center justify-center text-accent-400 text-xs font-bold" aria-hidden="true">
                                             {step.number}
                                         </span>
                                     </div>
@@ -97,11 +97,11 @@ export default function Process() {
                                     <p className="text-gray-400 text-sm leading-relaxed">
                                         {step.description}
                                     </p>
-                                </div>
+                                </article>
 
                                 {/* Arrow for mobile */}
                                 {index < steps.length - 1 && (
-                                    <div className="lg:hidden flex justify-center mt-6 mb-0">
+                                    <div className="lg:hidden flex justify-center mt-6 mb-0" aria-hidden="true">
                                         <motion.div
                                             animate={{ y: [0, 5, 0] }}
                                             transition={{ duration: 1.5, repeat: Infinity }}
@@ -113,9 +113,9 @@ export default function Process() {
                                         </motion.div>
                                     </div>
                                 )}
-                            </motion.div>
+                            </motion.li>
                         ))}
-                    </div>
+                    </ol>
                 </motion.div>
             </div>
         </section>
