@@ -56,8 +56,8 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className={`scroll-smooth ${inter.variable} ${outfit.variable}`}>
-            <body className="antialiased font-sans">
+        <html lang={locale} className="scroll-smooth">
+            <body className={`antialiased font-sans ${inter.variable} ${outfit.variable}`}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                     <CookieConsent />
