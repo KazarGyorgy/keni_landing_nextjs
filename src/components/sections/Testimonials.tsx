@@ -52,7 +52,7 @@ export default function Testimonials() {
     return (
         <section id="velemenyek" className="section-padding relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-3xl" />
             </div>
 
@@ -88,7 +88,7 @@ export default function Testimonials() {
                     <div className="relative">
                         {/* Main Card */}
                         <AnimatePresence mode="wait">
-                            <motion.div
+                            <motion.article
                                 key={currentIndex}
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export default function Testimonials() {
                             >
                                 {/* Quote icon */}
                                 <div className="mb-6">
-                                    <svg className="w-12 h-12 text-accent-500/30" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-12 h-12 text-accent-500/30" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                     </svg>
                                 </div>
@@ -111,7 +111,7 @@ export default function Testimonials() {
                                 {/* Rating */}
                                 <div className="flex gap-1 mb-4">
                                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                        <HiStar key={i} className="w-5 h-5 text-accent-400" />
+                                        <HiStar key={i} className="w-5 h-5 text-accent-400" aria-hidden="true" />
                                     ))}
                                 </div>
 
@@ -131,7 +131,7 @@ export default function Testimonials() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.article>
                         </AnimatePresence>
 
                         {/* Navigation Buttons */}
@@ -141,7 +141,7 @@ export default function Testimonials() {
                                 className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
                                 aria-label={t("aria.prev")}
                             >
-                                <HiChevronLeft className="w-6 h-6" />
+                                <HiChevronLeft className="w-6 h-6" aria-hidden="true" />
                             </button>
 
                             {/* Dots */}
@@ -164,7 +164,7 @@ export default function Testimonials() {
                                 className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
                                 aria-label={t("aria.next")}
                             >
-                                <HiChevronRight className="w-6 h-6" />
+                                <HiChevronRight className="w-6 h-6" aria-hidden="true" />
                             </button>
                         </div>
                     </div>

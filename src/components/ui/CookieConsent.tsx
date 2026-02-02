@@ -91,6 +91,8 @@ export default function CookieConsent() {
                         exit={{ y: 100, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
                         className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+                        role="region"
+                        aria-label="Cookie beleegyezés"
                     >
                         <div className="container-custom mx-auto">
                             <div className="bg-primary-900 border border-white/10 rounded-2xl shadow-xl p-6 md:p-8 border-accent-500/20">
@@ -146,11 +148,14 @@ export default function CookieConsent() {
                                 exit={{ opacity: 0, y: "100%" }}
                                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                                 className="fixed inset-x-0 bottom-0 top-auto z-[70] md:top-1/2 md:bottom-auto md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg md:inset-x-auto"
+                                role="dialog"
+                                aria-modal="true"
+                                aria-labelledby="cookie-settings-title"
                             >
                                 <div className="bg-primary-900 border border-white/10 shadow-xl border-accent-500/20 max-h-[85vh] overflow-y-auto safe-area-pb rounded-t-2xl rounded-b-none border-b-0 md:rounded-2xl md:border-b md:p-8 p-6 pb-8">
                                     {/* Header */}
                                     <div className="flex items-center justify-between mb-6">
-                                        <h3 className="font-display font-semibold text-white text-xl">
+                                        <h3 id="cookie-settings-title" className="font-display font-semibold text-white text-xl">
                                             Cookie beállítások
                                         </h3>
                                         <button
@@ -180,11 +185,14 @@ export default function CookieConsent() {
                                         {/* Analytics */}
                                         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="font-medium text-white">Analitikai cookie-k</span>
+                                                <span className="font-medium text-white" id="analytics-cookies-label">Analitikai cookie-k</span>
                                                 <button
                                                     onClick={() => togglePreference("analytics")}
                                                     className={`relative w-12 h-6 rounded-full transition-colors ${preferences.analytics ? "bg-accent-500" : "bg-white/20"
                                                         }`}
+                                                    role="switch"
+                                                    aria-checked={preferences.analytics}
+                                                    aria-labelledby="analytics-cookies-label"
                                                 >
                                                     <span
                                                         className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${preferences.analytics ? "left-7" : "left-1"
@@ -201,11 +209,14 @@ export default function CookieConsent() {
                                         {/* Marketing */}
                                         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="font-medium text-white">Marketing cookie-k</span>
+                                                <span className="font-medium text-white" id="marketing-cookies-label">Marketing cookie-k</span>
                                                 <button
                                                     onClick={() => togglePreference("marketing")}
                                                     className={`relative w-12 h-6 rounded-full transition-colors ${preferences.marketing ? "bg-accent-500" : "bg-white/20"
                                                         }`}
+                                                    role="switch"
+                                                    aria-checked={preferences.marketing}
+                                                    aria-labelledby="marketing-cookies-label"
                                                 >
                                                     <span
                                                         className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${preferences.marketing ? "left-7" : "left-1"

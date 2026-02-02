@@ -55,7 +55,7 @@ export default function WhyUs() {
     return (
         <section id="rolunk" className="section-padding relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -98,13 +98,13 @@ export default function WhyUs() {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
                 >
                     {features.map((feature, index) => (
-                        <motion.div
+                        <motion.article
                             key={index}
                             variants={staggerItem}
                             className="glass-card p-6 text-center group hover:bg-white/10 transition-all duration-300"
                         >
                             <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <feature.icon className="w-7 h-7 text-accent-400" />
+                                <feature.icon className="w-7 h-7 text-accent-400" aria-hidden="true" />
                             </div>
                             <h3 className="font-display font-semibold text-white mb-2">
                                 {feature.title}
@@ -112,7 +112,7 @@ export default function WhyUs() {
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 {feature.description}
                             </p>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </motion.div>
 
