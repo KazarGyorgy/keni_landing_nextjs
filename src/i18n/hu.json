@@ -46,8 +46,7 @@
                 "features": {
                     "bank_offers": "Több bank ajánlata",
                     "rates": "Egyedi kamatok",
-                    "csok": "CSOK integráció",
-                    "online": "Online igénylés"
+                    "csok": "CSOK integráció"
                 }
             },
             "szemelyi_kolcson": {

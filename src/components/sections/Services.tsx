@@ -17,7 +17,6 @@ export default function Services() {
             features: [
                 t("items.lakashitel.features.bank_offers"),
                 t("items.lakashitel.features.rates"),
-                t("items.lakashitel.features.online")
             ],
         },
         {
