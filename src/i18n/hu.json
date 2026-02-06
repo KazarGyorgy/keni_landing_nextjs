@@ -18,7 +18,7 @@
     "Hero": {
         "badges": {
             "loan": "Hitelügyintézés",
-            "independent": "Független Pénzügyi Tanácsadás",
+            "independent": "Független pénzügyi tanácsadás",
             "insurance": "Biztosításkötés",
             "update": "Meglévő biztosítások aktualizálása",
             "savings": "Lakástakarékpénztár indítás"
@@ -33,20 +33,19 @@
         "trust_badges": {
             "independent": "Független tanácsadás",
             "experience": "25+ év tapasztalat",
-            "clients": "500+ elégedett ügyfél"
+            "clients": "2500+ elégedett ügyfél"
         }
     },
     "Services": {
         "subtitle": "Szolgáltatásaink",
-        "title": "Hogyan segíthetünk?",
-        "description": "Független tanácsadóként a Te érdekeidet képviseljük.",
+        "description": "Független pénzügyi közvetítőként a Te érdekeidet képviseljük.",
         "items": {
             "lakashitel": {
                 "title": "Lakáshitel és jelzáloghitel",
                 "description": "Segítünk megtalálni a legjobb lakáshitel ajánlatot, legyen szó vásárlásról, építkezésről, felújításról, vagy szabadfelhasználásról.",
                 "features": {
                     "bank_offers": "Több bank ajánlata",
-                    "rates": "Kedvező kamatok",
+                    "rates": "Egyedi kamatok",
                     "csok": "CSOK integráció",
                     "online": "Online igénylés"
                 }
@@ -67,18 +66,18 @@
                     "life": "Életbiztosítás",
                     "retirement": "Nyugdíjbiztosítás",
                     "home": "Lakásbiztosítás",
-                    "casco": "CASCO és kötelező",
+                    "casco": "CASCO és kötelező biztosítás",
                     "megtakaritas": "Megtakarítás",
                     "online": "Online ügyintézés"
                 }
             },
             "csok": {
-                "title": "CSOK és lakástámogatás",
-                "description": "Teljes körű segítség a CSOK és egyéb állami lakástámogatások igénylésében.",
+                "title": "Társasházaknak",
+                "description": "Teljeskörű ügyintézés.",
                 "features": {
-                    "baby": "Babaváró hitel",
-                    "village": "Falusi CSOK",
-                    "renovation": "Otthonfelújítási támogatás"
+                    "baby": "Társasház biztosítás",
+                    "village": "Felújítási hitelek",
+                    "renovation": "Társasházi LTP megtakarítások"
                 }
             }
         },
@@ -207,7 +206,7 @@
         "subtitle": "Kapcsolat",
         "title_start": "Beszéljünk a",
         "title_highlight": "lehetőségekről",
-        "description": "Vedd fel velünk a kapcsolatot, és ingyenes konzultáció keretében segítünk megtalálni a számodra legjobb megoldást!",
+        "description": "Vedd fel velünk a kapcsolatot és ingyenes konzultáció keretében segítünk megtalálni a számodra legjobb megoldást!",
         "success": {
             "title": "Köszönjük a megkeresést!",
             "message": "Hamarosan felvesszük veled a kapcsolatot.",

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HiHome, HiCreditCard, HiShieldCheck, HiDocumentText, HiArrowRight } from "react-icons/hi";
+import { HiHome, HiCreditCard, HiShieldCheck, HiArrowRight } from "react-icons/hi";
+import { MdApartment } from "react-icons/md";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 
@@ -43,7 +44,7 @@ export default function Services() {
             ],
         },
         {
-            icon: HiDocumentText,
+            icon: MdApartment,
             title: t("items.csok.title"),
             description: t("items.csok.description"),
             features: [
@@ -70,10 +71,7 @@ export default function Services() {
                     viewport={viewportOnce}
                     className="text-center mb-8"
                 >
-                    <p className="md:text-3xl 2xl:text-[36px] text-white mb-2">
-                        {t("title")}
-                    </p>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="md:text-3xl 2xl:text-[36px] text-gray-400 my-2">
                         {t("description")}
                     </p>
                 </motion.div>

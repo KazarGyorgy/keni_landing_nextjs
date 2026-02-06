@@ -46,7 +46,7 @@ export default function WhyUs() {
     ];
 
     const stats = [
-        { value: 500, suffix: "+", label: t("stats.clients") },
+        { value: 2500, suffix: "+", label: t("stats.clients") },
         { value: 98, suffix: "%", label: t("stats.success") },
         { value: 25, suffix: "+", label: t("stats.experience") },
         { value: 30, suffix: "+", label: t("stats.partners") },
