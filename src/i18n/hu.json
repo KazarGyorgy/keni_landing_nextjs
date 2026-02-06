@@ -67,11 +67,12 @@
                     "home": "Lakásbiztosítás",
                     "casco": "CASCO és kötelező biztosítás",
                     "megtakaritas": "Megtakarítás",
-                    "online": "Online ügyintézés"
+                    "online": "Online ügyintézés",
+                    "utasbiztositas": "Utasbiztosítás"
                 }
             },
             "csok": {
-                "title": "Társasházaknak",
+                "title": "Társasházaknak és lakásszövetkezeteknek",
                 "description": "Teljeskörű ügyintézés.",
                 "features": {
                     "baby": "Társasház biztosítás",
@@ -181,7 +182,7 @@
             },
             "time": {
                 "q": "Mennyi idő alatt intéződik egy hitelügy?",
-                "a": "A folyamat általában 2-4 hét, de ez nagyban függ a szükséges dokumentumok rendelkezésre állásától és a bank aktuális leterheltségétől. Sürgős esetben gyorsított ügyintézést is tudunk biztosítani."
+                "a": "A folyamat általában 3-5 hét, de ez nagyban függ a szükséges dokumentumok rendelkezésre állásától és a bank aktuális leterheltségétől. Sürgős esetben gyorsított ügyintézést is tudunk biztosítani."
             },
             "docs": {
                 "q": "Milyen dokumentumokra van szükség?",
@@ -197,7 +198,7 @@
             },
             "bar": {
                 "q": "Az utazás megkezdése előtt mennyivel köthetek utasbiztosítást?",
-                "a": "Az utasbiztosítást az utazás megkezdése előtt bármikor meg lehet kötni, de legkésőbb az indulás előtti napon. Ezért ha az utolsó pillanatban jut eszedbe, hogy kellene, hívj bizalommal!"
+                "a": "Az utasbiztosítást az utazás megkezdése előtt bármikor meg lehet kötni, de legkésőbb az indulás előtti napon. Ezért ha az utolsó pillanatban jut eszedbe, hogy kellene, akkor is hívj bizalommal!"
             }
         }
     },

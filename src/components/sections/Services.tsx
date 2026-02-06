@@ -36,6 +36,7 @@ export default function Services() {
             features: [
                 t("items.biztositasok.features.life"),
                 t("items.biztositasok.features.retirement"),
+                t("items.biztositasok.features.utasbiztositas"),
                 t("items.biztositasok.features.home"),
                 t("items.biztositasok.features.casco"),
                 t("items.biztositasok.features.megtakaritas"),
