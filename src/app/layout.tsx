@@ -57,7 +57,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className="scroll-smooth">
-            <body className={`antialiased font-sans ${inter.variable} ${outfit.variable}`}>
+            <body className={`antialiased font-sans ${inter.variable} ${outfit.variable} select-none`}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                     <CookieConsent />
