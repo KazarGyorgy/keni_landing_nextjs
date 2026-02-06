@@ -39,10 +39,9 @@ export default function Hero() {
                     </h1>
 
                     {/* Subtitle */}
-                    {/* Subtitle */}
                     <p
                         className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
-                        style={{ animationDelay: "0.1s", animationFillMode: "both" }}
+                        style={{ animationDelay: "0.1s" }}
                     >
                         {t("subtitle")}
                     </p>
@@ -50,7 +49,7 @@ export default function Hero() {
                     {/* CTA Buttons */}
                     <div
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up"
-                        style={{ animationDelay: "0.2s", animationFillMode: "both" }}
+                        style={{ animationDelay: "0.2s" }}
                     >
                         <a href="#contact" className="btn-primary flex items-center gap-2 group">
                             {t("cta.consultation")}
@@ -65,7 +64,7 @@ export default function Hero() {
                     {/* Trust Badges */}
                     <ul
                         className="flex flex-wrap items-center justify-center gap-6 md:gap-10 animate-fade-in-up"
-                        style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+                        style={{ animationDelay: "0.3s" }}
                     >
                         {trustBadges.map((badge, index) => (
                             <li

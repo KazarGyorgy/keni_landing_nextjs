@@ -63,7 +63,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="section-padding relative content-visibility-auto min-h-screen flex flex-col justify-center">
+        <section id="services" className="section-padding relative min-h-screen flex flex-col justify-center">
             {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/20 to-transparent" />
