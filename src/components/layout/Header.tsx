@@ -13,12 +13,11 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { href: "#szolgaltatasok", label: t("nav.szolgaltatasok") },
-        { href: "#rolunk", label: t("nav.rolunk") },
-        { href: "#folyamat", label: t("nav.folyamat") },
-        { href: "#velemenyek", label: t("nav.velemenyek") },
-        { href: "#gyik", label: t("nav.gyik") },
-        { href: "#kapcsolat", label: t("nav.kapcsolat") },
+        { href: "#about", label: t("nav.rolunk") },
+        { href: "#process", label: t("nav.folyamat") },
+        { href: "#testimonials", label: t("nav.velemenyek") },
+        { href: "#faq", label: t("nav.gyik") },
+        { href: "#contact", label: t("nav.kapcsolat") },
     ];
 
     useEffect(() => {
@@ -80,7 +79,7 @@ export default function Header() {
                                     HU | EN
                                 </div>
                             )}
-                            <a href="#kapcsolat" className="btn-primary text-sm">
+                            <a href="#contact" className="btn-primary text-sm">
                                 {t("cta")}
                             </a>
                         </div>
@@ -125,7 +124,7 @@ export default function Header() {
                                     ))}
                                 </ul>
                                 <a
-                                    href="#kapcsolat"
+                                    href="#contact"
                                     onClick={handleNavClick}
                                     className="btn-primary text-center mt-4"
                                 >

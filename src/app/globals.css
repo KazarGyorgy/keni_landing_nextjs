@@ -78,7 +78,7 @@ body {
 
   /* Szekció spacing */
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
+    @apply py-20 md:py-28 lg:py-16 px-4 md:px-8;
   }
 
   /* Konténer */

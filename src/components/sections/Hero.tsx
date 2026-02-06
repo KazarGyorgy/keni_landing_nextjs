@@ -28,11 +28,13 @@ export default function Hero() {
                     className="max-w-4xl mx-auto text-center"
                 >
                     {/* Badge */}
-                    <motion.div variants={fadeInUp} className="mb-8">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium">
-                            <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true" />
-                            {t("badge")}
-                        </span>
+                    <motion.div variants={fadeInUp} className="mb-8 flex flex-row flex-wrap justify-center gap-x-8 gap-y-3">
+                        {["loan", "independent", "insurance", "update", "savings"].map((key) => (
+                            <span key={key} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium">
+                                <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true" />
+                                {t(`badges.${key}`)}
+                            </span>
+                        ))}
                     </motion.div>
 
                     {/* Main Heading */}
@@ -55,11 +57,11 @@ export default function Hero() {
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up"
                         style={{ animationDelay: "0.2s", animationFillMode: "both" }}
                     >
-                        <a href="#kapcsolat" className="btn-primary flex items-center gap-2 group">
+                        <a href="#contact" className="btn-primary flex items-center gap-2 group">
                             {t("cta.consultation")}
                             <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                         </a>
-                        <a href="#szolgaltatasok" className="btn-secondary">
+                        <a href="#services" className="btn-secondary">
                             {t("cta.services")}
                         </a>
                     </div>
@@ -85,26 +87,6 @@ export default function Hero() {
                     </motion.ul>
                 </motion.div>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2"
-                    aria-hidden="true"
-                >
-                    <motion.div
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
-                    >
-                        <motion.div
-                            animate={{ opacity: [1, 0.3, 1], y: [0, 8, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="w-1.5 h-1.5 rounded-full bg-accent-400"
-                        />
-                    </motion.div>
-                </motion.div>
             </div>
         </section>
     );

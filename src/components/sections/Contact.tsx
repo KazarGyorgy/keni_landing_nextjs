@@ -7,6 +7,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animation
 import { useTranslations } from "next-intl";
 import ContactForm from "./Contact/ContactForm";
 import ContactSuccess from "./Contact/ContactSuccess";
+import ProtectedPhone from "../ui/ProtectedPhone";
 
 export default function Contact() {
     const t = useTranslations("Contact");
@@ -16,25 +17,19 @@ export default function Contact() {
         {
             icon: HiPhone,
             label: t("info.labels.phone"),
-            value: "+36 30 123 4567",
-            href: "tel:+36301234567",
+            value: "",
+            href: "",
         },
         {
             icon: HiMail,
             label: t("info.labels.email"),
-            value: "info@financehub.hu",
-            href: "mailto:info@financehub.hu",
-        },
-        {
-            icon: HiLocationMarker,
-            label: t("info.labels.office"),
-            value: "1051 Budapest, Példa utca 1.",
-            href: "#",
-        },
+            value: "info@penzinfo.hu",
+            href: "mailto:info@penzinfo.hu",
+        }
     ];
 
     return (
-        <section id="kapcsolat" className="section-padding relative overflow-hidden">
+        <section id="contact" className="section-padding relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/20 to-transparent" />
@@ -74,7 +69,7 @@ export default function Contact() {
                         whileInView="visible"
                         viewport={viewportOnce}
                     >
-                        <div className="glass-card p-8 md:p-10">
+                        <div className="glass-card p-6 xl:p-8">
                             {showSuccess ? (
                                 <ContactSuccess />
                             ) : (
@@ -93,7 +88,7 @@ export default function Contact() {
                     >
                         <div className="space-y-8">
                             <div>
-                                <h3 className="font-display text-2xl font-bold text-white mb-4">
+                                <h3 className="font-display text-2xl font-weight-500 text-white mb-4">
                                     {t("info.title")}
                                 </h3>
                                 <p className="text-gray-400 leading-relaxed">
@@ -103,9 +98,8 @@ export default function Contact() {
 
                             <div className="space-y-6">
                                 {contactInfo.map((info, index) => (
-                                    <a
+                                    <div
                                         key={index}
-                                        href={info.href}
                                         className="flex items-center gap-5 group"
                                     >
                                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
@@ -114,32 +108,15 @@ export default function Contact() {
                                         <div>
                                             <div className="text-gray-400 text-sm">{info.label}</div>
                                             <div className="text-white font-medium group-hover:text-accent-400 transition-colors">
-                                                {info.value}
+                                                {info.label === t("info.labels.phone") ? (
+                                                    <ProtectedPhone />
+                                                ) : (
+                                                    <a href={info.href}>{info.value}</a>
+                                                )}
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 ))}
-                            </div>
-
-                            {/* Opening hours */}
-                            <div className="glass-card p-6">
-                                <h4 className="font-display font-semibold text-white mb-4">
-                                    {t("hours.title")}
-                                </h4>
-                                <div className="space-y-2 text-sm">
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-400">{t("hours.days.week")}</span>
-                                        <span className="text-white">9:00 - 18:00</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-400">{t("hours.days.saturday")}</span>
-                                        <span className="text-white">9:00 - 13:00</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-400">{t("hours.days.sunday")}</span>
-                                        <span className="text-accent-400">{t("hours.closed")}</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </motion.div>

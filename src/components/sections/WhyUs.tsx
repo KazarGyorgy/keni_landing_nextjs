@@ -48,12 +48,12 @@ export default function WhyUs() {
     const stats = [
         { value: 500, suffix: "+", label: t("stats.clients") },
         { value: 98, suffix: "%", label: t("stats.success") },
-        { value: 10, suffix: "+", label: t("stats.experience") },
+        { value: 25, suffix: "+", label: t("stats.experience") },
         { value: 30, suffix: "+", label: t("stats.partners") },
     ];
 
     return (
-        <section id="rolunk" className="section-padding relative overflow-hidden">
+        <section id="about" className="section-padding relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <motion.div

@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions/contact";
 import { HiArrowRight } from "react-icons/hi";
 import { useTranslations } from "next-intl";
@@ -35,7 +36,7 @@ function SubmitButton() {
 
 export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
     const t = useTranslations("Contact");
-    const [state, formAction] = useFormState(submitContactForm, { success: false });
+    const [state, formAction] = useActionState(submitContactForm, { success: false });
 
     if (state.success) {
         onSuccess();
@@ -43,7 +44,7 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
     }
 
     return (
-        <form action={formAction} className="space-y-6">
+        <form action={formAction} className="space-y-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -89,25 +90,32 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
                 />
             </div>
 
-            <div>
+            <div className="relative">
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                     {t("form.subject")}
                 </label>
-                <select
-                    id="subject"
-                    name="subject"
-                    required
-                    defaultValue=""
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
-                    aria-invalid={state?.errors?.subject ? "true" : "false"}
-                >
-                    <option value="" className="bg-primary-900" disabled>{t("form.subject_placeholder")}</option>
-                    <option value="lakas" className="bg-primary-900">{t("form.subjects.lakas")}</option>
-                    <option value="szemelyi" className="bg-primary-900">{t("form.subjects.szemelyi")}</option>
-                    <option value="csok" className="bg-primary-900">{t("form.subjects.csok")}</option>
-                    <option value="biztositas" className="bg-primary-900">{t("form.subjects.biztositas")}</option>
-                    <option value="egyeb" className="bg-primary-900">{t("form.subjects.egyeb")}</option>
-                </select>
+                <div className="relative">
+                    <select
+                        id="subject"
+                        name="subject"
+                        required
+                        defaultValue=""
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors appearance-none pr-10"
+                        aria-invalid={state?.errors?.subject ? "true" : "false"}
+                    >
+                        <option value="" className="bg-primary-900" disabled>{t("form.subject_placeholder")}</option>
+                        <option value="lakas" className="bg-primary-900">{t("form.subjects.lakas")}</option>
+                        <option value="szemelyi" className="bg-primary-900">{t("form.subjects.szemelyi")}</option>
+                        <option value="csok" className="bg-primary-900">{t("form.subjects.csok")}</option>
+                        <option value="biztositas" className="bg-primary-900">{t("form.subjects.biztositas")}</option>
+                        <option value="egyeb" className="bg-primary-900">{t("form.subjects.egyeb")}</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-400">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
             </div>
 
             <div>

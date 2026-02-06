@@ -22,7 +22,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
                 className="w-full px-6 py-5 flex items-center justify-between text-left group"
                 aria-expanded={isOpen}
             >
-                <span className="font-display font-semibold text-white group-hover:text-accent-400 transition-colors pr-4">
+                <span className="font-display font-semibold text-xl text-accent-400 transition-colors pr-4">
                     {question}
                 </span>
                 <motion.div
@@ -42,7 +42,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <div className="px-6 pb-5 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                        <div className="px-6 pb-5 text-lg text-gray-400 leading-relaxed border-t border-white/5 pt-4">
                             {answer}
                         </div>
                     </motion.div>
@@ -74,8 +74,8 @@ export default function FAQ() {
             answer: t("items.guarantee.a"),
         },
         {
-            question: t("items.rejected.q"),
-            answer: t("items.rejected.a"),
+            question: t("items.insurance.q"),
+            answer: t("items.insurance.a"),
         },
         {
             question: t("items.bar.q"),
@@ -84,7 +84,7 @@ export default function FAQ() {
     ];
 
     return (
-        <section id="gyik" className="section-padding">
+        <section id="faq" className="section-padding">
             <div className="container-custom mx-auto">
                 {/* Section Header */}
                 <motion.div

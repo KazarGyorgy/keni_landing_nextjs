@@ -36,7 +36,7 @@ export default function Process() {
     ];
 
     return (
-        <section id="folyamat" className="section-padding relative content-visibility-auto">
+        <section id="process" className="section-padding relative content-visibility-auto">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-800/20 to-transparent" aria-hidden="true" />
 
@@ -70,9 +70,9 @@ export default function Process() {
                     className="relative"
                 >
                     {/* Connecting Line - Desktop */}
-                    <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20" aria-hidden="true" />
+                    <div className="hidden lg:block absolute top-[3.5rem] left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20 z-0" aria-hidden="true" />
 
-                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
                         {steps.map((step, index) => (
                             <motion.li
                                 key={index}

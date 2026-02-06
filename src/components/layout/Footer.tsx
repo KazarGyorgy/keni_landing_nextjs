@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import Link from "next/link";
+import { HiPhone, HiMail } from "react-icons/hi";
+import ProtectedPhone from "../ui/ProtectedPhone";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 
@@ -24,8 +26,8 @@ export default function Footer() {
             { label: t("links.biztositasok"), href: "#" },
         ],
         informaciok: [
-            { label: t("links.rolunk"), href: "#rolunk" },
-            { label: t("links.gyakori_kerdesek"), href: "#gyik" },
+            { label: t("links.rolunk"), href: "#about" },
+            { label: t("links.gyakori_kerdesek"), href: "#faq" },
         ],
         jogi: [
             { label: t("links.adatvedelem"), href: "/adatvedelem" },
@@ -54,7 +56,7 @@ export default function Footer() {
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white">
-                                FinanceHub
+                                {t("brand_name")}
                             </span>
                         </a>
                         <p className="text-gray-400 mb-6 max-w-sm leading-relaxed">
@@ -63,18 +65,15 @@ export default function Footer() {
 
                         {/* Contact Info */}
                         <address className="space-y-3 not-italic">
-                            <a href="tel:+36301234567" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
-                                <HiPhone className="w-5 h-5" aria-hidden="true" />
-                                <span>+36 30 123 4567</span>
-                            </a>
-                            <a href="mailto:info@financehub.hu" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
-                                <HiMail className="w-5 h-5" aria-hidden="true" />
-                                <span>info@financehub.hu</span>
-                            </a>
                             <div className="flex items-center gap-3 text-gray-400">
-                                <HiLocationMarker className="w-5 h-5" aria-hidden="true" />
-                                <span>{t("contact.address")}</span>
+                                <HiPhone className="w-5 h-5" aria-hidden="true" />
+                                <ProtectedPhone />
                             </div>
+                            <a href="mailto:info@penzinfo.hu" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
+                                <HiMail className="w-5 h-5" aria-hidden="true" />
+                                <span>info@penzinfo.hu</span>
+                            </a>
+
                         </address>
                     </motion.div>
 
