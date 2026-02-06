@@ -46,7 +46,10 @@
                 "features": {
                     "bank_offers": "Több bank ajánlata",
                     "rates": "Egyedi kamatok",
-                    "csok": "CSOK integráció"
+                    "csok": "CSOK integráció",
+                    "otthonStart": "Otthon Start hitel",
+                    "elozetesErtekbecsles": "Előzetes értékbecslés",
+                    "bankiElominosites": "Banki előminősítés"
                 }
             },
             "szemelyi_kolcson": {
@@ -55,12 +58,14 @@
                 "features": {
                     "fast": "Gyors ügyintézés",
                     "no_collateral": "Fedezet nélkül",
+                    "moreBankOffers": "Több bank ajánlata",
+                    "bestRates":"Legjobb kamatok",
                     "online": "Online igénylés"
                 }
             },
             "biztositasok": {
                 "title": "Biztosítások",
-                "description": "Átfogó biztosítási megoldások családod és vagyonod védelmére.",
+                "description": "Átfogó biztosítási megoldások családod, vagyonod és céged védelmére.",
                 "features": {
                     "life": "Életbiztosítás",
                     "retirement": "Nyugdíjbiztosítás",
@@ -68,7 +73,8 @@
                     "casco": "CASCO és kötelező biztosítás",
                     "megtakaritas": "Megtakarítás",
                     "online": "Online ügyintézés",
-                    "utasbiztositas": "Utasbiztosítás"
+                    "utasbiztositas": "Utasbiztosítás",
+                    "ceges": "Céges biztosítás"
                 }
             },
             "csok": {
@@ -77,7 +83,8 @@
                 "features": {
                     "baby": "Társasház biztosítás",
                     "village": "Felújítási hitelek",
-                    "renovation": "Társasházi LTP megtakarítások"
+                    "renovation": "Társasházi LTP megtakarítások",
+                    "felelossegbiztositas":"Felelősségbiztosítás közös képviseleteknek"
                 }
             }
         },
@@ -266,7 +273,7 @@
     },
     "Footer": {
          "brand_name": "PénzINFO",
-        "brand_description": "Segítünk megtalálni a legjobb pénzügyi megoldásokat személyre szabott tanácsadással és átlátható folyamatokkal.",
+        "brand_description": "Segítünk megtalálni személyre szabottan a legjobb pénzügyi megoldásokat.",
         "headings": {
             "szolgaltatasok": "Szolgáltatások",
             "informaciok": "Információk",
@@ -275,7 +282,7 @@
         "links": {
             "lakashitel": "Lakáshitel",
             "szemelyi_kolcson": "Személyi kölcsön",
-            "csok": "CSOK",
+            "csok": "LTP megtakarítások",
             "biztositasok": "Biztosítások",
             "rolunk": "Rólunk",
             "gyakori_kerdesek": "Gyakori kérdések",
@@ -283,7 +290,7 @@
             "aszf": "ÁSZF",
             "cookie_szabalyzat": "Cookie szabályzat"
         },
-        "copyright": "© {year} FinanceHub. Minden jog fenntartva.",
+        "copyright": "© {year} PénzInfo. Minden jog fenntartva.",
         "social": {
             "facebook": "Facebook",
             "linkedin": "LinkedIn",

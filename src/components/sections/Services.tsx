@@ -17,6 +17,9 @@ export default function Services() {
             features: [
                 t("items.lakashitel.features.bank_offers"),
                 t("items.lakashitel.features.rates"),
+                t("items.lakashitel.features.otthonStart"),
+                t("items.lakashitel.features.elozetesErtekbecsles"),
+                t("items.lakashitel.features.bankiElominosites")
             ],
         },
         {
@@ -26,6 +29,8 @@ export default function Services() {
             features: [
                 t("items.szemelyi_kolcson.features.fast"),
                 t("items.szemelyi_kolcson.features.no_collateral"),
+                t("items.szemelyi_kolcson.features.moreBankOffers"),
+                t("items.szemelyi_kolcson.features.bestRates"),
                 t("items.szemelyi_kolcson.features.online")
             ],
         },
@@ -41,6 +46,7 @@ export default function Services() {
                 t("items.biztositasok.features.casco"),
                 t("items.biztositasok.features.megtakaritas"),
                 t("items.biztositasok.features.online"),
+                t("items.biztositasok.features.ceges")
             ],
         },
         {
@@ -50,7 +56,8 @@ export default function Services() {
             features: [
                 t("items.csok.features.baby"),
                 t("items.csok.features.village"),
-                t("items.csok.features.renovation")
+                t("items.csok.features.renovation"),
+                t("items.csok.features.felelossegbiztositas")
             ],
         },
     ];
