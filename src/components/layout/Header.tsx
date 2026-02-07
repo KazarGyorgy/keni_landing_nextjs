@@ -7,18 +7,20 @@ import { fadeIn } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 import { SHOW_LANGUAGE_SWITCHER } from "@/lib/config";
 
+import Link from "next/link";
+
 export default function Header() {
     const t = useTranslations("Header");
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { href: "#about", label: t("nav.rolunk") },
-        { href: "#process", label: t("nav.folyamat") },
-        { href: "#news", label: t("nav.hirek") },
-        { href: "#testimonials", label: t("nav.velemenyek") },
-        { href: "#faq", label: t("nav.gyik") },
-        { href: "#contact", label: t("nav.kapcsolat") },
+        { href: "/#about", label: t("nav.rolunk") },
+        { href: "/#process", label: t("nav.folyamat") },
+        { href: "/#news", label: t("nav.hirek") },
+        { href: "/#testimonials", label: t("nav.velemenyek") },
+        { href: "/#faq", label: t("nav.gyik") },
+        { href: "/#contact", label: t("nav.kapcsolat") },
     ];
 
     useEffect(() => {
@@ -48,26 +50,26 @@ export default function Header() {
                 <nav className="container-custom mx-auto px-4 md:px-8">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <a href="#" className="flex items-center gap-3 group">
+                        <Link href="/" className="flex items-center gap-3 group">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white group-hover:text-accent-400 transition-colors">
                                 {t("logo_text")}
                             </span>
-                        </a>
+                        </Link>
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-8">
                             <ul className="flex items-center gap-8 list-none">
                                 {navLinks.map((link) => (
                                     <li key={link.href}>
-                                        <a
+                                        <Link
                                             href={link.href}
                                             className="text-gray-300 hover:text-accent-400 transition-colors font-medium text-sm tracking-wide"
                                         >
                                             {link.label}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -80,9 +82,9 @@ export default function Header() {
                                     HU | EN
                                 </div>
                             )}
-                            <a href="#contact" className="btn-primary text-sm">
+                            <Link href="/#contact" className="btn-primary text-sm">
                                 {t("cta")}
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -114,23 +116,23 @@ export default function Header() {
                                 <ul className="flex flex-col gap-4 list-none p-0 m-0">
                                     {navLinks.map((link) => (
                                         <li key={link.href}>
-                                            <a
+                                            <Link
                                                 href={link.href}
-                                                onClick={handleNavClick}
+                                                onClick={() => setIsMobileMenuOpen(false)}
                                                 className="block text-gray-200 hover:text-accent-400 transition-colors font-medium py-2 border-b border-white/5 last:border-0"
                                             >
                                                 {link.label}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
-                                <a
-                                    href="#contact"
-                                    onClick={handleNavClick}
+                                <Link
+                                    href="/#contact"
+                                    onClick={() => setIsMobileMenuOpen(false)}
                                     className="btn-primary text-center mt-4"
                                 >
                                     {t("cta")}
-                                </a>
+                                </Link>
                             </nav>
                         </div>
                     </motion.div>

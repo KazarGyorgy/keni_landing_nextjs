@@ -20,15 +20,15 @@ export default function Footer() {
 
     const footerLinks = {
         szolgaltatasok: [
-            { label: t("links.lakashitel"), href: "#" },
-            { label: t("links.szemelyi_kolcson"), href: "#" },
-            { label: t("links.csok"), href: "#" },
-            { label: t("links.biztositasok"), href: "#" },
+            { label: t("links.lakashitel"), href: "/#lakashitel" },
+            { label: t("links.szemelyi_kolcson"), href: "/#szemelyi-kolcson" },
+            { label: t("links.csok"), href: "/#csok" },
+            { label: t("links.biztositasok"), href: "/#biztositasok" },
         ],
         informaciok: [
-            { label: t("links.rolunk"), href: "#about" },
-            { label: t("links.news"), href: "#news" },
-            { label: t("links.gyakori_kerdesek"), href: "#faq" },
+            { label: t("links.rolunk"), href: "/#about" },
+            { label: t("links.news"), href: "/#news" },
+            { label: t("links.gyakori_kerdesek"), href: "/#faq" },
         ],
         jogi: [
             { label: t("links.adatvedelem"), href: "/adatvedelem" },
@@ -52,14 +52,14 @@ export default function Footer() {
                 >
                     {/* Brand Column */}
                     <motion.div variants={staggerItem} className="lg:col-span-2">
-                        <a href="#" className="flex items-center gap-3 mb-6">
+                        <Link href="/" className="flex items-center gap-3 mb-6">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
                             <span className="font-display font-semibold text-xl text-white">
                                 {t("brand_name")}
                             </span>
-                        </a>
+                        </Link>
                         <p className="text-gray-400 mb-6 max-w-sm leading-relaxed">
                             {t("brand_description")}
                         </p>
@@ -74,11 +74,10 @@ export default function Footer() {
                                 <HiMail className="w-5 h-5" aria-hidden="true" />
                                 <span>info@penzinfo.hu</span>
                             </a>
-                             <a href="mailto:info@penzinfo.hu" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
-                            <HiLibrary className="w-5 h-5" aria-hidden="true" />
-                                       <span> MNB nyilvántartási szám: 57467713</span>
-                                           
-                        </a>
+                            <div className="flex items-center gap-3 text-gray-400">
+                                <HiLibrary className="w-5 h-5" aria-hidden="true" />
+                                <span> MNB nyilvántartási szám: 57467713</span>
+                            </div>
 
                         </address>
                     </motion.div>
@@ -89,12 +88,12 @@ export default function Footer() {
                         <ul className="space-y-3">
                             {footerLinks.szolgaltatasok.map((link) => (
                                 <li key={link.label}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -105,12 +104,12 @@ export default function Footer() {
                         <ul className="space-y-3">
                             {footerLinks.informaciok.map((link) => (
                                 <li key={link.label}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -121,12 +120,12 @@ export default function Footer() {
                         <ul className="space-y-3">
                             {footerLinks.jogi.map((link) => (
                                 <li key={link.label}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

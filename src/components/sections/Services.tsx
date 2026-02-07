@@ -11,6 +11,7 @@ export default function Services() {
 
     const services = [
         {
+            id: "lakashitel",
             icon: HiHome,
             title: t("items.lakashitel.title"),
             description: t("items.lakashitel.description"),
@@ -23,6 +24,7 @@ export default function Services() {
             ],
         },
         {
+            id: "szemelyi-kolcson",
             icon: HiCreditCard,
             title: t("items.szemelyi_kolcson.title"),
             description: t("items.szemelyi_kolcson.description"),
@@ -35,6 +37,7 @@ export default function Services() {
             ],
         },
         {
+            id: "biztositasok",
             icon: HiShieldCheck,
             title: t("items.biztositasok.title"),
             description: t("items.biztositasok.description"),
@@ -50,6 +53,7 @@ export default function Services() {
             ],
         },
         {
+            id: "csok",
             icon: MdApartment,
             title: t("items.csok.title"),
             description: t("items.csok.description"),
@@ -94,6 +98,7 @@ export default function Services() {
                     {services.map((service, index) => (
                         <motion.article
                             key={index}
+                            id={service.id}
                             variants={staggerItem}
                             className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col"
                         >
