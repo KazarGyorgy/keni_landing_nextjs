@@ -8,6 +8,8 @@ import { useTranslations } from "next-intl";
 import ContactForm from "./Contact/ContactForm";
 import ContactSuccess from "./Contact/ContactSuccess";
 import ProtectedPhone from "../ui/ProtectedPhone";
+import Image from "next/image";
+import meImg from "@/img/me.png";
 
 export default function Contact() {
     const t = useTranslations("Contact");
@@ -101,27 +103,39 @@ export default function Contact() {
                                 </p>
                             </div>
 
-                            <div className="space-y-6">
-                                {contactInfo.map((info, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5 group justify-center lg:justify-start"
-                                    >
-                                        <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300 flex-shrink-0">
-                                            <info.icon className="w-6 h-6 text-accent-400" aria-hidden="true" />
-                                        </div>
-                                        <div>
-                                            <div className="text-gray-400 text-sm">{info.label}</div>
-                                            <div className="text-white font-medium group-hover:text-accent-400 transition-colors">
-                                                {info.label === t("info.labels.phone") ? (
-                                                    <ProtectedPhone />
-                                                ) : (
-                                                    <a href={info.href}>{info.value}</a>
-                                                )}
+                            <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
+                                <div className="relative w-60 h-72 lg:w-60 lg:h-80 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-500/20 shadow-lg shadow-accent-500/10 mx-auto lg:mx-0">
+                                    <Image
+                                        src={meImg}
+                                        alt="Profilkép"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 1024px) 288px, 320px"
+                                        placeholder="blur"
+                                    />
+                                </div>
+                                <div className="space-y-6 flex-1 w-full">
+                                    {contactInfo.map((info, index) => (
+                                        <div
+                                            key={index}
+                                            className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5 group justify-center lg:justify-start"
+                                        >
+                                            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300 flex-shrink-0">
+                                                <info.icon className="w-6 h-6 text-accent-400" aria-hidden="true" />
+                                            </div>
+                                            <div>
+                                                <div className="text-gray-400 text-sm">{info.label}</div>
+                                                <div className="text-white font-medium group-hover:text-accent-400 transition-colors">
+                                                    {info.label === t("info.labels.phone") ? (
+                                                        <ProtectedPhone />
+                                                    ) : (
+                                                        <a href={info.href}>{info.value}</a>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </motion.div>
