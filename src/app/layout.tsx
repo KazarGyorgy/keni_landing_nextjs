@@ -3,6 +3,8 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { Suspense } from "react";
+import ScrollToHash from "@/components/utils/ScrollToHash";
 import CookieConsent from "@/components/ui/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -16,7 +18,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     return {
         title: t("title"),
         description: t("description"),
-        keywords: ["hitelközvetítés", "biztosítás", "pénzügyi tanácsadás", "lakáshitel", "személyi kölcsön", "CSOK"],
+        keywords: ["hitelközvetítés", "biztosítás", "pénzügyi tanácsadás", "lakáshitel", "személyi kölcsön", "Társasház biztosítás"],
         authors: [{ name: "Pénzügyi Alkusz" }],
         openGraph: {
             title: t("og.title"),
@@ -60,6 +62,9 @@ export default async function RootLayout({
             <body className={`antialiased font-sans ${inter.variable} ${outfit.variable} select-none`}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
+                    <Suspense fallback={null}>
+                        <ScrollToHash />
+                    </Suspense>
                     <CookieConsent />
                     <SpeedInsights />
                 </NextIntlClientProvider>

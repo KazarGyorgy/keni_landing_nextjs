@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Introduction from "@/components/sections/Introduction";
 import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
 import Process from "@/components/sections/Process";
 import News from "@/components/sections/News";
@@ -14,8 +14,8 @@ export default function Home() {
         <>
             <Header />
             <main>
-                <Services />
                 <Hero />
+                <Introduction />
                 <WhyUs />
                 <Process />
                 <News />

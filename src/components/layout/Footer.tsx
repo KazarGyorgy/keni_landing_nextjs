@@ -20,25 +20,25 @@ export default function Footer() {
 
     const footerLinks = {
         szolgaltatasok: [
-            { label: t("links.lakashitel"), href: "/#lakashitel" },
-            { label: t("links.szemelyi_kolcson"), href: "/#szemelyi-kolcson" },
-            { label: t("links.csok"), href: "/#csok" },
-            { label: t("links.biztositasok"), href: "/#biztositasok" },
+            { label: t("links.mortgage"), href: "/#mortgage" },
+            { label: t("links.personal_loan"), href: "/#personal-loan" },
+            { label: t("links.savings"), href: "/#condominium" },
+            { label: t("links.insurance"), href: "/#insurance" },
         ],
         informaciok: [
-            { label: t("links.rolunk"), href: "/#about" },
+            { label: t("links.about"), href: "/#about" },
             { label: t("links.news"), href: "/#news" },
-            { label: t("links.gyakori_kerdesek"), href: "/#faq" },
+            { label: t("links.faq"), href: "/#faq" },
         ],
         jogi: [
-            { label: t("links.adatvedelem"), href: "/adatvedelem" },
-            { label: t("links.aszf"), href: "/aszf" },
-            { label: t("links.cookie_szabalyzat"), href: "/sutik" },
+            { label: t("links.privacy"), href: "/adatvedelem" },
+            { label: t("links.terms"), href: "/aszf" },
+            { label: t("links.cookies"), href: "/sutik" },
         ],
     };
 
     return (
-        <footer className="relative bg-primary-900 border-t border-white/5">
+        <footer className="relative bg-primary-900 border-t border-white/5" >
             {/* Decorative gradient */}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" aria-hidden="true" />
 
@@ -51,8 +51,8 @@ export default function Footer() {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8"
                 >
                     {/* Brand Column */}
-                    <motion.div variants={staggerItem} className="lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-3 mb-6">
+                    <motion.div variants={staggerItem} className="lg:col-span-2 text-center md:text-left">
+                        <Link href="/" className="flex items-center justify-center md:justify-start gap-3 mb-6">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
                             </div>
@@ -60,12 +60,12 @@ export default function Footer() {
                                 {t("brand_name")}
                             </span>
                         </Link>
-                        <p className="text-gray-400 mb-6 max-w-sm leading-relaxed">
+                        <p className="text-gray-400 mb-6 max-w-sm leading-relaxed mx-auto md:mx-0">
                             {t("brand_description")}
                         </p>
 
                         {/* Contact Info */}
-                        <address className="space-y-3 not-italic">
+                        <address className="space-y-3 not-italic flex flex-col items-center md:items-start">
                             <div className="flex items-center gap-3 text-gray-400">
                                 <HiPhone className="w-5 h-5" aria-hidden="true" />
                                 <ProtectedPhone />
@@ -83,8 +83,8 @@ export default function Footer() {
                     </motion.div>
 
                     {/* Links Columns */}
-                    <motion.div variants={staggerItem}>
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.szolgaltatasok")}</h4>
+                    <motion.div variants={staggerItem} className="text-center md:text-left">
+                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.services")}</h4>
                         <ul className="space-y-3">
                             {footerLinks.szolgaltatasok.map((link) => (
                                 <li key={link.label}>
@@ -99,8 +99,8 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    <motion.div variants={staggerItem}>
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.informaciok")}</h4>
+                    <motion.div variants={staggerItem} className="text-center md:text-left">
+                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.info")}</h4>
                         <ul className="space-y-3">
                             {footerLinks.informaciok.map((link) => (
                                 <li key={link.label}>
@@ -115,8 +115,8 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    <motion.div variants={staggerItem}>
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.jogi")}</h4>
+                    <motion.div variants={staggerItem} className="text-center md:text-left">
+                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.legal")}</h4>
                         <ul className="space-y-3">
                             {footerLinks.jogi.map((link) => (
                                 <li key={link.label}>
@@ -143,23 +143,9 @@ export default function Footer() {
                     <p className="text-gray-500 text-sm">
                         {t("copyright", { year: currentYear })}
                     </p>
-
-                    {/* Social Links */}
-                    <ul className="flex items-center gap-4">
-                        {socialLinks.map((social) => (
-                            <li key={social.label}>
-                                <a
-                                    href={social.href}
-                                    aria-label={t(`social.${social.label}`)}
-                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-primary-900 transition-all duration-300"
-                                >
-                                    <social.icon className="w-4 h-4" aria-hidden="true" />
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                    {/*  */}
                 </motion.div>
             </div>
-        </footer>
+        </footer >
     );
 }

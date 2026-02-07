@@ -1,85 +1,169 @@
 "use client";
 
-import { HiArrowRight, HiShieldCheck, HiClock, HiUserGroup } from "react-icons/hi";
+import { motion } from "framer-motion";
+import { HiHome, HiCreditCard, HiShieldCheck, HiArrowRight } from "react-icons/hi";
+import { MdApartment } from "react-icons/md";
+import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
-import HeroBackground from "./Hero/HeroBackground";
 
-export default function Hero() {
+export default function Services() {
     const t = useTranslations("Hero");
 
-    const trustBadges = [
-        { icon: HiShieldCheck, text: t("trust_badges.independent") },
-        { icon: HiClock, text: t("trust_badges.experience") },
-        { icon: HiUserGroup, text: t("trust_badges.clients") },
+    const services = [
+        {
+            id: "mortgage",
+            icon: HiHome,
+            title: t("items.mortgage.title"),
+            description: t("items.mortgage.description"),
+            features: [
+                t("items.mortgage.features.bank_offers"),
+                t("items.mortgage.features.unique_rates"),
+                t("items.mortgage.features.home_start"),
+                t("items.mortgage.features.preliminary_appraisal"),
+                t("items.mortgage.features.pre_qualification")
+            ],
+        },
+        {
+            id: "personal-loan",
+            icon: HiCreditCard,
+            title: t("items.personal_loan.title"),
+            description: t("items.personal_loan.description"),
+            features: [
+                t("items.personal_loan.features.multiple_offers"),
+                t("items.personal_loan.features.best_rates"),
+                t("items.personal_loan.features.no_collateral"),
+                t("items.personal_loan.features.fast"),
+                t("items.personal_loan.features.online")
+            ],
+        },
+        {
+            id: "insurance",
+            icon: HiShieldCheck,
+            title: t("items.insurance.title"),
+            description: t("items.insurance.description"),
+            features: [
+                t("items.insurance.features.life"),
+                t("items.insurance.features.retirement"),
+                t("items.insurance.features.home"),
+                t("items.insurance.features.travel"),
+                t("items.insurance.features.casco"),
+                t("items.insurance.features.savings"),
+                t("items.insurance.features.corporate"),
+                t("items.insurance.features.online")
+            ],
+        },
+        {
+            id: "condominium",
+            icon: MdApartment,
+            title: t("items.condominium.title"),
+            description: t("items.condominium.description"),
+            features: [
+                t("items.condominium.features.condo_insurance"),
+                t("items.condominium.features.renovation_loan"),
+                t("items.condominium.features.ltp_savings"),
+                t("items.condominium.features.liability_insurance")
+            ],
+        },
     ];
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <HeroBackground />
+        <section id="services" className="section-padding relative min-h-screen flex flex-col justify-center">
+            {/* Background decoration */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/20 to-transparent" />
+            </div>
 
-            {/* Content */}
-            <div className="relative z-10 container-custom mx-auto px-4 md:px-8 pt-20 pb-16">
-                <div
-                    className="max-w-4xl mx-auto text-center"
+            <div className="container-custom mx-auto">
+                {/* Section Header */}
+                <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                    className="text-center mb-8"
                 >
-                    {/* Badge */}
-                    <div className="mb-8 flex flex-row flex-wrap justify-center gap-x-8 gap-y-3 animate-fade-in-up">
-                        {["loan", "independent", "insurance", "update", "savings"].map((key) => (
-                            <span key={key} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium">
-                                <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true" />
-                                {t(`badges.${key}`)}
-                            </span>
-                        ))}
-                    </div>
-
-                    {/* Main Heading */}
-                    <h1 className="heading-xl text-white mb-6 animate-fade-in-up">
-                        {t("title_start")}{" "}
-                        <span className="text-gradient-gold">{t("title_highlight")}</span>
-                    </h1>
-
-                    {/* Subtitle */}
-                    <p
-                        className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
-                        style={{ animationDelay: "0.1s" }}
-                    >
-                        {t("subtitle")}
+                    <p className="md:text-3xl 2xl:text-[36px] text-gray-400 my-2">
+                        {t("description")}
                     </p>
+                </motion.div>
 
-                    {/* CTA Buttons */}
-                    <div
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up"
-                        style={{ animationDelay: "0.2s" }}
-                    >
-                        <a href="#contact" className="btn-primary flex items-center gap-2 group">
-                            {t("cta.consultation")}
-                            <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                        </a>
-                        <a href="#services" className="btn-secondary">
-                            {t("cta.services")}
-                        </a>
-                    </div>
+                {/* Services Grid */}
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-6"
+                >
+                    {services.map((service, index) => (
+                        <motion.article
+                            key={index}
+                            id={service.id}
+                            variants={staggerItem}
+                            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col"
+                        >
+                            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* Trust Badges */}
-                    {/* Trust Badges */}
-                    <ul
-                        className="flex flex-wrap items-center justify-center gap-6 md:gap-10 animate-fade-in-up"
-                        style={{ animationDelay: "0.3s" }}
-                    >
-                        {trustBadges.map((badge, index) => (
-                            <li
-                                key={index}
-                                className="flex items-center gap-3 text-gray-400"
-                            >
-                                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                                    <badge.icon className="w-5 h-5 text-accent-400" aria-hidden="true" />
+                            <div className="flex flex-col md:flex-row items-center md:items-stretch gap-4 2xl:gap-5 text-center md:text-left h-full">
+                                {/* Icon */}
+                                <div className="flex-shrink-0 w-14 h-14 md:w-12 md:h-12 2xl:w-14 2xl:h-14 rounded-xl bg-primary-900/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <service.icon className="w-8 h-8 md:w-7 md:h-7 text-accent-400" aria-hidden="true" />
                                 </div>
-                                <span className="text-sm font-medium">{badge.text}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
 
+                                {/* Content */}
+                                <div className="flex-1 relative z-10 w-full flex flex-col">
+                                    <h3 className="font-display text-2xl md:text-3xl 2xl:text-[36px] font-bold text-primary-900 mb-2 2xl:mb-3">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-primary-900/80 mb-3 2xl:mb-4 leading-relaxed font-medium text-sm 2xl:text-base">
+                                        {service.description}
+                                    </p>
+
+                                    {/* Features */}
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-3 2xl:mb-4">
+                                        {service.features.map((feature, idx) => (
+                                            <span
+                                                key={idx}
+                                                className="px-3 py-1 rounded-full bg-primary-900/10 text-primary-900 text-xs font-semibold border border-primary-900/10"
+                                            >
+                                                {feature}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Link */}
+                                    <a
+                                        href="#contact"
+                                        className="inline-flex items-center gap-2 text-primary-900 font-bold text-sm hover:gap-3 transition-all mx-auto md:mx-0 mt-auto w-fit"
+                                    >
+                                        {t("learn_more")}
+                                        <HiArrowRight className="w-4 h-4" />
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.article>
+                    ))}
+                </motion.div>
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                    aria-hidden="true"
+                >
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
+                    >
+                        <motion.div
+                            animate={{ opacity: [1, 0.3, 1], y: [0, 8, 0] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-1.5 h-1.5 rounded-full bg-accent-400"
+                        />
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

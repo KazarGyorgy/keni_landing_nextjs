@@ -6,17 +6,17 @@
     "Header": {
         "logo_text": "PénzINFO",
         "nav": {
-            "szolgaltatasok": "Szolgáltatások",
-            "rolunk": "Rólunk",
-            "folyamat": "Hogyan működik",
-            "velemenyek": "Vélemények",
-            "gyik": "GYIK",
-            "hirek": "Hírek",
-            "kapcsolat": "Kapcsolat"
+            "services": "Szolgáltatások",
+            "about": "Rólunk",
+            "process": "Hogyan működik",
+            "testimonials": "Vélemények",
+            "faq": "GYIK",
+            "news": "Hírek",
+            "contact": "Kapcsolat"
         },
         "cta": "Ingyenes Konzultáció"
     },
-    "Hero": {
+    "Introduction": {
         "badges": {
             "loan": "Hitelügyintézés",
             "independent": "Független pénzügyi tanácsadás",
@@ -37,34 +37,34 @@
             "clients": "2500+ elégedett ügyfél"
         }
     },
-    "Services": {
+    "Hero": {
         "subtitle": "Szolgáltatásaink",
         "description": "Független pénzügyi közvetítőként a Te érdekeidet képviseljük.",
         "items": {
-            "lakashitel": {
+            "mortgage": {
                 "title": "Lakáshitel és jelzáloghitel",
                 "description": "Segítünk megtalálni a legjobb lakáshitel ajánlatot, legyen szó vásárlásról, építkezésről, felújításról, vagy szabadfelhasználásról.",
                 "features": {
                     "bank_offers": "Több bank ajánlata",
-                    "rates": "Egyedi kamatok",
+                    "unique_rates": "Egyedi kamatok",
                     "csok": "CSOK integráció",
-                    "otthonStart": "Otthon Start hitel",
-                    "elozetesErtekbecsles": "Előzetes értékbecslés",
-                    "bankiElominosites": "Banki előminősítés"
+                    "home_start": "Otthon Start hitel",
+                    "preliminary_appraisal": "Előzetes értékbecslés",
+                    "pre_qualification": "Banki előminősítés"
                 }
             },
-            "szemelyi_kolcson": {
+            "personal_loan": {
                 "title": "Személyi kölcsön",
                 "description": "Gyors és egyszerű személyi kölcsön igénylés, versenyképes kamatokkal és rugalmas futamidővel.",
                 "features": {
                     "fast": "Gyors ügyintézés",
                     "no_collateral": "Fedezet nélkül",
-                    "moreBankOffers": "Több bank ajánlata",
-                    "bestRates": "Legjobb kamatok",
+                    "multiple_offers": "Több bank ajánlata",
+                    "best_rates": "Legjobb kamatok",
                     "online": "Online igénylés"
                 }
             },
-            "biztositasok": {
+            "insurance": {
                 "title": "Biztosítások",
                 "description": "Átfogó biztosítási megoldások családod, vagyonod és céged védelmére.",
                 "features": {
@@ -72,20 +72,20 @@
                     "retirement": "Nyugdíjbiztosítás",
                     "home": "Lakásbiztosítás",
                     "casco": "CASCO és kötelező biztosítás",
-                    "megtakaritas": "Megtakarítás",
+                    "savings": "Megtakarítás",
                     "online": "Online ügyintézés",
-                    "utasbiztositas": "Utasbiztosítás",
-                    "ceges": "Céges biztosítás"
+                    "travel": "Utasbiztosítás",
+                    "corporate": "Céges biztosítás"
                 }
             },
-            "csok": {
+            "condominium": {
                 "title": "Társasházaknak és lakásszövetkezeteknek",
                 "description": "Teljeskörű ügyintézés.",
                 "features": {
-                    "baby": "Társasház biztosítás",
-                    "village": "Felújítási hitelek",
-                    "renovation": "Társasházi LTP megtakarítások",
-                    "felelossegbiztositas": "Felelősségbiztosítás közös képviselőknek"
+                    "condo_insurance": "Társasház biztosítás",
+                    "renovation_loan": "Felújítási hitelek",
+                    "ltp_savings": "Társasházi LTP megtakarítások",
+                    "liability_insurance": "Felelősségbiztosítás közös képviselőknek"
                 }
             }
         },
@@ -179,60 +179,60 @@
             "next": "Következő vélemény",
             "dot": "Vélemény {n}"
         },
-        "items": {
-            "1": {
+        "items": [
+            {
                 "name": "K. Anna",
                 "title": "Lakásvásárló",
                 "content": "Fantasztikus segítséget kaptam a lakáshitel ügyintézésben. Minden kérdésemre azonnal válaszoltak, és a végén sokkal jobb kamatot értem el, mint amire számítottam."
             },
-            "2": {
+            {
                 "name": "N. Péter",
                 "title": "Családapa, 3 gyermek",
-                "content": "A CSOK igénylés bonyolultnak tűnt, de a FinanceHub csapata végigvezetett a teljes folyamaton. Professzionális és megbízható partner voltak."
+                "content": "A CSOK igénylés bonyolultnak tűnt, de a PénzINFO csapata végigvezetett a teljes folyamaton. Professzionális és megbízható partner voltak."
             },
-            "3": {
+            {
                 "name": "Sz. Márta",
                 "title": "Vállalkozó",
                 "content": "Biztosítási és hitelügyekben is számíthatok rájuk. Mindig elérhetőek, és valóban az ügyfél érdekeit nézik. Csak ajánlani tudom!"
             },
-            "4": {
+            {
                 "name": "T. Gergő",
                 "title": "Első lakásvásárló",
-                "content": "Első lakásomat vettem, és fogalmam sem volt mit kell csinálni. A FinanceHub mindent elintézett, nekem csak aláírnom kellett. Köszönöm!"
+                "content": "Első lakásomat vettem, és fogalmam sem volt mit kell csinálni. A PénzINFO mindent elintézett, nekem csak aláírnom kellett. Köszönöm!"
             }
-        }
+        ]
     },
     "FAQ": {
         "subtitle": "GYIK",
         "title_start": "Gyakran ismételt",
         "title_highlight": "kérdések",
         "description": "Összegyűjtöttük a leggyakrabban feltett kérdéseket. Ha nem találod a választ, keress minket bátran!",
-        "items": {
-            "cost": {
+        "items": [
+            {
                 "q": "Mennyibe kerül a tanácsadás?",
                 "a": "Számodra a tanácsadás, az ügyintézés és minden általunk végzett tevékenység teljesen ingyenes. A közvetítői díjat a pénzintézetek fizetik, így neked semmilyen plusz költséggel nem kell számolnod."
             },
-            "time": {
+            {
                 "q": "Mennyi idő alatt intéződik egy hitelügy?",
                 "a": "A folyamat általában 3-5 hét, de ez nagyban függ a szükséges dokumentumok rendelkezésre állásától és a bank aktuális leterheltségétől. Sürgős esetben gyorsított ügyintézést is tudunk biztosítani."
             },
-            "docs": {
+            {
                 "q": "Milyen dokumentumokra van szükség?",
                 "a": "Az alapvető dokumentumok: személyi igazolvány, lakcímkártya, jövedelemigazolás (munkáltatói igazolás vagy NAV jövedelemigazolás), valamint az ingatlannal kapcsolatos iratok lakáshitel esetén. Az első konzultáción részletesen átbeszéljük, mire lesz szükség."
             },
-            "guarantee": {
+            {
                 "q": "Hogyan garantáljuk, hogy a legjobb ajánlatot kapod?",
                 "a": "Független tanácsadóként több mint 30 pénzintézettel állunk kapcsolatban. Minden esetben összehasonlítjuk a legjobb elérhető ajánlatokat és objektíven bemutatjuk azok előnyeit és hátrányait. A döntés mindig a Tied."
             },
-            "insurance": {
+            {
                 "q": "Mennyi idő alatt találjuk meg a legjobb biztosítási ajánlatot?",
                 "a": "Általában 24-48 órán belül, de ez függ a biztosítók válaszidejétől. Sürgős esetben Online ügyintézéssel akár néhány órán belül is tudunk ajánlatot adni."
             },
-            "bar": {
+            {
                 "q": "Az utazás megkezdése előtt mennyivel köthetek utasbiztosítást?",
                 "a": "Az utasbiztosítást az utazás megkezdése előtt bármikor meg lehet kötni, de legkésőbb az indulás előtti napon. Ezért ha az utolsó pillanatban jut eszedbe, hogy kellene, akkor is hívj bizalommal!"
             }
-        }
+        ]
     },
     "Contact": {
         "subtitle": "Kapcsolat",
@@ -254,11 +254,11 @@
             "subject": "Téma *",
             "subject_placeholder": "Válasszon témát...",
             "subjects": {
-                "lakas": "Lakáshitel",
-                "szemelyi": "Személyi kölcsön",
-                "csok": "CSOK / Lakástámogatás",
-                "biztositas": "Biztosítás",
-                "egyeb": "Egyéb kérdés"
+                "mortgage": "Lakáshitel",
+                "personal_loan": "Személyi kölcsön",
+                "family_support": "CSOK / Lakástámogatás",
+                "insurance": "Biztosítás",
+                "other": "Egyéb kérdés"
             },
             "message": "Üzenet",
             "message_placeholder": "Írd le röviden, miben segíthetünk...",
@@ -301,21 +301,21 @@
         "brand_name": "PénzINFO",
         "brand_description": "Segítünk megtalálni személyre szabottan a legjobb pénzügyi megoldásokat.",
         "headings": {
-            "szolgaltatasok": "Szolgáltatások",
-            "informaciok": "Információk",
-            "jogi": "Jogi"
+            "services": "Szolgáltatások",
+            "info": "Információk",
+            "legal": "Jogi"
         },
         "links": {
-            "lakashitel": "Lakáshitel",
-            "szemelyi_kolcson": "Személyi kölcsön",
-            "csok": "LTP megtakarítások",
-            "biztositasok": "Biztosítások",
-            "rolunk": "Rólunk",
-            "gyakori_kerdesek": "Gyakori kérdések",
+            "mortgage": "Lakáshitel",
+            "personal_loan": "Személyi kölcsön",
+            "savings": "LTP megtakarítások",
+            "insurance": "Biztosítások",
+            "about": "Rólunk",
+            "faq": "Gyakori kérdések",
             "news": "Hírek",
-            "adatvedelem": "Adatvédelem",
-            "aszf": "ÁSZF",
-            "cookie_szabalyzat": "Cookie szabályzat"
+            "privacy": "Adatvédelem",
+            "terms": "ÁSZF",
+            "cookies": "Cookie szabályzat"
         },
         "copyright": "© {year} PénzInfo. Minden jog fenntartva.",
         "social": {

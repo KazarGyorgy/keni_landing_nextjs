@@ -89,7 +89,7 @@ export default function Contact() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={viewportOnce}
-                        className="flex flex-col justify-center"
+                        className="flex flex-col justify-center text-center lg:text-left"
                     >
                         <div className="space-y-8">
                             <div>
@@ -105,9 +105,9 @@ export default function Contact() {
                                 {contactInfo.map((info, index) => (
                                     <div
                                         key={index}
-                                        className="flex items-center gap-5 group"
+                                        className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5 group justify-center lg:justify-start"
                                     >
-                                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300">
+                                        <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-accent-500/20 to-accent-600/10 flex items-center justify-center group-hover:from-accent-500/30 group-hover:to-accent-600/20 transition-all duration-300 flex-shrink-0">
                                             <info.icon className="w-6 h-6 text-accent-400" aria-hidden="true" />
                                         </div>
                                         <div>

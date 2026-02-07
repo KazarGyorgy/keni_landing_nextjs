@@ -15,12 +15,12 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { href: "/#about", label: t("nav.rolunk") },
-        { href: "/#process", label: t("nav.folyamat") },
-        { href: "/#news", label: t("nav.hirek") },
-        { href: "/#testimonials", label: t("nav.velemenyek") },
-        { href: "/#faq", label: t("nav.gyik") },
-        { href: "/#contact", label: t("nav.kapcsolat") },
+        { href: "/#about", label: t("nav.about") },
+        { href: "/#process", label: t("nav.process") },
+        { href: "/#news", label: t("nav.news") },
+        { href: "/#testimonials", label: t("nav.testimonials") },
+        { href: "/#faq", label: t("nav.faq") },
+        { href: "/#contact", label: t("nav.contact") },
     ];
 
     useEffect(() => {

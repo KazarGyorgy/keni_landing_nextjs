@@ -10,36 +10,15 @@ export default function Testimonials() {
     const t = useTranslations("Testimonials");
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const testimonials = [
-        {
-            id: 1,
-            name: t("items.1.name"),
-            title: t("items.1.title"),
-            content: t("items.1.content"),
-            rating: 5,
-        },
-        {
-            id: 2,
-            name: t("items.2.name"),
-            title: t("items.2.title"),
-            content: t("items.2.content"),
-            rating: 5,
-        },
-        {
-            id: 3,
-            name: t("items.3.name"),
-            title: t("items.3.title"),
-            content: t("items.3.content"),
-            rating: 5,
-        },
-        {
-            id: 4,
-            name: t("items.4.name"),
-            title: t("items.4.title"),
-            content: t("items.4.content"),
-            rating: 5,
-        },
-    ];
+    const items = t.raw("items") as Array<{ name: string; title: string; content: string }>;
+
+    const testimonials = items.map((item, index) => ({
+        id: index + 1,
+        name: item.name,
+        title: item.title,
+        content: item.content,
+        rating: 5,
+    }));
 
     const nextTestimonial = () => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);

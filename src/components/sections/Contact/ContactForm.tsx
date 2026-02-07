@@ -104,11 +104,11 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
                         aria-invalid={state?.errors?.subject ? "true" : "false"}
                     >
                         <option value="" className="bg-primary-900" disabled>{t("form.subject_placeholder")}</option>
-                        <option value="lakas" className="bg-primary-900">{t("form.subjects.lakas")}</option>
-                        <option value="szemelyi" className="bg-primary-900">{t("form.subjects.szemelyi")}</option>
-                        <option value="csok" className="bg-primary-900">{t("form.subjects.csok")}</option>
-                        <option value="biztositas" className="bg-primary-900">{t("form.subjects.biztositas")}</option>
-                        <option value="egyeb" className="bg-primary-900">{t("form.subjects.egyeb")}</option>
+                        <option value="mortgage" className="bg-primary-900">{t("form.subjects.mortgage")}</option>
+                        <option value="personal_loan" className="bg-primary-900">{t("form.subjects.personal_loan")}</option>
+                        <option value="family_support" className="bg-primary-900">{t("form.subjects.family_support")}</option>
+                        <option value="insurance" className="bg-primary-900">{t("form.subjects.insurance")}</option>
+                        <option value="other" className="bg-primary-900">{t("form.subjects.other")}</option>
                     </select>
                     <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-400">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -56,32 +56,12 @@ export default function FAQ() {
     const t = useTranslations("FAQ");
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-    const faqs = [
-        {
-            question: t("items.cost.q"),
-            answer: t("items.cost.a"),
-        },
-        {
-            question: t("items.time.q"),
-            answer: t("items.time.a"),
-        },
-        {
-            question: t("items.docs.q"),
-            answer: t("items.docs.a"),
-        },
-        {
-            question: t("items.guarantee.q"),
-            answer: t("items.guarantee.a"),
-        },
-        {
-            question: t("items.insurance.q"),
-            answer: t("items.insurance.a"),
-        },
-        {
-            question: t("items.bar.q"),
-            answer: t("items.bar.a"),
-        },
-    ];
+    const items = t.raw("items") as Array<{ q: string; a: string }>;
+
+    const faqs = items.map((item) => ({
+        question: item.q,
+        answer: item.a,
+    }));
 
     return (
         <section id="faq" className="section-padding">
