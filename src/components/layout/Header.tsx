@@ -38,11 +38,8 @@ export default function Header() {
 
     return (
         <>
-            <motion.header
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            <header
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in ${isScrolled
                     ? "bg-primary-900/90 backdrop-blur-lg shadow-lg"
                     : "bg-transparent"
                     }`}
@@ -99,7 +96,7 @@ export default function Header() {
                         </button>
                     </div>
                 </nav>
-            </motion.header>
+            </header>
 
             {/* Mobile Menu */}
             <AnimatePresence>

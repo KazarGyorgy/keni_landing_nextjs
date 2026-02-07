@@ -75,32 +75,20 @@ export default function Services() {
 
             <div className="container-custom mx-auto">
                 {/* Section Header */}
-                <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
-                    className="text-center mb-8"
-                >
+                <div className="text-center mb-8 animate-fade-in-up">
                     <p className="md:text-3xl 2xl:text-[36px] text-gray-400 my-2">
                         {t("description")}
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Services Grid */}
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-6"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-6">
                     {services.map((service, index) => (
-                        <motion.article
+                        <article
                             key={index}
                             id={service.id}
-                            variants={staggerItem}
-                            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col"
+                            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col animate-fade-in-up"
+                            style={{ animationDelay: `${index * 100}ms` }}
                         >
                             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -141,9 +129,9 @@ export default function Services() {
                                     </a>
                                 </div>
                             </div>
-                        </motion.article>
+                        </article>
                     ))}
-                </motion.div>
+                </div>
                 {/* Scroll Indicator */}
                 <motion.div
                     initial={{ opacity: 0 }}
