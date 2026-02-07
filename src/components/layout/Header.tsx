@@ -15,6 +15,7 @@ export default function Header() {
     const navLinks = [
         { href: "#about", label: t("nav.rolunk") },
         { href: "#process", label: t("nav.folyamat") },
+        { href: "#news", label: t("nav.hirek") },
         { href: "#testimonials", label: t("nav.velemenyek") },
         { href: "#faq", label: t("nav.gyik") },
         { href: "#contact", label: t("nav.kapcsolat") },

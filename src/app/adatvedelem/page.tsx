@@ -1,5 +1,3 @@
-import React from "react";
-import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 
@@ -10,13 +8,13 @@ export default function PrivacyPolicy() {
         <main className="min-h-screen bg-primary-900 text-white">
             <section className="section-padding pt-32">
                 <div className="container-custom mx-auto">
-                    <Link
+                    <a
                         href="/"
                         className="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors mb-8"
                     >
                         <HiArrowLeft className="w-5 h-5" />
                         {t("back_home")}
-                    </Link>
+                    </a>
 
                     <div className="glass-card max-w-4xl mx-auto p-8 md:p-12 border-accent-500/20">
                         <h1 className="heading-lg mb-8 text-gradient-gold text-center">{t("privacy.title")}</h1>
@@ -29,10 +27,10 @@ export default function PrivacyPolicy() {
 
                             <h2 className="text-white text-2xl font-bold mt-12 mb-6">1. Az Adatkezelő adatai</h2>
                             <p>
-                                <strong>Név:</strong> [Vállalkozás Neve]<br />
-                                <strong>Székhely:</strong> [Cím]<br />
-                                <strong>E-mail:</strong> [Email cím]<br />
-                                <strong>Telefon:</strong> [Telefonszám]
+                                <strong>Név:</strong> Kazár Éva Julianna<br />
+                                <strong>Székhely:</strong> 1096 Budapest, Haller utca 23-25<br />
+                                <strong>E-mail:</strong> [EMAIL_ADDRESS]<br />
+                                <strong>Telefon:</strong> +36-20/852-2767
                             </p>
 
                             <h2 className="text-white text-2xl font-bold mt-12 mb-6">2. A kezelt adatok köre és az adatkezelés célja</h2>
@@ -58,10 +56,17 @@ export default function PrivacyPolicy() {
                                 Amennyiben nem jön létre üzleti kapcsolat, az adatait töröljük.
                             </p>
 
-                            <h2 className="text-white text-2xl font-bold mt-12 mb-6">4. Adattovábbítás</h2>
+                            <h2 className="text-white text-2xl font-bold mt-12 mb-6">4. Partner cégek adatkezelési és ügyfél tájékoztatója</h2>
                             <p>
-                                Személyes adatait harmadik félnek nem továbbítjuk, kivéve, ha erre jogszabály kötelez minket, vagy ha ez a szolgáltatás teljesítéséhez (pl. banki partnerek felé történő közvetítés) elengedhetetlen, és ehhez Ön kifejezetten hozzájárult.
+                                Az érdeklődés beérkezése után az első konzultáción átadásra kerül a partner cégek adatkezelési és ügyfél tájékoztatója.
                             </p>
+
+                            <h2 className="text-white text-2xl font-bold mt-12 mb-6">5. Megbízási szerződés aláírása</h2>
+                            <p>
+                                A munkánkat ügyfél megbízás alapján végezzük. A megbízási szerződés kitöltéséhez az ügyfél adatai szükségesek.
+                                Személyes adatokat csak a megbízási szerződés kitöltéséhez és az ajánlat kéréshez használjuk.
+                            </p>
+
 
                             <h2 className="text-white text-2xl font-bold mt-12 mb-6">5. Az Ön jogai</h2>
                             <p>

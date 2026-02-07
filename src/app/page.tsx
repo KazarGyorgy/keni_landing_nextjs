@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
 import Process from "@/components/sections/Process";
+import News from "@/components/sections/News";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
@@ -17,6 +18,7 @@ export default function Home() {
                 <Hero />
                 <WhyUs />
                 <Process />
+                <News />
                 <Testimonials />
                 <FAQ />
                 <Contact />

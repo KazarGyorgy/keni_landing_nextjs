@@ -14,18 +14,21 @@ export default function Process() {
             icon: HiPhone,
             title: t("steps.contact.title"),
             description: t("steps.contact.description"),
+            id: "contact-step",
         },
         {
             number: "02",
             icon: HiClipboardCheck,
             title: t("steps.assessment.title"),
             description: t("steps.assessment.description"),
+            id: "assessment-step",
         },
         {
             number: "03",
             icon: HiDocumentSearch,
             title: t("steps.comparison.title"),
             description: t("steps.comparison.description"),
+            id: "comparison-step",
         },
         {
             number: "04",
@@ -76,6 +79,7 @@ export default function Process() {
                         {steps.map((step, index) => (
                             <motion.li
                                 key={index}
+                                id={step.id}
                                 variants={staggerItem}
                                 className="relative list-none gpu-optimized"
                             >

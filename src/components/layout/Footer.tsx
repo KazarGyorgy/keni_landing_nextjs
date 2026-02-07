@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
-import { HiPhone, HiMail } from "react-icons/hi";
+import { HiPhone, HiMail, HiLibrary } from "react-icons/hi";
 import ProtectedPhone from "../ui/ProtectedPhone";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 import { useTranslations } from "next-intl";
@@ -27,6 +27,7 @@ export default function Footer() {
         ],
         informaciok: [
             { label: t("links.rolunk"), href: "#about" },
+            { label: t("links.news"), href: "#news" },
             { label: t("links.gyakori_kerdesek"), href: "#faq" },
         ],
         jogi: [
@@ -73,6 +74,11 @@ export default function Footer() {
                                 <HiMail className="w-5 h-5" aria-hidden="true" />
                                 <span>info@penzinfo.hu</span>
                             </a>
+                             <a href="mailto:info@penzinfo.hu" className="flex items-center gap-3 text-gray-400 hover:text-accent-400 transition-colors">
+                            <HiLibrary className="w-5 h-5" aria-hidden="true" />
+                                       <span> MNB nyilvántartási szám: 57467713</span>
+                                           
+                        </a>
 
                         </address>
                     </motion.div>

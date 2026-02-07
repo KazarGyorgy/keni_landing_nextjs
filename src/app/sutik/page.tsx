@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 
@@ -10,13 +9,13 @@ export default function CookiePolicy() {
         <main className="min-h-screen bg-primary-900 text-white">
             <section className="section-padding pt-32">
                 <div className="container-custom mx-auto">
-                    <Link
+                    <a
                         href="/"
                         className="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors mb-8"
                     >
                         <HiArrowLeft className="w-5 h-5" />
                         {t("back_home")}
-                    </Link>
+                    </a>
 
                     <div className="glass-card max-w-4xl mx-auto p-8 md:p-12 border-accent-500/20">
                         <h1 className="heading-lg mb-8 text-gradient-gold text-center">{t("cookies.title")}</h1>

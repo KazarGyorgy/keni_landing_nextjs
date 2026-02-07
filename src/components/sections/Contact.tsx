@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import { HiPhone, HiMail, HiLocationMarker, HiLibrary } from "react-icons/hi";
 import { fadeInUp, fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 import ContactForm from "./Contact/ContactForm";
@@ -25,6 +25,11 @@ export default function Contact() {
             label: t("info.labels.email"),
             value: "info@penzinfo.hu",
             href: "mailto:info@penzinfo.hu",
+        },
+        {
+            icon: HiLibrary,
+            label: t("info.labels.mnb"),
+            value: "57467713",
         }
     ];
 

@@ -11,6 +11,7 @@
             "folyamat": "Hogyan működik",
             "velemenyek": "Vélemények",
             "gyik": "GYIK",
+            "hirek": "Hírek",
             "kapcsolat": "Kapcsolat"
         },
         "cta": "Ingyenes Konzultáció"
@@ -59,7 +60,7 @@
                     "fast": "Gyors ügyintézés",
                     "no_collateral": "Fedezet nélkül",
                     "moreBankOffers": "Több bank ajánlata",
-                    "bestRates":"Legjobb kamatok",
+                    "bestRates": "Legjobb kamatok",
                     "online": "Online igénylés"
                 }
             },
@@ -84,7 +85,7 @@
                     "baby": "Társasház biztosítás",
                     "village": "Felújítási hitelek",
                     "renovation": "Társasházi LTP megtakarítások",
-                    "felelossegbiztositas":"Felelősségbiztosítás közös képviseleteknek"
+                    "felelossegbiztositas": "Felelősségbiztosítás közös képviselőknek"
                 }
             }
         },
@@ -143,6 +144,30 @@
                 "description": "Segítünk az ügyintézésben és végigkísérünk a teljes folyamaton a sikeres lezárásig."
             }
         }
+    },
+    "News": {
+        "subtitle": "Hírek",
+        "title_start": "Legfrissebb",
+        "title_highlight": "aktualitások",
+        "description": "Maradj naprakész a pénzügyi világ változásaival. Hírek, tippek és tanácsok.",
+        "read_more": "Tudj meg többet",
+        "aria": {
+            "prev": "Előző hír",
+            "next": "Következő hír",
+            "dot": "Hír {n}"
+        },
+        "items": [
+            {
+                "date": "2026. március 1. - 2026 március 31.",
+                "title": "Lakásbiztosítási kampány",
+                "summary": "Mielőtt felmondanád a remélhetőleg jól megkötött lakásbiztosításod, mindenféleképpen konzultálj velünk vagy hívd fel a biztosítási üzletkötődet / alkuszodat! Sok buktatója lehet a folyamatnak. "
+            },
+            {
+                "date": "2026. február 1.",
+                "title": "Jelzálloghitel kamatok",
+                "summary": "Több bank is változtatott a lakáshitelek kamatán. Ha eddig készült kalkuláció azt érdemes most újra lefuttatni. "
+            }
+        ]
     },
     "Testimonials": {
         "subtitle": "Vélemények",
@@ -245,7 +270,8 @@
             "description": "Hívj fel vagy küldj üzenetet és ingyenes konzultáció keretében megbeszéljük az igényeidet. Nincs rejtett költség, nincs kötelezettség.",
             "labels": {
                 "phone": "Telefon",
-                "email": "E-mail"
+                "email": "E-mail",
+                "mnb": "MNB nyilvántartási szám"
             }
         }
     },
@@ -272,7 +298,7 @@
         }
     },
     "Footer": {
-         "brand_name": "PénzINFO",
+        "brand_name": "PénzINFO",
         "brand_description": "Segítünk megtalálni személyre szabottan a legjobb pénzügyi megoldásokat.",
         "headings": {
             "szolgaltatasok": "Szolgáltatások",
@@ -286,6 +312,7 @@
             "biztositasok": "Biztosítások",
             "rolunk": "Rólunk",
             "gyakori_kerdesek": "Gyakori kérdések",
+            "news": "Hírek",
             "adatvedelem": "Adatvédelem",
             "aszf": "ÁSZF",
             "cookie_szabalyzat": "Cookie szabályzat"
