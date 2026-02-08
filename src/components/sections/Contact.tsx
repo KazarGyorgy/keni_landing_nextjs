@@ -119,8 +119,8 @@ export default function Contact() {
                                             />
                                         </div>
                                         <div>
-                                            <div className="text-gray-400 text-sm">{t("info.contact_person.role")}</div>
-                                            <div className="text-white font-medium">{t("info.contact_person.name")}</div>
+                                            <div className="text-gray-400 text-sm">{t("info.contact_person.name")}</div>
+                                            <div className="text-white font-medium">{t("info.contact_person.role")}</div>
                                         </div>
                                     </div>
                                     {/* Contact Info */}
