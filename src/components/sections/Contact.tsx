@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { HiPhone, HiMail, HiLocationMarker, HiLibrary } from "react-icons/hi";
+import { HiPhone, HiMail, HiLocationMarker, HiLibrary, HiUser } from "react-icons/hi";
 import { fadeInUp, fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 import ContactForm from "./Contact/ContactForm";
@@ -104,17 +104,26 @@ export default function Contact() {
                             </div>
 
                             <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
-                                <div className="relative w-60 h-72 lg:w-60 lg:h-80 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-500/20 shadow-lg shadow-accent-500/10 mx-auto lg:mx-0">
-                                    <Image
-                                        src={meImg}
-                                        alt="Profilkép"
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 288px, 320px"
-                                        placeholder="blur"
-                                    />
-                                </div>
+
                                 <div className="space-y-6 flex-1 w-full">
+                                    {/* Contact Person */}
+                                    <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5 group justify-center lg:justify-start">
+                                        <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-500/20 shadow-lg shadow-accent-500/10">
+                                            <Image
+                                                src={meImg}
+                                                alt={t("info.contact_person.name")}
+                                                fill
+                                                className="object-cover"
+                                                sizes="56px"
+                                                placeholder="blur"
+                                            />
+                                        </div>
+                                        <div>
+                                            <div className="text-gray-400 text-sm">{t("info.contact_person.role")}</div>
+                                            <div className="text-white font-medium">{t("info.contact_person.name")}</div>
+                                        </div>
+                                    </div>
+                                    {/* Contact Info */}
                                     {contactInfo.map((info, index) => (
                                         <div
                                             key={index}
