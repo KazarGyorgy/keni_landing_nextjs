@@ -4,9 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
-import CarouselNavigation from "@/components/ui/CarouselNavigation";
-import NewsCard from "@/components/ui/NewsCard";
-import SectionHeader from "@/components/ui/SectionHeader";
+import CarouselNavigation from "@/components/ui/navigation/CarouselNavigation";
+import NewsCard from "@/components/ui/cards/NewsCard";
+import SectionHeader from "@/components/ui/common/SectionHeader";
 
 export default function News() {
     const t = useTranslations("News");

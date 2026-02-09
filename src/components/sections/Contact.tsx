@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeader from "@/components/ui/SectionHeader";
+import SectionHeader from "@/components/ui/common/SectionHeader";
 import meImg from "@/img/me.png";
 import { fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { motion } from "framer-motion";
@@ -8,9 +8,9 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import { HiLibrary, HiMail, HiPhone } from "react-icons/hi";
-import ProtectedPhone from "../ui/ProtectedPhone";
 import ContactForm from "./Contact/ContactForm";
 import ContactSuccess from "./Contact/ContactSuccess";
+import ProtectedPhone from "../ui/common/ProtectedPhone";
 
 export default function Contact() {
     const t = useTranslations("Contact");
@@ -38,7 +38,6 @@ export default function Contact() {
 
     return (
         <section id="contact" className="section-padding relative overflow-hidden">
-            {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/20 to-transparent" />
                 <motion.div
@@ -49,7 +48,6 @@ export default function Contact() {
             </div>
 
             <div className="container-custom mx-auto relative z-10">
-                {/* Section Header */}
                 <SectionHeader
                     subtitle={t("subtitle")}
                     titleStart={t("title_start")}
@@ -58,7 +56,6 @@ export default function Contact() {
                 />
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                    {/* Contact Form */}
                     <motion.div
                         variants={fadeInLeft}
                         initial="hidden"

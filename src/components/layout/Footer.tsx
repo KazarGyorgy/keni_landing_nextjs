@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import Link from "next/link";
-import { HiPhone, HiMail, HiLibrary } from "react-icons/hi";
-import ProtectedPhone from "../ui/ProtectedPhone";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { HiLibrary, HiMail, HiPhone } from "react-icons/hi";
+import ProtectedPhone from "../ui/common/ProtectedPhone";
+import FooterLinkColumn from "../ui/footer/FooterLinkColumn";
+import FooterCopyright from "../ui/footer/FooterCopyright";
 
+// Social links doesn't use it now, but in the future it will be used
 const socialLinks = [
     { icon: FaFacebookF, href: "#", label: "facebook" },
     { icon: FaLinkedinIn, href: "#", label: "linkedin" },
@@ -18,23 +21,11 @@ export default function Footer() {
     const t = useTranslations("Footer");
     const currentYear = new Date().getFullYear();
 
-    const footerLinks = {
-        szolgaltatasok: [
-            { label: t("links.mortgage"), href: "/#mortgage" },
-            { label: t("links.personal_loan"), href: "/#personal-loan" },
-            { label: t("links.savings"), href: "/#condominium" },
-            { label: t("links.insurance"), href: "/#insurance" },
-        ],
-        informaciok: [
-            { label: t("links.about"), href: "/#about" },
-            { label: t("links.news"), href: "/#news" },
-            { label: t("links.faq"), href: "/#faq" },
-        ],
-        jogi: [
-            { label: t("links.privacy"), href: "/adatvedelem" },
-            { label: t("links.terms"), href: "/aszf" },
-            { label: t("links.cookies"), href: "/sutik" },
-        ],
+    // Load link groups from translations
+    const linkGroups = t.raw("link_groups") as {
+        services: Array<{ label: string; href: string }>;
+        info: Array<{ label: string; href: string }>;
+        legal: Array<{ label: string; href: string }>;
     };
 
     return (
@@ -83,68 +74,24 @@ export default function Footer() {
                     </motion.div>
 
                     {/* Links Columns */}
-                    <motion.div variants={staggerItem} className="text-center md:text-left">
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.services")}</h4>
-                        <ul className="space-y-3">
-                            {footerLinks.szolgaltatasok.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                    <FooterLinkColumn
+                        heading={t("headings.services")}
+                        links={linkGroups.services}
+                    />
 
-                    <motion.div variants={staggerItem} className="text-center md:text-left">
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.info")}</h4>
-                        <ul className="space-y-3">
-                            {footerLinks.informaciok.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                    <FooterLinkColumn
+                        heading={t("headings.info")}
+                        links={linkGroups.info}
+                    />
 
-                    <motion.div variants={staggerItem} className="text-center md:text-left">
-                        <h4 className="font-display font-semibold text-white mb-4">{t("headings.legal")}</h4>
-                        <ul className="space-y-3">
-                            {footerLinks.jogi.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                    <FooterLinkColumn
+                        heading={t("headings.legal")}
+                        links={linkGroups.legal}
+                    />
                 </motion.div>
 
-                {/* Bottom Bar */}
-                <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4"
-                >
-                    <p className="text-gray-500 text-sm">
-                        {t("copyright", { year: currentYear })}
-                    </p>
-                    {/*  */}
-                </motion.div>
+                {/* Copyright */}
+                <FooterCopyright copyrightText={t("copyright", { year: currentYear })} />
             </div>
         </footer >
     );

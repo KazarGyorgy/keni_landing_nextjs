@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
-import SectionHeader from "@/components/ui/SectionHeader";
-import ExpansionPanel from "@/components/ui/ExpansionPanel";
+import SectionHeader from "@/components/ui/common/SectionHeader";
+import ExpansionPanel from "@/components/ui/common/ExpansionPanel";
 
 export default function FAQ() {
     const t = useTranslations("FAQ");

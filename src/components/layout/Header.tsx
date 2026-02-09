@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { fadeIn } from "@/lib/animations";
-import { useTranslations } from "next-intl";
 import { SHOW_LANGUAGE_SWITCHER } from "@/lib/config";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 import Link from "next/link";
 
