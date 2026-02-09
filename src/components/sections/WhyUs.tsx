@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { HiCheckCircle, HiLightBulb, HiTrendingUp, HiChat } from "react-icons/hi";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
+import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useAnimatedCounter } from "@/hooks/useScrollAnimation";
 import { useTranslations } from "next-intl";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
     const { ref, count } = useAnimatedCounter(value, 2000);
@@ -70,24 +71,12 @@ export default function WhyUs() {
 
             <div className="container-custom mx-auto relative z-10">
                 {/* Section Header */}
-                <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
-                    className="text-center mb-16"
-                >
-                    <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        {t("subtitle")}
-                    </span>
-                    <h2 className="heading-lg text-white mb-6">
-                        {t("title_start")}{" "}
-                        <span className="text-gradient-gold">{t("title_highlight")}</span>
-                    </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        {t("description")}
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    subtitle={t("subtitle")}
+                    titleStart={t("title_start")}
+                    titleHighlight={t("title_highlight")}
+                    description={t("description")}
+                />
 
                 {/* Features Grid */}
                 <motion.div

@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import meImg from "@/img/me.png";
+import { fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { motion } from "framer-motion";
-import { HiPhone, HiMail, HiLocationMarker, HiLibrary, HiUser } from "react-icons/hi";
-import { fadeInUp, fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useState } from "react";
+import { HiLibrary, HiMail, HiPhone } from "react-icons/hi";
+import ProtectedPhone from "../ui/ProtectedPhone";
 import ContactForm from "./Contact/ContactForm";
 import ContactSuccess from "./Contact/ContactSuccess";
-import ProtectedPhone from "../ui/ProtectedPhone";
-import Image from "next/image";
-import meImg from "@/img/me.png";
 
 export default function Contact() {
     const t = useTranslations("Contact");
@@ -49,24 +50,12 @@ export default function Contact() {
 
             <div className="container-custom mx-auto relative z-10">
                 {/* Section Header */}
-                <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
-                    className="text-center mb-16"
-                >
-                    <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        {t("subtitle")}
-                    </span>
-                    <h2 className="heading-lg text-white mb-6">
-                        {t("title_start")}{" "}
-                        <span className="text-gradient-gold">{t("title_highlight")}</span>
-                    </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        {t("description")}
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    subtitle={t("subtitle")}
+                    titleStart={t("title_start")}
+                    titleHighlight={t("title_highlight")}
+                    description={t("description")}
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Contact Form */}
