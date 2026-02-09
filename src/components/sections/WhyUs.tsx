@@ -5,7 +5,7 @@ import { HiCheckCircle, HiLightBulb, HiTrendingUp, HiChat } from "react-icons/hi
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useAnimatedCounter } from "@/hooks/useScrollAnimation";
 import { useTranslations } from "next-intl";
-import SectionHeader from "@/components/ui/SectionHeader";
+import SectionHeader from "@/components/ui/common/SectionHeader";
 
 function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
     const { ref, count } = useAnimatedCounter(value, 2000);

@@ -1,8 +1,8 @@
 "use client";
 
 import { IconType } from "react-icons";
-import FeatureBadge from "./FeatureBadge";
-import LearnMoreLink from "./LearnMoreLink";
+import FeatureBadge from "../common/FeatureBadge";
+import LearnMoreLink from "../common/LearnMoreLink";
 
 interface ServiceCardProps {
     service: {
@@ -20,8 +20,7 @@ export default function ServiceCard({ service, index, learnMoreLabel }: ServiceC
     return (
         <article
             id={service.id}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col animate-fade-in-up"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 p-5 2xl:p-8 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-gold h-full flex flex-col"
         >
 
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

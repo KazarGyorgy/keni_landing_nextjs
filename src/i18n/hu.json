@@ -309,23 +309,91 @@
             "info": "Információk",
             "legal": "Jogi"
         },
-        "links": {
-            "mortgage": "Lakáshitel",
-            "personal_loan": "Személyi kölcsön",
-            "savings": "LTP megtakarítások",
-            "insurance": "Biztosítások",
-            "about": "Rólunk",
-            "faq": "Gyakori kérdések",
-            "news": "Hírek",
-            "privacy": "Adatvédelem",
-            "terms": "ÁSZF",
-            "cookies": "Cookie szabályzat"
+        "link_groups": {
+            "services": [
+                {
+                    "label": "Lakáshitel",
+                    "href": "/#services"
+                },
+                {
+                    "label": "Személyi kölcsön",
+                    "href": "/#services"
+                },
+                {
+                    "label": "LTP megtakarítások",
+                    "href": "/#services"
+                },
+                {
+                    "label": "Biztosítások",
+                    "href": "/#services"
+                }
+            ],
+            "info": [
+                {
+                    "label": "Rólunk",
+                    "href": "/#about"
+                },
+                {
+                    "label": "Hírek",
+                    "href": "/#news"
+                },
+                {
+                    "label": "Gyakori kérdések",
+                    "href": "/#faq"
+                }
+            ],
+            "legal": [
+                {
+                    "label": "Adatvédelem",
+                    "href": "/adatvedelem"
+                },
+                {
+                    "label": "ÁSZF",
+                    "href": "/aszf"
+                },
+                {
+                    "label": "Cookie szabályzat",
+                    "href": "/sutik"
+                }
+            ]
         },
         "copyright": "© {year} PénzInfo. Minden jog fenntartva.",
         "social": {
             "facebook": "Facebook",
             "linkedin": "LinkedIn",
             "instagram": "Instagram"
+        }
+    },
+    "CookieConsent": {
+        "banner": {
+            "title": "🍪 Cookie beállítások",
+            "description": "Weboldalunk cookie-kat használ a felhasználói élmény javítása és a weboldal működésének biztosítása érdekében. A \"Beállítások\" gombra kattintva testreszabhatod, hogy mely cookie-kat engedélyezed.",
+            "privacy_link": "Adatvédelmi tájékoztató",
+            "aria_label": "Cookie beleegyezés"
+        },
+        "buttons": {
+            "settings": "Beállítások",
+            "accept_necessary": "Csak szükségesek",
+            "accept_all": "Összes elfogadása",
+            "save_preferences": "Beállítások mentése"
+        },
+        "modal": {
+            "title": "Cookie beállítások"
+        },
+        "categories": {
+            "necessary": {
+                "title": "Szükséges cookie-k",
+                "description": "Ezek a cookie-k elengedhetetlenek a weboldal működéséhez. Nélkülük az oldal alapvető funkciói nem működnének megfelelően.",
+                "always_active": "Mindig aktív"
+            },
+            "analytics": {
+                "title": "Analitikai cookie-k",
+                "description": "Segítenek megérteni, hogyan használják a látogatók a weboldalt. Az adatok anonim módon kerülnek összegyűjtésre."
+            },
+            "marketing": {
+                "title": "Marketing cookie-k",
+                "description": "Személyre szabott hirdetések megjelenítéséhez használjuk. Ezek segítenek releváns tartalmak megjelenítésében."
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import { staggerItem } from "@/lib/animations";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface ExpansionPanelProps {
     title: string | ReactNode;
@@ -18,8 +18,37 @@ export default function ExpansionPanel({
     isOpen,
     onClick,
 }: ExpansionPanelProps) {
+    const panelRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        if (isOpen && panelRef.current) {
+            // Wait for animation to complete
+            const timeoutId = setTimeout(() => {
+                const panel = panelRef.current;
+                if (!panel) return;
+
+                const rect = panel.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Check if the bottom of the panel is below the viewport
+                if (rect.bottom > viewportHeight) {
+                    // Scroll so the panel is fully visible with some padding
+                    const scrollOffset = rect.bottom - viewportHeight + 100; // 100px padding
+                    window.scrollBy({
+                        top: scrollOffset,
+                        behavior: "smooth"
+                    });
+                }
+            }, 250); // Match animation duration
+
+            // Cleanup function to prevent memory leaks
+            return () => clearTimeout(timeoutId);
+        }
+    }, [isOpen]);
+
     return (
         <motion.article
+            ref={panelRef}
             variants={staggerItem}
             className="glass-card overflow-hidden"
         >

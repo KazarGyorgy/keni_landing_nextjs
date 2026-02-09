@@ -4,9 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
-import TestimonialCard from "@/components/ui/TestimonialCard";
-import CarouselNavigation from "@/components/ui/CarouselNavigation";
-import SectionHeader from "@/components/ui/SectionHeader";
+import TestimonialCard from "@/components/ui/cards/TestimonialCard";
+import CarouselNavigation from "@/components/ui/navigation/CarouselNavigation";
+import SectionHeader from "@/components/ui/common/SectionHeader";
 
 export default function Testimonials() {
     const t = useTranslations("Testimonials");

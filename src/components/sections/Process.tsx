@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { HiPhone, HiClipboardCheck, HiDocumentSearch, HiCheckCircle } from "react-icons/hi";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
-import ProcessCard from "@/components/ui/ProcessCard";
-import SectionHeader from "@/components/ui/SectionHeader";
+import ProcessCard from "@/components/ui/cards/ProcessCard";
+import SectionHeader from "@/components/ui/common/SectionHeader";
 
 export default function Process() {
     const t = useTranslations("Process");

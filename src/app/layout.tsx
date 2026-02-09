@@ -5,7 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import ScrollToHash from "@/components/utils/ScrollToHash";
-import CookieConsent from "@/components/ui/CookieConsent";
+import CookieConsent from "@/components/ui/common/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
