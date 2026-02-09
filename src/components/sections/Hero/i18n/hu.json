@@ -1,0 +1,54 @@
+{
+    "subtitle": "Szolgáltatásaink",
+    "description": "Független pénzügyi közvetítőként a Te érdekeidet képviseljük.",
+    "items": {
+        "mortgage": {
+            "title": "Lakáshitel és jelzáloghitel",
+            "description": "Segítünk megtalálni a legjobb lakáshitel ajánlatot, legyen szó vásárlásról, építkezésről, felújításról, vagy szabadfelhasználásról.",
+            "features": {
+                "bank_offers": "Több bank ajánlata",
+                "unique_rates": "Egyedi kamatok",
+                "csok": "CSOK integráció",
+                "home_start": "Otthon Start hitel",
+                "preliminary_appraisal": "Előzetes értékbecslés",
+                "pre_qualification": "Banki előminősítés"
+            }
+        },
+        "personal_loan": {
+            "title": "Személyi kölcsön",
+            "description": "Gyors és egyszerű személyi kölcsön igénylés, versenyképes kamatokkal és rugalmas futamidővel.",
+            "features": {
+                "fast": "Gyors ügyintézés",
+                "no_collateral": "Fedezet nélkül",
+                "multiple_offers": "Több bank ajánlata",
+                "best_rates": "Legjobb kamatok",
+                "online": "Online igénylés"
+            }
+        },
+        "insurance": {
+            "title": "Biztosítások",
+            "description": "Átfogó biztosítási megoldások családod, vagyonod és céged védelmére.",
+            "features": {
+                "life": "Életbiztosítás",
+                "retirement": "Nyugdíjbiztosítás",
+                "home": "Lakásbiztosítás",
+                "casco": "CASCO és kötelező biztosítás",
+                "savings": "Megtakarítás",
+                "online": "Online ügyintézés",
+                "travel": "Utasbiztosítás",
+                "corporate": "Céges biztosítás"
+            }
+        },
+        "condominium": {
+            "title": "Társasházaknak és lakásszövetkezeteknek",
+            "description": "Teljeskörű ügyintézés.",
+            "features": {
+                "condo_insurance": "Társasház biztosítás",
+                "renovation_loan": "Felújítási hitelek",
+                "ltp_savings": "Társasházi LTP megtakarítások",
+                "liability_insurance": "Felelősségbiztosítás közös képviselőknek"
+            }
+        }
+    },
+    "learn_more": "Tudj meg többet"
+}

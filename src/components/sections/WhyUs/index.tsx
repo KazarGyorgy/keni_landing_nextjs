@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { HiCheckCircle, HiLightBulb, HiTrendingUp, HiChat } from "react-icons/hi";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { useAnimatedCounter } from "@/hooks/useScrollAnimation";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import SectionHeader from "@/components/ui/common/SectionHeader";
+import messages from "./i18n/hu.json";
 
 function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
     const { ref, count } = useAnimatedCounter(value, 2000);
@@ -21,6 +22,15 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 }
 
 export default function WhyUs() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ WhyUs: messages }}>
+            <WhyUsContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function WhyUsContent() {
     const t = useTranslations("WhyUs");
 
     const features = [

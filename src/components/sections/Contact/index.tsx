@@ -4,15 +4,25 @@ import SectionHeader from "@/components/ui/common/SectionHeader";
 import meImg from "@/img/me.png";
 import { fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import { HiLibrary, HiMail, HiPhone } from "react-icons/hi";
-import ContactForm from "./Contact/ContactForm";
-import ContactSuccess from "./Contact/ContactSuccess";
-import ProtectedPhone from "../ui/common/ProtectedPhone";
+import ContactForm from "./ContactForm";
+import ContactSuccess from "./ContactSuccess";
+import ProtectedPhone from "@/components/ui/common/ProtectedPhone";
+import messages from "./i18n/hu.json";
 
 export default function Contact() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ Contact: messages }}>
+            <ContactContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function ContactContent() {
     const t = useTranslations("Contact");
     const [showSuccess, setShowSuccess] = useState(false);
 

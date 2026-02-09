@@ -3,11 +3,21 @@
 import { motion } from "framer-motion";
 import { HiPhone, HiClipboardCheck, HiDocumentSearch, HiCheckCircle } from "react-icons/hi";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import ProcessCard from "@/components/ui/cards/ProcessCard";
 import SectionHeader from "@/components/ui/common/SectionHeader";
+import messages from "./i18n/hu.json";
 
 export default function Process() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ Process: messages }}>
+            <ProcessContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function ProcessContent() {
     const t = useTranslations("Process");
 
     const steps = [

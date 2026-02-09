@@ -2,11 +2,21 @@
 
 import ScrollIndicator from "@/components/ui/navigation/ScrollIndicator";
 import ServiceCard from "@/components/ui/cards/ServiceCard";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import { HiCreditCard, HiHome, HiShieldCheck } from "react-icons/hi";
 import { MdApartment } from "react-icons/md";
+import messages from "./i18n/hu.json";
 
 export default function Services() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ Hero: messages }}>
+            <ServicesContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function ServicesContent() {
     const t = useTranslations("Hero");
 
     // Icon mapping for services
@@ -61,3 +71,8 @@ export default function Services() {
         </section>
     );
 }
+
+function HeroContent() {
+    return null;
+}
+

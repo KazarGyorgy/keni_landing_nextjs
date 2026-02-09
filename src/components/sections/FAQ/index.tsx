@@ -3,11 +3,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, viewportOnce } from "@/lib/animations";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import SectionHeader from "@/components/ui/common/SectionHeader";
 import ExpansionPanel from "@/components/ui/common/ExpansionPanel";
+import messages from "./i18n/hu.json";
 
 export default function FAQ() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ FAQ: messages }}>
+            <FAQContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function FAQContent() {
     const t = useTranslations("FAQ");
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
