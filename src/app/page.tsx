@@ -1,5 +1,4 @@
 import Header from "@/components/layout/Header";
-import Introduction from "@/components/sections/Introduction";
 import Hero from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
 
@@ -10,6 +9,7 @@ const News = dynamic(() => import("@/components/sections/News"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
 const FAQ = dynamic(() => import("@/components/sections/FAQ"));
 const Contact = dynamic(() => import("@/components/sections/Contact"));
+const Introduction = dynamic(() => import("@/components/sections/Introduction"));
 
 export default function Home() {
     return (
