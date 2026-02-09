@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiChevronLeft, HiChevronRight, HiStar } from "react-icons/hi";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
 import { useTranslations } from "next-intl";
+import TestimonialCard from "@/components/ui/TestimonialCard";
+import CarouselNavigation from "@/components/ui/CarouselNavigation";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Testimonials() {
     const t = useTranslations("Testimonials");
@@ -36,27 +38,12 @@ export default function Testimonials() {
             </div>
 
             <div className="container-custom mx-auto relative z-10">
-                {/* Section Header */}
-                <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
-                    className="text-center mb-16"
-                >
-                    <span className="text-accent-400 font-medium text-sm uppercase tracking-widest mb-4 block">
-                        {t("subtitle")}
-                    </span>
-                    <h2 className="heading-lg text-white mb-6">
-                        {t("title_start")}{" "}
-                        <span className="text-gradient-gold">{t("title_highlight")}</span>
-                    </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        {t("description")}
-                    </p>
-                </motion.div>
-
-                {/* Testimonial Carousel */}
+                <SectionHeader
+                    subtitle={t("subtitle")}
+                    titleStart={t("title_start")}
+                    titleHighlight={t("title_highlight")}
+                    description={t("description")}
+                />
                 <motion.div
                     variants={fadeInUp}
                     initial="hidden"
@@ -65,87 +52,21 @@ export default function Testimonials() {
                     className="max-w-4xl mx-auto"
                 >
                     <div className="relative">
-                        {/* Main Card */}
                         <AnimatePresence mode="wait">
-                            <motion.article
-                                key={currentIndex}
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.3 }}
-                                className="glass-card p-8 md:p-12"
-                            >
-                                {/* Quote icon */}
-                                <div className="mb-6">
-                                    <svg className="w-12 h-12 text-accent-500/30" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                                    </svg>
-                                </div>
-
-                                {/* Content */}
-                                <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
-                                    &ldquo;{testimonials[currentIndex].content}&rdquo;
-                                </p>
-
-                                {/* Rating */}
-                                <div className="flex gap-1 mb-4">
-                                    {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                        <HiStar key={i} className="w-5 h-5 text-accent-400" aria-hidden="true" />
-                                    ))}
-                                </div>
-
-                                {/* Author */}
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
-                                        <span className="text-primary-900 font-display font-bold text-lg">
-                                            {testimonials[currentIndex].name.charAt(0)}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <div className="font-display font-semibold text-white">
-                                            {testimonials[currentIndex].name}
-                                        </div>
-                                        <div className="text-gray-400 text-sm">
-                                            {testimonials[currentIndex].title}
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.article>
+                            <TestimonialCard testimonial={testimonials[currentIndex]} />
                         </AnimatePresence>
-
-                        {/* Navigation Buttons */}
-                        <div className="flex items-center justify-center gap-4 mt-8">
-                            <button
-                                onClick={prevTestimonial}
-                                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
-                                aria-label={t("aria.prev")}
-                            >
-                                <HiChevronLeft className="w-6 h-6" aria-hidden="true" />
-                            </button>
-
-                            {/* Dots */}
-                            <div className="flex gap-2">
-                                {testimonials.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setCurrentIndex(index)}
-                                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                                            ? "bg-accent-400 w-8"
-                                            : "bg-white/20 hover:bg-white/40"
-                                            }`}
-                                        aria-label={t("aria.dot", { n: index + 1 })}
-                                    />
-                                ))}
-                            </div>
-
-                            <button
-                                onClick={nextTestimonial}
-                                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent-500 hover:text-primary-900 hover:border-accent-500 transition-all duration-300"
-                                aria-label={t("aria.next")}
-                            >
-                                <HiChevronRight className="w-6 h-6" aria-hidden="true" />
-                            </button>
-                        </div>
+                        <CarouselNavigation
+                            currentIndex={currentIndex}
+                            totalItems={testimonials.length}
+                            onPrevious={prevTestimonial}
+                            onNext={nextTestimonial}
+                            onDotClick={setCurrentIndex}
+                            ariaLabels={{
+                                previous: t("aria.prev"),
+                                next: t("aria.next"),
+                                dot: (index) => t("aria.dot", { n: index + 1 }),
+                            }}
+                        />
                     </div>
                 </motion.div>
             </div>
