@@ -19,8 +19,15 @@ export default function ExpansionPanel({
     onClick,
 }: ExpansionPanelProps) {
     const panelRef = useRef<HTMLElement>(null);
+    const isFirstRender = useRef(true);
 
     useEffect(() => {
+        // Skip scroll logic on initial render to prevent page jumping on load
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
+
         if (isOpen && panelRef.current) {
             // Wait for animation to complete
             const timeoutId = setTimeout(() => {

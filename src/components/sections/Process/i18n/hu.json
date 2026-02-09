@@ -1,0 +1,24 @@
+{
+    "subtitle": "Hogyan működik?",
+    "title_start": "Egyszerű folyamat,",
+    "title_highlight": "garantált eredmény",
+    "description": "Négy egyszerű lépésben jutunk el a célhoz. Mi intézzük a bonyolult részeket, Te csak a döntést hozod meg.",
+    "steps": {
+        "contact": {
+            "title": "Kapcsolatfelvétel",
+            "description": "Hívj fel vagy töltsd ki az űrlapot és egyeztetünk egy ingyenes konzultációs időpontot."
+        },
+        "assessment": {
+            "title": "Igényfelmérés",
+            "description": "Megismerjük a pénzügyi helyzetedet és céljaidat, hogy a legjobb megoldást megtaláljuk számodra."
+        },
+        "comparison": {
+            "title": "Ajánlatok Összehasonlítása",
+            "description": "Több bank vagy biztosító ajánlatát hasonlítjuk össze és bemutatjuk a legjobb opciókat."
+        },
+        "contract": {
+            "title": "Szerződéskötés",
+            "description": "Segítünk az ügyintézésben és végigkísérünk a teljes folyamaton a sikeres lezárásig."
+        }
+    }
+}

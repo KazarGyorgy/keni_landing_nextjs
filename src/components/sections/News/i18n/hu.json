@@ -1,0 +1,24 @@
+{
+    "subtitle": "Hírek",
+    "title_start": "Legfrissebb",
+    "title_highlight": "aktualitások",
+    "description": "Maradj naprakész a pénzügyi világ változásaival. Hírek, tippek és tanácsok.",
+    "read_more": "Tudj meg többet",
+    "aria": {
+        "prev": "Előző hír",
+        "next": "Következő hír",
+        "dot": "Hír {n}"
+    },
+    "items": [
+        {
+            "date": "2026. március 1. - 2026 március 31.",
+            "title": "Lakásbiztosítási kampány",
+            "summary": "Mielőtt felmondanád a remélhetőleg jól megkötött lakásbiztosításod, mindenféleképpen konzultálj velünk vagy hívd fel a biztosítási üzletkötődet / alkuszodat! Sok buktatója lehet a folyamatnak. "
+        },
+        {
+            "date": "2026. február 1.",
+            "title": "Jelzálloghitel kamatok",
+            "summary": "Több bank is változtatott a lakáshitelek kamatán. Ha eddig készült kalkuláció azt érdemes most újra lefuttatni. "
+        }
+    ]
+}

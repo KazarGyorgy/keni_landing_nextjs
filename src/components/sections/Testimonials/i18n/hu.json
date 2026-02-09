@@ -1,0 +1,33 @@
+{
+    "subtitle": "Vélemények",
+    "title_start": "Amit ügyfeleink",
+    "title_highlight": "mondanak rólunk",
+    "description": "Büszkék vagyunk az ügyfeleink elégedettségére. Íme néhány vélemény azok közül, akiknek már segíthettünk.",
+    "aria": {
+        "prev": "Előző vélemény",
+        "next": "Következő vélemény",
+        "dot": "Vélemény {n}"
+    },
+    "items": [
+        {
+            "name": "K. Anna",
+            "title": "Lakásvásárló",
+            "content": "Fantasztikus segítséget kaptam a lakáshitel ügyintézésben. Minden kérdésemre azonnal válaszoltak, és a végén sokkal jobb kamatot értem el, mint amire számítottam."
+        },
+        {
+            "name": "N. Péter",
+            "title": "Családapa, 3 gyermek",
+            "content": "A CSOK igénylés bonyolultnak tűnt, de a PénzINFO csapata végigvezetett a teljes folyamaton. Professzionális és megbízható partner voltak."
+        },
+        {
+            "name": "Sz. Márta",
+            "title": "Vállalkozó",
+            "content": "Biztosítási és hitelügyekben is számíthatok rájuk. Mindig elérhetőek, és valóban az ügyfél érdekeit nézik. Csak ajánlani tudom!"
+        },
+        {
+            "name": "T. Gergő",
+            "title": "Első lakásvásárló",
+            "content": "Első lakásomat vettem, és fogalmam sem volt mit kell csinálni. A PénzINFO mindent elintézett, nekem csak aláírnom kellett. Köszönöm!"
+        }
+    ]
+}

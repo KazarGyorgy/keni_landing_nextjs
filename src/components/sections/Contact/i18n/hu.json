@@ -1,0 +1,45 @@
+{
+    "subtitle": "Kapcsolat",
+    "title_start": "Beszéljünk a",
+    "title_highlight": "lehetőségekről",
+    "description": "Vedd fel velünk a kapcsolatot és ingyenes konzultáció keretében segítünk megtalálni a számodra legjobb megoldást!",
+    "success": {
+        "title": "Köszönjük a megkeresést!",
+        "message": "Hamarosan felvesszük veled a kapcsolatot.",
+        "new_message": "Új üzenet küldése"
+    },
+    "form": {
+        "name": "Név *",
+        "name_placeholder": "Név",
+        "phone": "Telefon *",
+        "phone_placeholder": "+36 30 123 4567",
+        "email": "E-mail",
+        "email_placeholder": "pelda@email.com",
+        "subject": "Téma *",
+        "subject_placeholder": "Válasszon témát...",
+        "subjects": {
+            "mortgage": "Lakáshitel",
+            "personal_loan": "Személyi kölcsön",
+            "family_support": "CSOK / Lakástámogatás",
+            "insurance": "Biztosítás",
+            "other": "Egyéb kérdés"
+        },
+        "message": "Üzenet",
+        "message_placeholder": "Írd le röviden, miben segíthetünk...",
+        "submit": "Üzenet küldése",
+        "submitting": "Küldés..."
+    },
+    "info": {
+        "title": "Lépj kapcsolatba velünk!",
+        "description": "Hívj fel vagy küldj üzenetet és ingyenes konzultáció keretében megbeszéljük az igényeidet. Nincs rejtett költség, nincs kötelezettség.",
+        "contact_person": {
+            "role": "Független pénzügyi közvetítő",
+            "name": "Kazár Éva"
+        },
+        "labels": {
+            "phone": "Telefon",
+            "email": "E-mail",
+            "mnb": "MNB nyilvántartási szám"
+        }
+    }
+}

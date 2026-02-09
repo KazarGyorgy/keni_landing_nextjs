@@ -3,12 +3,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import CarouselNavigation from "@/components/ui/navigation/CarouselNavigation";
 import NewsCard from "@/components/ui/cards/NewsCard";
 import SectionHeader from "@/components/ui/common/SectionHeader";
+import messages from "./i18n/hu.json";
 
 export default function News() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ News: messages }}>
+            <NewsContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function NewsContent() {
     const t = useTranslations("News");
     const [currentIndex, setCurrentIndex] = useState(0);
 

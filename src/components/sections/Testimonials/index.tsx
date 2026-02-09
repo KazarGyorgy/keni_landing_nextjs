@@ -3,12 +3,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
 import TestimonialCard from "@/components/ui/cards/TestimonialCard";
 import CarouselNavigation from "@/components/ui/navigation/CarouselNavigation";
 import SectionHeader from "@/components/ui/common/SectionHeader";
+import messages from "./i18n/hu.json";
 
 export default function Testimonials() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ Testimonials: messages }}>
+            <TestimonialsContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function TestimonialsContent() {
     const t = useTranslations("Testimonials");
     const [currentIndex, setCurrentIndex] = useState(0);
 

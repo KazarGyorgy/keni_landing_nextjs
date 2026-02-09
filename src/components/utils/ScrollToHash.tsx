@@ -14,6 +14,8 @@ export default function ScrollToHash() {
             const hash = window.location.hash;
             if (hash) {
                 const id = hash.replace("#", "");
+                if (!id) return;
+
                 const element = document.getElementById(id);
                 if (element) {
                     // Sima görgetés az elemhez

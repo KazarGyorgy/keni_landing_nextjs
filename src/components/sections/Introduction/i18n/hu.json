@@ -1,0 +1,21 @@
+{
+    "badges": {
+        "loan": "Hitelügyintézés",
+        "independent": "Független pénzügyi tanácsadás",
+        "insurance": "Biztosításkötés",
+        "update": "Meglévő biztosítások aktualizálása",
+        "savings": "Lakástakarékpénztár indítás"
+    },
+    "title_start": "Pénzügyi döntéseid",
+    "title_highlight": "megbízható partnere",
+    "subtitle": "Személyre szabott hitel- és biztosítási megoldások, amelyek valóban az érdekedben állnak. Átlátható feltételek, tiszta kommunikáció.",
+    "cta": {
+        "consultation": "Ingyenes Konzultáció",
+        "services": "Szolgáltatásaink"
+    },
+    "trust_badges": {
+        "independent": "Független tanácsadás",
+        "experience": "25+ év tapasztalat",
+        "clients": "2500+ elégedett ügyfél"
+    }
+}

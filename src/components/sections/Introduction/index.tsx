@@ -2,11 +2,21 @@
 
 import { motion } from "framer-motion";
 import { HiArrowRight, HiShieldCheck, HiClock, HiUserGroup } from "react-icons/hi";
-import { useTranslations } from "next-intl";
-import HeroBackground from "./Hero/HeroBackground";
+import { NextIntlClientProvider, useTranslations, useLocale } from "next-intl";
+import HeroBackground from "../Hero/HeroBackground";
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
+import messages from "./i18n/hu.json";
 
 export default function Introduction() {
+    const locale = useLocale();
+    return (
+        <NextIntlClientProvider locale={locale} messages={{ Introduction: messages }}>
+            <IntroductionContent />
+        </NextIntlClientProvider>
+    );
+}
+
+function IntroductionContent() {
     const t = useTranslations("Introduction");
 
     const trustBadges = [
