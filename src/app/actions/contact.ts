@@ -1,6 +1,9 @@
 "use server";
 
 import { CONTACT_EMAIL } from "@/lib/config";
+import nodemailer from "nodemailer";
+import { getAdminNotificationEmail, getClientConfirmationEmail } from "@/lib/email-templates";
+import { getTranslations } from "next-intl/server";
 
 export interface ContactFormState {
     success: boolean;
@@ -11,36 +14,69 @@ export interface ContactFormState {
 }
 
 export async function submitContactForm(prevState: ContactFormState, formData: FormData): Promise<ContactFormState> {
-    // Artificial delay to simulate network request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
+    const t = await getTranslations();
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
-    const subject = formData.get("subject") as string;
+    const subjectKey = formData.get("subject") as string;
     const message = formData.get("message") as string;
+
+    // Use translation for subject label (fallback to key if not found, though t returns key usually)
+    const subject = subjectKey ? t(`Contact.form.subjects.${subjectKey}`) : "";
 
     // Basic validation
     const errors: { [key: string]: string[] } = {};
     if (!name) errors.name = ["A név megadása kötelező."];
     if (!phone) errors.phone = ["A telefonszám megadása kötelező."];
-    if (!subject) errors.subject = ["Kérjük válasszon témát."];
+    if (!subjectKey) errors.subject = ["Kérjük válasszon témát."];
+    if (!message) errors.message = ["Az üzenet megadása kötelező."];
 
     if (Object.keys(errors).length > 0) {
         return { success: false, errors };
     }
 
-    // Simulate email sending
-    console.log("------------------------------------------------");
-    console.log(`Sending email to: ${CONTACT_EMAIL}`);
-    console.log(`From: ${name} (${email || "No email provided"})`);
-    console.log(`Phone: ${phone}`);
-    console.log(`Subject: ${subject}`);
-    console.log(`Message: ${message}`);
-    console.log("------------------------------------------------");
+    try {
+        const transporter = nodemailer.createTransport({
+            host: process.env.SMTP_HOST,
+            port: Number(process.env.SMTP_PORT) || 465,
+            secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+        });
 
-    // Here you would integrate with an email service provider like Resend, SendGrid, or Nodemailer
-    // example: await resend.emails.send({ to: CONTACT_EMAIL, ... })
+        // 1. Send notification to Admin
+        const adminEmail = getAdminNotificationEmail({ name, email, phone, subject, message }, t);
+        await transporter.sendMail({
+            from: `"${name}" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+            to: CONTACT_EMAIL,
+            replyTo: email,
+            subject: adminEmail.subject,
+            text: adminEmail.text,
+            html: adminEmail.html,
+        });
 
-    return { success: true, message: "Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot." };
+        // 2. Send confirmation to User (Client)
+        try {
+            const clientEmail = getClientConfirmationEmail({ name, email, phone, subject, message }, t);
+            await transporter.sendMail({
+                from: `"Kazár Éva - Pénzügyi Tanácsadó" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+                to: email,
+                subject: clientEmail.subject,
+                text: clientEmail.text,
+                html: clientEmail.html,
+            });
+        } catch (confirmError) {
+            console.error("Confirmation email sending failed:", confirmError);
+        }
+
+        return { success: true, message: "Köszönjük! Üzenetét sikeresen elküldtük." };
+    } catch (error) {
+        console.error("Email sending error:", error);
+        return {
+            success: false,
+            message: "Sajnáljuk, hiba történt az üzenet küldésekor. Kérjük próbálja meg később vagy hívjon minket telefonon."
+        };
+    }
 }

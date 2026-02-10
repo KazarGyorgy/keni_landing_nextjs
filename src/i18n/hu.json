@@ -132,5 +132,37 @@
                 "description": "Személyre szabott hirdetések megjelenítéséhez használjuk. Ezek segítenek releváns tartalmak megjelenítésében."
             }
         }
+    },
+    "Emails": {
+        "admin": {
+            "subject": "Kapcsolatfelvétel: {subject}",
+            "title": "Új üzenet érkezett a weboldalról:",
+            "fields": {
+                "name": "Név",
+                "email": "Email",
+                "phone": "Telefon",
+                "subject": "Tárgy",
+                "message": "Üzenet"
+            }
+        },
+        "client": {
+            "subject": "Kapcsolatfelvétel - Visszaigazolás",
+            "greeting": "Kedves {name}!",
+            "thank_you": "Köszönjük a megkeresését. Üzenetét megkaptuk és hamarosan felvesszük Önnel a kapcsolatot a megadott elérhetőségeken.",
+            "urgent": "Amennyiben sürgős kérdése van, kérjük hívjon minket a +3620/852-2767 telefonszámon.",
+            "signature": {
+                "name": "Kazár Éva",
+                "role": "Független Pénzügyi Tanácsadó",
+                "email": "info@penzinfo.hu"
+            },
+            "html": {
+                "header": "Köszönjük megkeresését!",
+                "confirmation": "Ezúton visszaigazoljuk, hogy üzenete sikeresen megérkezett hozzánk.",
+                "process": "Kollégánk hamarosan feldolgozza a megkeresést, és felveszi Önnel a kapcsolatot a megadott elérhetőségek egyikén.",
+                "your_subject": "Az Ön üzenetének tárgya:",
+                "urgent_call": "Amennyiben sürgős kérdése van, keressen minket bizalommal az alábbi telefonszámon:",
+                "auto_reply": "Ez egy automatikus üzenet, kérjük ne válaszoljon rá közvetlenül, ha nem ezt a címet használja."
+            }
+        }
     }
 }

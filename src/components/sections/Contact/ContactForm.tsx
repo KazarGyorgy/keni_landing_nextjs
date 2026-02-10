@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions/contact";
 import { HiArrowRight } from "react-icons/hi";
@@ -38,8 +38,13 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
     const t = useTranslations("Contact");
     const [state, formAction] = useActionState(submitContactForm, { success: false });
 
+    useEffect(() => {
+        if (state.success) {
+            onSuccess();
+        }
+    }, [state.success, onSuccess]);
+
     if (state.success) {
-        onSuccess();
         return null;
     }
 
@@ -106,7 +111,6 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
                         <option value="" className="bg-primary-900" disabled>{t("form.subject_placeholder")}</option>
                         <option value="mortgage" className="bg-primary-900">{t("form.subjects.mortgage")}</option>
                         <option value="personal_loan" className="bg-primary-900">{t("form.subjects.personal_loan")}</option>
-                        <option value="family_support" className="bg-primary-900">{t("form.subjects.family_support")}</option>
                         <option value="insurance" className="bg-primary-900">{t("form.subjects.insurance")}</option>
                         <option value="other" className="bg-primary-900">{t("form.subjects.other")}</option>
                     </select>
