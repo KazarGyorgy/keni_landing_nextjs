@@ -20,7 +20,6 @@
         "subjects": {
             "mortgage": "Lakáshitel",
             "personal_loan": "Személyi kölcsön",
-            "family_support": "CSOK / Lakástámogatás",
             "insurance": "Biztosítás",
             "other": "Egyéb kérdés"
         },
