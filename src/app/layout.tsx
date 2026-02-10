@@ -1,12 +1,12 @@
-import type { Metadata, Viewport } from "next";
-import { Inter, Outfit } from "next/font/google";
-import "./globals.css";
+import DynamicCookieConsent from "@/components/ui/common/DynamicCookieConsent";
+import ScrollToHash from "@/components/utils/ScrollToHash";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { Inter, Outfit } from "next/font/google";
 import { Suspense } from "react";
-import ScrollToHash from "@/components/utils/ScrollToHash";
-import CookieConsent from "@/components/ui/common/CookieConsent";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 
 export const viewport: Viewport = {
     themeColor: "#0A1628",
@@ -65,7 +65,7 @@ export default async function RootLayout({
                     <Suspense fallback={null}>
                         <ScrollToHash />
                     </Suspense>
-                    <CookieConsent />
+                    <DynamicCookieConsent />
                     <SpeedInsights />
                 </NextIntlClientProvider>
             </body>
