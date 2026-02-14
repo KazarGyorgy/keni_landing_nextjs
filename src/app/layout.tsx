@@ -1,6 +1,7 @@
 import DynamicCookieConsent from "@/components/ui/common/DynamicCookieConsent";
 import ScrollToHash from "@/components/utils/ScrollToHash";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { LazyMotion, domAnimation } from "framer-motion";
 import type { Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
@@ -62,12 +63,14 @@ export default async function RootLayout({
         <html lang={locale} className="scroll-smooth">
             <body className={`antialiased font-sans ${inter.variable} ${outfit.variable} select-none`}>
                 <NextIntlClientProvider messages={messages}>
-                    {children}
-                    <Suspense fallback={null}>
-                        <ScrollToHash />
-                    </Suspense>
-                    <DynamicCookieConsent />
-                    <SpeedInsights />
+                    <LazyMotion features={domAnimation}>
+                        {children}
+                        <Suspense fallback={null}>
+                            <ScrollToHash />
+                        </Suspense>
+                        <DynamicCookieConsent />
+                        <SpeedInsights />
+                    </LazyMotion>
                 </NextIntlClientProvider>
             </body>
         </html>

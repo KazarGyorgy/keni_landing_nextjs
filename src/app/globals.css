@@ -174,10 +174,14 @@ body {
 
 .animate-blob-1 {
   animation: blob-bounce 20s infinite linear;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .animate-blob-2 {
   animation: blob-bounce-slow 25s infinite linear;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes fade-in-up {
