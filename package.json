@@ -6,9 +6,11 @@
     "dev": "next dev",
     "dev:lan": "next dev -H 0.0.0.0",
     "build": "next build",
+    "build:prod": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:vercel": "git push vercel main"
+    "deploy:vercel": "git push vercel main",
+    "analyze": "cross-env ANALYZE=true next build --webpack"
   },
   "browserslist": [
     "chrome >= 87",
@@ -40,7 +42,10 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.1.6",
     "@types/nodemailer": "^7.0.9",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "cross-env": "^10.1.0",
     "pdf-parse": "^1.1.1"
   }
 }

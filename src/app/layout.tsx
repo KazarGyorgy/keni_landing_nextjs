@@ -12,8 +12,9 @@ export const viewport: Viewport = {
     themeColor: "#0A1628",
 };
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-    const t = await getTranslations({ locale: await getLocale(), namespace: "Metadata" });
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "Metadata" });
 
     return {
         title: t("title"),
