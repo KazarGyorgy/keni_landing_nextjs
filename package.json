@@ -1,5 +1,5 @@
 {
-  "name": "financelanding",
+  "name": "penzinfo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,7 +7,8 @@
     "dev:lan": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:vercel": "git push vercel main"
   },
   "browserslist": [
     "chrome >= 87",
