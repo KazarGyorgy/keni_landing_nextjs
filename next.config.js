@@ -13,7 +13,7 @@ const nextConfig = {
     compress: true,
     reactStrictMode: true,
     experimental: {
-        optimizeCss: true, // Kikapcsolva, mert blokkolja a fontok előtöltését (dependency chain issue)
+        optimizeCss: false, // Kikapcsolva, mert blokkolja a fontok előtöltését (dependency chain issue)
         optimizePackageImports: ['react-icons', 'framer-motion'],
     },
 
