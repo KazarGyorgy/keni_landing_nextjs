@@ -27,7 +27,6 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), system-ui, sans-serif;
   background: linear-gradient(135deg, #0A1628 0%, #0D1829 100%);
   color: #ffffff;
   min-height: 100vh;
