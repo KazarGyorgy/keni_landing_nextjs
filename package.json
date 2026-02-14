@@ -13,10 +13,11 @@
     "analyze": "cross-env ANALYZE=true next build --webpack"
   },
   "browserslist": [
-    "chrome >= 87",
-    "firefox >= 78",
-    "safari >= 14",
-    "edge >= 88"
+    "chrome >= 100",
+    "firefox >= 90",
+    "safari >= 15.6",
+    "edge >= 100",
+    "ios >= 15.6"
   ],
   "keywords": [],
   "author": "",
