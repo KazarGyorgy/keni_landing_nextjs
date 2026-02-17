@@ -1,6 +1,7 @@
 import DynamicCookieConsent from "@/components/ui/common/DynamicCookieConsent";
 import ScrollToHash from "@/components/utils/ScrollToHash";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 import { LazyMotion, domAnimation } from "framer-motion";
 import type { Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
@@ -83,6 +84,7 @@ export default async function RootLayout({
             </Suspense>
             <DynamicCookieConsent />
             <SpeedInsights />
+            <Analytics />
           </LazyMotion>
         </NextIntlClientProvider>
       </body>
