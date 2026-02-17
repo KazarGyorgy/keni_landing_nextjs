@@ -1,7 +1,7 @@
 
 export interface PrivacySection {
     title: string;
-    content: string[];
+    content: (string | { subtitle: string })[];
 }
 
 export const privacyData = {
@@ -42,9 +42,21 @@ export const privacyData = {
         {
             "title": "4. Kezelt személyes adatok köre, célja és jogalapja",
             "content": [
-                "4.1. Kapcsolatfelvétel Kezelt adatok köre: - név - e-mail cím - telefonszám - üzenet tartalma Adatkezelés célja: kapcsolatfelvétel, tájékoztatás nyújtása, ajánlatadás Jogalap: az érintett hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont) Adatkezelés időtartama: a kapcsolatfelvétel lezárásától számított legfeljebb 12 hónapig, vagy az érintett hozzájárulásának visszavonásáig 4.2. Szerződéskötéshez és közvetítői megbízáshoz kapcsolódó adatkezelés Kezelt adatok köre: - természetes személyazonosító adatok - elérhetőségi adatok",
-                "- pénzügyi, biztosítási adatok",
-                "Adatkezelés célja: biztosítási alkuszi és hitelközvetítői tevékenység ellátása, közvetítői megbízás teljesítése, ajánlatok továbbítása, valamint a jogszabályi és felügyeleti (MNB) kötelezettségek teljesítése Jogalap: - szerződés teljesítése (GDPR 6. cikk (1) bekezdés b) pont) - jogi kötelezettség teljesítése (GDPR 6. cikk (1) bekezdés c) pont) Adatkezelés időtartama: a közvetítői megbízás vagy a közvetített szerződés megszűnésétől számított 8 évig, figyelemmel a számviteli jogszabályokra, a Polgári Törvénykönyv elévülési szabályaira, valamint az MNB felügyeleti elvárásaira 4.3. Panaszkezeléssel kapcsolatos adatkezelés Kezelt adatok köre: - név - elérhetőségi adatok - panasz tartalma - a panasz kivizsgálásához szükséges egyéb személyes adatok Adatkezelés célja: panasz kivizsgálása, megválaszolása, jogszabályi kötelezettség teljesítése Jogalap: jogi kötelezettség teljesítése (GDPR 6. cikk (1) bekezdés c) pont) Adatkezelés időtartama: a panasz lezárásától számított 5 évig, a vonatkozó fogyasztóvédelmi és pénzügyi jogszabályok alapján"
+                { "subtitle": "4.1. Kapcsolatfelvétel" },
+                "Kezelt adatok köre: - név - e-mail cím - telefonszám - üzenet tartalma",
+                "Adatkezelés célja: kapcsolatfelvétel, tájékoztatás nyújtása, ajánlatadás",
+                "Jogalap: az érintett hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont)",
+                "Adatkezelés időtartama: a kapcsolatfelvétel lezárásától számított legfeljebb 12 hónapig, vagy az érintett hozzájárulásának visszavonásáig",
+                { "subtitle": "4.2. Szerződéskötéshez és közvetítői megbízáshoz kapcsolódó adatkezelés" },
+                "Kezelt adatok köre: - természetes személyazonosító adatok - elérhetőségi adatok - pénzügyi, biztosítási adatok",
+                "Adatkezelés célja: biztosítási alkuszi és hitelközvetítői tevékenység ellátása, közvetítői megbízás teljesítése, ajánlatok továbbítása, valamint a jogszabályi és felügyeleti (MNB) kötelezettségek teljesítése",
+                "Jogalap: - szerződés teljesítése (GDPR 6. cikk (1) bekezdés b) pont) - jogi kötelezettség teljesítése (GDPR 6. cikk (1) bekezdés c) pont)",
+                "Adatkezelés időtartama: a közvetítői megbízás vagy a közvetített szerződés megszűnésétől számított 8 évig, figyelemmel a számviteli jogszabályokra, a Polgári Törvénykönyv elévülési szabályaira, valamint az MNB felügyeleti elvárásaira",
+                { "subtitle": "4.3. Panaszkezeléssel kapcsolatos adatkezelés" },
+                "Kezelt adatok köre: - név - elérhetőségi adatok - panasz tartalma - a panasz kivizsgálásához szükséges egyéb személyes adatok",
+                "Adatkezelés célja: panasz kivizsgálása, megválaszolása, jogszabályi kötelezettség teljesítése",
+                "Jogalap: jogi kötelezettség teljesítése (GDPR 6. cikk (1) bekezdés c) pont)",
+                "Adatkezelés időtartama: a panasz lezárásától számított 5 évig, a vonatkozó fogyasztóvédelmi és pénzügyi jogszabályok alapján"
             ]
         },
         {

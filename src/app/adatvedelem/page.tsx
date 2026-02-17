@@ -35,7 +35,10 @@ export default function PrivacyPolicy() {
                       </a>
                     </p>
                     {privacyData.intro.slice(1).map((para, idx) => (
-                      <p key={`intro-${idx}`} className="text-gray-300 mb-4">
+                      <p
+                        key={`intro-${idx}`}
+                        className="text-gray-300 mb-4 text-justify"
+                      >
                         {para}
                       </p>
                     ))}
