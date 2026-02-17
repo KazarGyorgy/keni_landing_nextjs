@@ -65,7 +65,7 @@ function WhyUsContent() {
 
     return (
         <section id="about" className="section-padding relative overflow-hidden">
-            {/* Background Elements */}
+
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <motion.div
                     animate={{ rotate: 360 }}
@@ -80,7 +80,7 @@ function WhyUsContent() {
             </div>
 
             <div className="container-custom mx-auto relative z-10">
-                {/* Section Header */}
+
                 <SectionHeader
                     subtitle={t("subtitle")}
                     titleStart={t("title_start")}
@@ -88,7 +88,7 @@ function WhyUsContent() {
                     description={t("description")}
                 />
 
-                {/* Features Grid */}
+
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -115,7 +115,7 @@ function WhyUsContent() {
                     ))}
                 </motion.div>
 
-                {/* Stats Section */}
+
                 <motion.div
                     variants={fadeInUp}
                     initial="hidden"

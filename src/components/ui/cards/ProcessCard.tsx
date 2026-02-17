@@ -27,12 +27,12 @@ export default function ProcessCard({ step, index, totalSteps }: ProcessCardProp
             className="relative list-none gpu-optimized"
         >
             <article className="glass-card p-6 md:h-full text-center group hover:bg-white/10 transition-all duration-300">
-                {/* Step Number */}
+
                 <div className="relative z-10 mb-6">
                     <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
                         <step.icon className="w-7 h-7 text-primary-900" aria-hidden="true" />
                     </div>
-                    {/* Number badge */}
+
                     <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary-800 border-2 border-accent-500 flex items-center justify-center text-accent-400 text-xs font-bold" aria-hidden="true">
                         {step.number}
                     </span>
@@ -46,7 +46,7 @@ export default function ProcessCard({ step, index, totalSteps }: ProcessCardProp
                 </p>
             </article>
 
-            {/* Arrow for mobile */}
+
             {!isLastStep && (
                 <div className="lg:hidden flex justify-center mt-6 mb-0" aria-hidden="true">
                     <motion.div

@@ -10,7 +10,7 @@ import ProtectedPhone from "../ui/common/ProtectedPhone";
 import FooterLinkColumn from "../ui/footer/FooterLinkColumn";
 import FooterCopyright from "../ui/footer/FooterCopyright";
 
-// Social links doesn't use it now, but in the future it will be used
+
 const socialLinks = [
     { icon: FaFacebookF, href: "#", label: "facebook" },
     { icon: FaLinkedinIn, href: "#", label: "linkedin" },
@@ -21,7 +21,7 @@ export default function Footer() {
     const t = useTranslations("Footer");
     const currentYear = new Date().getFullYear();
 
-    // Load link groups from translations
+
     const linkGroups = t.raw("link_groups") as {
         services: Array<{ label: string; href: string }>;
         info: Array<{ label: string; href: string }>;
@@ -30,7 +30,7 @@ export default function Footer() {
 
     return (
         <footer className="relative bg-primary-900 border-t border-white/5" >
-            {/* Decorative gradient */}
+
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" aria-hidden="true" />
 
             <div className="container-custom mx-auto section-padding pb-8">
@@ -41,7 +41,7 @@ export default function Footer() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8"
                 >
-                    {/* Brand Column */}
+
                     <motion.div variants={staggerItem} className="lg:col-span-2 text-center md:text-left">
                         <Link href="/" className="flex items-center justify-center md:justify-start gap-3 mb-6">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
@@ -55,7 +55,7 @@ export default function Footer() {
                             {t("brand_description")}
                         </p>
 
-                        {/* Contact Info */}
+
                         <address className="space-y-3 not-italic flex flex-col items-center md:items-start">
                             <div className="flex items-center gap-3 text-gray-400">
                                 <HiPhone className="w-5 h-5" aria-hidden="true" />
@@ -73,7 +73,7 @@ export default function Footer() {
                         </address>
                     </motion.div>
 
-                    {/* Links Columns */}
+
                     <FooterLinkColumn
                         heading={t("headings.services")}
                         links={linkGroups.services}
@@ -90,7 +90,7 @@ export default function Footer() {
                     />
                 </motion.div>
 
-                {/* Copyright */}
+
                 <FooterCopyright copyrightText={t("copyright", { year: currentYear })} />
             </div>
         </footer >

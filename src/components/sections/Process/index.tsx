@@ -52,11 +52,11 @@ function ProcessContent() {
 
     return (
         <section id="process" className="section-padding relative content-visibility-auto">
-            {/* Background Gradient */}
+
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-800/20 to-transparent" aria-hidden="true" />
 
             <div className="container-custom mx-auto relative z-10">
-                {/* Section Header */}
+
                 <SectionHeader
                     subtitle={t("subtitle")}
                     titleStart={t("title_start")}
@@ -64,7 +64,7 @@ function ProcessContent() {
                     description={t("description")}
                 />
 
-                {/* Process Steps */}
+
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -72,7 +72,7 @@ function ProcessContent() {
                     viewport={viewportOnce}
                     className="relative"
                 >
-                    {/* Connecting Line - Desktop */}
+
                     <div className="hidden lg:block absolute top-[3.5rem] left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent-500/20 via-accent-500/40 to-accent-500/20 z-0" aria-hidden="true" />
 
                     <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">

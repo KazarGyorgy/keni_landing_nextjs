@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-// Fade animációk
+
 export const fadeIn: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,7 +45,7 @@ export const fadeInRight: Variants = {
     }
 };
 
-// Stagger konténer
+
 export const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,7 +57,7 @@ export const staggerContainer: Variants = {
     }
 };
 
-// Stagger item
+
 export const staggerItem: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -67,7 +67,7 @@ export const staggerItem: Variants = {
     }
 };
 
-// Scale animáció
+
 export const scaleIn: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -77,7 +77,7 @@ export const scaleIn: Variants = {
     }
 };
 
-// Float animáció (folyamatos)
+
 export const float = {
     y: [0, -10, 0],
     transition: {
@@ -87,7 +87,7 @@ export const float = {
     }
 };
 
-// Pulse animáció
+
 export const pulse = {
     scale: [1, 1.02, 1],
     transition: {
@@ -97,7 +97,7 @@ export const pulse = {
     }
 };
 
-// Hero text animáció
+
 export const heroText: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -110,14 +110,14 @@ export const heroText: Variants = {
     }
 };
 
-// Kártya hover
+
 export const cardHover = {
     scale: 1.02,
     y: -8,
     transition: { duration: 0.3, ease: "easeOut" }
 };
 
-// Viewport beállítások scroll animációkhoz
+
 export const viewportOnce = {
     once: true,
     margin: "-100px"

@@ -21,10 +21,10 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
     const subjectKey = formData.get("subject") as string;
     const message = formData.get("message") as string;
 
-    // Use translation for subject label (fallback to key if not found, though t returns key usually)
+
     const subject = subjectKey ? t(`Contact.form.subjects.${subjectKey}`) : "";
 
-    // Basic validation
+
     const errors: { [key: string]: string[] } = {};
     if (!name) errors.name = ["A név megadása kötelező."];
     if (!phone) errors.phone = ["A telefonszám megadása kötelező."];
@@ -46,7 +46,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             },
         });
 
-        // 1. Send notification to Admin
+
         const adminEmail = getAdminNotificationEmail({ name, email, phone, subject, message }, t);
         await transporter.sendMail({
             from: `"${name}" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
@@ -57,7 +57,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             html: adminEmail.html,
         });
 
-        // 2. Send confirmation to User (Client)
+
         try {
             const clientEmail = getClientConfirmationEmail({ name, email, phone, subject, message }, t);
             await transporter.sendMail({

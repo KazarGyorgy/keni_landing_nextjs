@@ -29,7 +29,7 @@ function IntroductionContent() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             <HeroBackground />
 
-            {/* Content */}
+
             <div className="relative z-10 container-custom mx-auto px-4 md:px-8 pt-20 pb-16">
                 <motion.div
                     variants={staggerContainer}
@@ -38,7 +38,7 @@ function IntroductionContent() {
                     viewport={viewportOnce}
                     className="max-w-4xl mx-auto text-center"
                 >
-                    {/* Badge */}
+
                     <motion.div variants={fadeInUp} className="mb-8 flex flex-row flex-wrap justify-center gap-x-8 gap-y-3">
                         {["loan", "independent", "insurance", "update", "savings"].map((key) => (
                             <span key={key} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium">
@@ -48,13 +48,13 @@ function IntroductionContent() {
                         ))}
                     </motion.div>
 
-                    {/* Main Heading */}
+
                     <motion.h1 variants={fadeInUp} className="heading-xl text-white mb-6">
                         {t("title_start")}{" "}
                         <span className="text-gradient-gold">{t("title_highlight")}</span>
                     </motion.h1>
 
-                    {/* Subtitle */}
+
                     <motion.p
                         variants={fadeInUp}
                         className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
@@ -62,7 +62,7 @@ function IntroductionContent() {
                         {t("subtitle")}
                     </motion.p>
 
-                    {/* CTA Buttons */}
+
                     <motion.div
                         variants={fadeInUp}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
@@ -76,7 +76,7 @@ function IntroductionContent() {
                         </a>
                     </motion.div>
 
-                    {/* Trust Badges */}
+
                     <motion.ul
                         variants={fadeInUp}
                         className="flex flex-wrap items-center justify-center gap-6 md:gap-10"

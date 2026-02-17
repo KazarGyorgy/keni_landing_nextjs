@@ -81,7 +81,7 @@ function ContactContent() {
                         </div>
                     </motion.div>
 
-                    {/* Contact Info */}
+
                     <motion.div
                         variants={fadeInRight}
                         initial="hidden"
@@ -102,7 +102,7 @@ function ContactContent() {
                             <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
 
                                 <div className="space-y-6 flex-1 w-full">
-                                    {/* Contact Person */}
+
                                     <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5 group justify-center lg:justify-start">
                                         <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-500/20 shadow-lg shadow-accent-500/10">
                                             <Image
@@ -119,7 +119,7 @@ function ContactContent() {
                                             <div className="text-white font-medium">{t("info.contact_person.role")}</div>
                                         </div>
                                     </div>
-                                    {/* Contact Info */}
+
                                     {contactInfo.map((info, index) => (
                                         <div
                                             key={index}

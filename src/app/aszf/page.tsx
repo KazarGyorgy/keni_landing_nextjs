@@ -19,7 +19,7 @@ export default function TermsAndConditions() {
                             <h1 className="heading-lg mb-8 text-gradient-gold text-center">{t("terms.title")}</h1>
 
                             <div className="prose prose-invert prose-lg max-w-none text-gray-300">
-                                {/* Intro Section with Download Link */}
+
                                 {termsData.intro.length > 0 && (
                                     <>
                                         <p className="lead text-xl text-white mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
@@ -43,7 +43,7 @@ export default function TermsAndConditions() {
                                     </>
                                 )}
 
-                                {/* Numbered Sections */}
+
                                 {termsData.sections.length > 0 ? (
                                     termsData.sections.map((section, idx) => (
                                         <TermSection

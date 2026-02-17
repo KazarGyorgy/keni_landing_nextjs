@@ -24,29 +24,29 @@ export default function NewsCard({ news, readMoreLabel }: NewsCardProps) {
             transition={{ duration: 0.3 }}
             className="glass-card p-8 md:p-12 relative overflow-hidden"
         >
-            {/* Background Calendar Icon */}
+
             <div className="absolute top-0 right-0 p-8 opacity-10">
                 <HiCalendar className="w-24 h-24 text-accent-500" />
             </div>
 
             <div className="relative z-10">
-                {/* Date */}
+
                 <div className="flex items-center gap-2 text-accent-400 font-medium mb-4">
                     <HiCalendar className="w-5 h-5" />
                     <span>{news.date}</span>
                 </div>
 
-                {/* Title */}
+
                 <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
                     {news.title}
                 </h3>
 
-                {/* Summary */}
+
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                     {news.summary}
                 </p>
 
-                {/* Read More */}
+
                 <a
                     href={news.link}
                     className="inline-flex items-center gap-2 text-white font-semibold hover:text-accent-400 transition-colors group"

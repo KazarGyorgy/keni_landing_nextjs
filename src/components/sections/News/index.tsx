@@ -44,13 +44,13 @@ function NewsContent() {
 
     return (
         <section id="news" className="section-padding relative overflow-hidden content-visibility-auto">
-            {/* Background decoration - Distinct from Testimonials but similar style */}
+
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                 <div className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-3xl" />
             </div>
 
             <div className="container-custom mx-auto relative z-10">
-                {/* Section Header */}
+
                 <SectionHeader
                     subtitle={t("subtitle")}
                     titleStart={t("title_start")}
@@ -58,7 +58,7 @@ function NewsContent() {
                     description={t("description")}
                 />
 
-                {/* News Carousel */}
+
                 <motion.div
                     variants={fadeInUp}
                     initial="hidden"
@@ -67,7 +67,7 @@ function NewsContent() {
                     className="max-w-4xl mx-auto"
                 >
                     <div className="relative">
-                        {/* Main Card */}
+
                         <AnimatePresence mode="wait">
                             <NewsCard
                                 news={news[currentIndex]}
@@ -75,7 +75,7 @@ function NewsContent() {
                             />
                         </AnimatePresence>
 
-                        {/* Navigation Buttons */}
+
                         <CarouselNavigation
                             currentIndex={currentIndex}
                             totalItems={news.length}

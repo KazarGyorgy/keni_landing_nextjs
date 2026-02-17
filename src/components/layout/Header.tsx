@@ -45,7 +45,7 @@ export default function Header() {
             >
                 <nav className="container-custom mx-auto px-4 md:px-8">
                     <div className="flex items-center justify-between h-20">
-                        {/* Logo */}
+
                         <Link href="/" className="flex items-center gap-3 group">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center" aria-hidden="true">
                                 <span className="text-primary-900 font-display font-bold text-xl">F</span>
@@ -55,7 +55,7 @@ export default function Header() {
                             </span>
                         </Link>
 
-                        {/* Desktop Navigation */}
+
                         <div className="hidden lg:flex items-center gap-8">
                             <ul className="flex items-center gap-8 list-none">
                                 {navLinks.map((link) => (
@@ -71,7 +71,7 @@ export default function Header() {
                             </ul>
                         </div>
 
-                        {/* CTA Button and Language Switcher Placeholder */}
+
                         <div className="hidden lg:flex items-center gap-4">
                             {SHOW_LANGUAGE_SWITCHER && (
                                 <div className="text-white text-sm border border-white/20 px-2 py-1 rounded">
@@ -83,7 +83,7 @@ export default function Header() {
                             </Link>
                         </div>
 
-                        {/* Mobile Menu Button */}
+
                         <button
                             className="lg:hidden p-2 text-white hover:text-accent-400 transition-colors"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,7 +97,7 @@ export default function Header() {
                 </nav>
             </header>
 
-            {/* Mobile Menu */}
+
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div

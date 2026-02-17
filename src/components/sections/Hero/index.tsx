@@ -19,7 +19,7 @@ export default function Services() {
 function ServicesContent() {
     const t = useTranslations("Hero");
 
-    // Icon mapping for services
+
     const iconMap = {
         mortgage: HiHome,
         personal_loan: HiCreditCard,
@@ -27,14 +27,14 @@ function ServicesContent() {
         condominium: MdApartment,
     } as const;
 
-    // Load services from translations
+
     const servicesData = t.raw("items") as Record<string, {
         title: string;
         description: string;
         features: Record<string, string>;
     }>;
 
-    // Transform services data with icons
+
     const services = Object.entries(servicesData).map(([key, data]) => ({
         id: key.replace("_", "-"),
         icon: iconMap[key as keyof typeof iconMap],

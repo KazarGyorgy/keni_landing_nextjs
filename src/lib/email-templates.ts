@@ -6,7 +6,7 @@ export interface EmailData {
     message: string;
 }
 
-// Define specific type for next-intl translator function
+
 export type Translator = (key: string, values?: any) => string;
 
 export const getAdminNotificationEmail = (data: EmailData, t: Translator) => {
