@@ -24,14 +24,50 @@ ${t("Emails.admin.fields.message")}:
 ${message}
 `.trim(),
     html: `
-<h3>${t("Emails.admin.title")}</h3>
-<p><strong>${t("Emails.admin.fields.name")}:</strong> ${name}</p>
-<p><strong>${t("Emails.admin.fields.email")}:</strong> ${email}</p>
-<p><strong>${t("Emails.admin.fields.phone")}:</strong> ${phone}</p>
-<p><strong>${t("Emails.admin.fields.subject")}:</strong> ${subject}</p>
-<br/>
-<p><strong>${t("Emails.admin.fields.message")}:</strong></p>
-<p>${message.replace(/\n/g, "<br>")}</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+    .container { max-width: 600px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .header { text-align: center; border-bottom: 2px solid #D4AF37; padding-bottom: 20px; margin-bottom: 20px; }
+    .footer { font-size: 12px; color: #888; text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+    h2 { color: #1a1a1a; margin-top: 0; }
+    .highlight { color: #D4AF37; font-weight: bold; }
+    .label { font-weight: bold; color: #555; }
+    .value { margin-bottom: 15px; display: block; }
+    .message-box { background-color: #f9f9f9; padding: 15px; border-left: 4px solid #D4AF37; margin: 20px 0; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>${t("Emails.admin.title")}</h2>
+        </div>
+        
+        <p><span class="label">${t("Emails.admin.fields.name")}:</span><br>
+        <span class="value">${name}</span></p>
+
+        <p><span class="label">${t("Emails.admin.fields.email")}:</span><br>
+        <span class="value"><a href="mailto:${email}" style="color: #D4AF37; text-decoration: none;">${email}</a></span></p>
+
+        <p><span class="label">${t("Emails.admin.fields.phone")}:</span><br>
+        <span class="value"><a href="tel:${phone}" style="color: #333; text-decoration: none;">${phone}</a></span></p>
+
+        <p><span class="label">${t("Emails.admin.fields.subject")}:</span><br>
+        <span class="value">${subject}</span></p>
+
+        <div class="message-box">
+            <p class="label" style="margin-top: 0;">${t("Emails.admin.fields.message")}:</p>
+            <p style="white-space: pre-wrap; margin-bottom: 0;">${message.replace(/\n/g, "<br>")}</p>
+        </div>
+
+        <div class="footer">
+            <p>Ez egy automatikus értesítés a PénzINFO weboldalról.</p>
+        </div>
+    </div>
+</body>
+</html>
 `,
   };
 };

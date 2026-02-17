@@ -191,6 +191,12 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
 
       <SubmitButton />
 
+      {state?.message && !state.success && (
+        <div className="p-4 mb-4 text-sm text-red-400 rounded-lg bg-red-900/20" role="alert">
+          {state.message}
+        </div>
+      )}
+
       {state?.errors && (
         <div className="text-red-400 text-sm mt-2" role="alert">
           {Object.values(state.errors)

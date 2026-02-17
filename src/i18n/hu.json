@@ -164,5 +164,27 @@
                 "auto_reply": "Ez egy automatikus üzenet, kérjük ne válaszoljon rá közvetlenül, ha nem ezt a címet használja."
             }
         }
+    },
+    "Contact": {
+        "form": {
+            "subjects": {
+                "mortgage": "Lakáshitel",
+                "personal_loan": "Személyi kölcsön",
+                "insurance": "Biztosítás",
+                "other": "Egyéb kérdés"
+            },
+            "name": "Név",
+            "name_placeholder": "Adja meg a nevét",
+            "phone": "Telefonszám",
+            "phone_placeholder": "+36...",
+            "email": "E-mail cím",
+            "email_placeholder": "pelda@email.hu",
+            "subject": "Témakör",
+            "subject_placeholder": "Válasszon témát...",
+            "message": "Üzenet",
+            "message_placeholder": "Írja le miben segíthetünk...",
+            "submit": "Üzenet küldése",
+            "submitting": "Küldés folyamatban..."
+        }
     }
 }

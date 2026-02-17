@@ -1,10 +1,11 @@
 "use server";
 
-import { CONTACT_EMAIL } from "@/lib/config";
+import { CONTACT_EMAIL, CONTACT_EMAIL_CC } from "@/lib/config";
 import nodemailer from "nodemailer";
 import {
   getAdminNotificationEmail,
   getClientConfirmationEmail,
+  EmailData,
 } from "@/lib/email-templates";
 import { getTranslations } from "next-intl/server";
 
@@ -14,6 +15,46 @@ export interface ContactFormState {
   errors?: {
     [key: string]: string[];
   };
+}
+
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 465,
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+};
+
+async function sendAdminEmail(data: EmailData, t: any) {
+  const transporter = createTransporter();
+  const adminEmail = getAdminNotificationEmail(data, t);
+
+  await transporter.sendMail({
+    from: `"PénzINFO Weboldal" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    to: CONTACT_EMAIL,
+    cc: CONTACT_EMAIL_CC,
+    replyTo: data.email,
+    subject: adminEmail.subject,
+    text: adminEmail.text,
+    html: adminEmail.html,
+  });
+}
+
+async function sendClientEmail(data: EmailData, t: any) {
+  const transporter = createTransporter();
+  const clientEmail = getClientConfirmationEmail(data, t);
+
+  await transporter.sendMail({
+    from: `"Kazár Éva - Pénzügyi Tanácsadó" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    to: data.email,
+    subject: clientEmail.subject,
+    text: clientEmail.text,
+    html: clientEmail.html,
+  });
 }
 
 export async function submitContactForm(
@@ -39,45 +80,12 @@ export async function submitContactForm(
     return { success: false, errors };
   }
 
+  const emailData: EmailData = { name, email, phone, subject, message };
+
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    const adminEmail = getAdminNotificationEmail(
-      { name, email, phone, subject, message },
-      t,
-    );
-    await transporter.sendMail({
-      from: `"${name}" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
-      to: CONTACT_EMAIL,
-      replyTo: email,
-      subject: adminEmail.subject,
-      text: adminEmail.text,
-      html: adminEmail.html,
-    });
-
-    try {
-      const clientEmail = getClientConfirmationEmail(
-        { name, email, phone, subject, message },
-        t,
-      );
-      await transporter.sendMail({
-        from: `"Kazár Éva - Pénzügyi Tanácsadó" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
-        to: email,
-        subject: clientEmail.subject,
-        text: clientEmail.text,
-        html: clientEmail.html,
-      });
-    } catch (confirmError) {
-      console.error("Confirmation email sending failed:", confirmError);
-    }
+    await sendAdminEmail(emailData, t);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await sendClientEmail(emailData, t);
 
     return {
       success: true,
@@ -88,7 +96,7 @@ export async function submitContactForm(
     return {
       success: false,
       message:
-        "Sajnáljuk, hiba történt az üzenet küldésekor. Kérjük próbálja meg később vagy hívjon minket telefonon.",
+        "Hiba történt az üzenet küldésekor. Kérjük próbálja meg később, vagy írjon közvetlenül az info@penzinfo.hu címre.",
     };
   }
 }
