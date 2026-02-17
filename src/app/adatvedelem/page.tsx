@@ -4,94 +4,131 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export default function PrivacyPolicy() {
-    const t = useTranslations("Legal");
+  const t = useTranslations("Legal");
 
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen bg-primary-900 text-white">
-                <section className="section-padding pt-32">
-                    <div className="container-custom mx-auto">
-                        <div className="glass-card max-w-4xl mx-auto p-8 md:p-12 border-accent-500/20">
-                            <h1 className="heading-lg mb-8 text-gradient-gold text-center">{t("privacy.title")}</h1>
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-primary-900 text-white">
+        <section className="section-padding pt-32">
+          <div className="container-custom mx-auto">
+            <div className="glass-card max-w-4xl mx-auto p-8 md:p-12 border-accent-500/20">
+              <h1 className="heading-lg mb-8 text-gradient-gold text-center">
+                {t("privacy.title")}
+              </h1>
 
-                            <div className="prose prose-invert prose-lg max-w-none text-gray-300">
-                                <p className="lead text-xl text-white mb-8">
-                                    Ez a dokumentum tájékoztatást nyújt arról, hogyan kezeljük személyes adatait weboldalunk használata során.
-                                    Kérjük, figyelmesen olvassa el.
-                                </p>
+              <div className="prose prose-invert prose-lg max-w-none text-gray-300">
+                <p className="lead text-xl text-white mb-8">
+                  Ez a dokumentum tájékoztatást nyújt arról, hogyan kezeljük
+                  személyes adatait weboldalunk használata során. Kérjük,
+                  figyelmesen olvassa el.
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">1. Az Adatkezelő adatai</h2>
-                                <p>
-                                    <strong>Név:</strong> Kazár Éva Julianna<br />
-                                    <strong>Székhely:</strong> 1096 Budapest, Haller utca 23-25<br />
-                                    <strong>E-mail:</strong> [EMAIL_ADDRESS]<br />
-                                    <strong>Telefon:</strong> +36-20/852-2767
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  1. Az Adatkezelő adatai
+                </h2>
+                <p>
+                  <strong>Név:</strong> Kazár Éva Julianna
+                  <br />
+                  <strong>Székhely:</strong> 1096 Budapest, Haller utca 23-25
+                  <br />
+                  <strong>E-mail:</strong> [EMAIL_ADDRESS]
+                  <br />
+                  <strong>Telefon:</strong> +36-20/852-2767
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">2. A kezelt adatok köre és az adatkezelés célja</h2>
-                                <h3 className="text-white text-xl font-semibold mt-8 mb-4">Kapcsolatfelvételi űrlap</h3>
-                                <p>
-                                    A weboldalon található űrlap kitöltésével Ön üzenetet küld az Adatkezelő részére.
-                                    <strong>Fontos:</strong> A megadott adatokat nem tároljuk weboldalhoz kapcsolódó adatbázisban.
-                                    Az űrlap tartalma közvetlenül e-mail formájában érkezik meg az Adatkezelőhöz, kizárólag kapcsolatfelvétel céljából.
-                                </p>
-                                <ul className="list-disc pl-6 space-y-2 mb-6">
-                                    <li>Név (azonosítás céljából)</li>
-                                    <li>E-mail cím (válaszadás céljából)</li>
-                                    <li>Telefonszám (telefonos egyeztetés céljából)</li>
-                                    <li>Üzenet szövege (az Ön által megadott egyéb információk)</li>
-                                </ul>
-                                <p>
-                                    <strong>Jogalap:</strong> Az Ön önkéntes hozzájárulása a kapcsolatfelvételhez (GDPR 6. cikk (1) bekezdés a) pont).
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  2. A kezelt adatok köre és az adatkezelés célja
+                </h2>
+                <h3 className="text-white text-xl font-semibold mt-8 mb-4">
+                  Kapcsolatfelvételi űrlap
+                </h3>
+                <p>
+                  A weboldalon található űrlap kitöltésével Ön üzenetet küld az
+                  Adatkezelő részére.
+                  <strong>Fontos:</strong> A megadott adatokat nem tároljuk
+                  weboldalhoz kapcsolódó adatbázisban. Az űrlap tartalma
+                  közvetlenül e-mail formájában érkezik meg az Adatkezelőhöz,
+                  kizárólag kapcsolatfelvétel céljából.
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-6">
+                  <li>Név (azonosítás céljából)</li>
+                  <li>E-mail cím (válaszadás céljából)</li>
+                  <li>Telefonszám (telefonos egyeztetés céljából)</li>
+                  <li>
+                    Üzenet szövege (az Ön által megadott egyéb információk)
+                  </li>
+                </ul>
+                <p>
+                  <strong>Jogalap:</strong> Az Ön önkéntes hozzájárulása a
+                  kapcsolatfelvételhez (GDPR 6. cikk (1) bekezdés a) pont).
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">3. Az adatkezelés időtartama és módja</h2>
-                                <p>
-                                    A beérkező e-maileket a kapcsolatfelvétel és az ügyintézés lezárásáig, vagy az Ön törlési kérelméig őrizzük meg levelezőrendszerünkben.
-                                    Amennyiben nem jön létre üzleti kapcsolat, az adatait töröljük.
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  3. Az adatkezelés időtartama és módja
+                </h2>
+                <p>
+                  A beérkező e-maileket a kapcsolatfelvétel és az ügyintézés
+                  lezárásáig, vagy az Ön törlési kérelméig őrizzük meg
+                  levelezőrendszerünkben. Amennyiben nem jön létre üzleti
+                  kapcsolat, az adatait töröljük.
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">4. Partner cégek adatkezelési és ügyfél tájékoztatója</h2>
-                                <p>
-                                    Az érdeklődés beérkezése után az első konzultáción átadásra kerül a partner cégek adatkezelési és ügyfél tájékoztatója.
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  4. Partner cégek adatkezelési és ügyfél tájékoztatója
+                </h2>
+                <p>
+                  Az érdeklődés beérkezése után az első konzultáción átadásra
+                  kerül a partner cégek adatkezelési és ügyfél tájékoztatója.
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">5. Megbízási szerződés aláírása</h2>
-                                <p>
-                                    A munkánkat ügyfél megbízás alapján végezzük. A megbízási szerződés kitöltéséhez az ügyfél adatai szükségesek.
-                                    Személyes adatokat csak a megbízási szerződés kitöltéséhez és az ajánlat kéréshez használjuk.
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  5. Megbízási szerződés aláírása
+                </h2>
+                <p>
+                  A munkánkat ügyfél megbízás alapján végezzük. A megbízási
+                  szerződés kitöltéséhez az ügyfél adatai szükségesek. Személyes
+                  adatokat csak a megbízási szerződés kitöltéséhez és az ajánlat
+                  kéréshez használjuk.
+                </p>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">5. Az Ön jogai</h2>
-                                <p>
-                                    Ön bármikor jogosult:
-                                </p>
-                                <ul className="list-disc pl-6 space-y-2 mb-6">
-                                    <li>Tájékoztatást kérni személyes adatai kezeléséről</li>
-                                    <li>Kérni adatai helyesbítését</li>
-                                    <li>Kérni adatai törlését ("elfeledtetéshez való jog")</li>
-                                    <li>Tiltakozni személyes adatai kezelése ellen</li>
-                                </ul>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  5. Az Ön jogai
+                </h2>
+                <p>Ön bármikor jogosult:</p>
+                <ul className="list-disc pl-6 space-y-2 mb-6">
+                  <li>Tájékoztatást kérni személyes adatai kezeléséről</li>
+                  <li>Kérni adatai helyesbítését</li>
+                  <li>Kérni adatai törlését ("elfeledtetéshez való jog")</li>
+                  <li>Tiltakozni személyes adatai kezelése ellen</li>
+                </ul>
 
-                                <h2 className="text-white text-2xl font-bold mt-12 mb-6">6. Jogorvoslati lehetőségek</h2>
-                                <p>
-                                    Panaszával a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH) fordulhat:
-                                    <br />
-                                    <em>1055 Budapest, Falk Miksa utca 9-11. | ugyfelszolgalat@naih.hu</em>
-                                </p>
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">
+                  6. Jogorvoslati lehetőségek
+                </h2>
+                <p>
+                  Panaszával a Nemzeti Adatvédelmi és Információszabadság
+                  Hatósághoz (NAIH) fordulhat:
+                  <br />
+                  <em>
+                    1055 Budapest, Falk Miksa utca 9-11. |
+                    ugyfelszolgalat@naih.hu
+                  </em>
+                </p>
 
-                                <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
-                                    <p className="text-sm text-gray-400 italic">
-                                        {t("last_updated", { date: new Date().toLocaleDateString('hu-HU') })}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
+                <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
+                  <p className="text-sm text-gray-400 italic">
+                    {t("last_updated", {
+                      date: new Date().toLocaleDateString("hu-HU"),
+                    })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }

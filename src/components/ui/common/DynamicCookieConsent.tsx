@@ -3,9 +3,9 @@
 import dynamic from "next/dynamic";
 
 const CookieConsent = dynamic(() => import("./CookieConsent"), {
-    ssr: false,
+  ssr: false,
 });
 
 export default function DynamicCookieConsent() {
-    return <CookieConsent />;
+  return <CookieConsent />;
 }

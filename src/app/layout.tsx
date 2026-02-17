@@ -10,69 +10,82 @@ import { Suspense } from "react";
 import "./globals.css";
 
 export const viewport: Viewport = {
-    themeColor: "#0A1628",
+  themeColor: "#0A1628",
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: "Metadata" });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
-    return {
-        title: t("title"),
-        description: t("description"),
-        keywords: ["hitelközvetítés", "biztosítás", "pénzügyi tanácsadás", "lakáshitel", "személyi kölcsön", "Társasház biztosítás"],
-        authors: [{ name: "Pénzügyi Alkusz" }],
-        openGraph: {
-            title: t("og.title"),
-            description: t("og.description"),
-            type: "website",
-            locale: "hu_HU",
-        },
-        robots: {
-            index: true,
-            follow: true,
-        },
-    };
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: [
+      "hitelközvetítés",
+      "biztosítás",
+      "pénzügyi tanácsadás",
+      "lakáshitel",
+      "személyi kölcsön",
+      "Társasház biztosítás",
+    ],
+    authors: [{ name: "Pénzügyi Alkusz" }],
+    openGraph: {
+      title: t("og.title"),
+      description: t("og.description"),
+      type: "website",
+      locale: "hu_HU",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
 }
 
 const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-inter",
-    display: "swap",
-    preload: true,
-    adjustFontFallback: true
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const outfit = Outfit({
-    subsets: ["latin"],
-    variable: "--font-outfit",
-    display: "swap",
-    preload: true,
-    adjustFontFallback: true
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export default async function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    const locale = await getLocale();
-    const messages = await getMessages();
+  const locale = await getLocale();
+  const messages = await getMessages();
 
-    return (
-        <html lang={locale} className="scroll-smooth">
-            <body className={`antialiased font-sans ${inter.variable} ${outfit.variable} select-none`}>
-                <NextIntlClientProvider messages={messages}>
-                    <LazyMotion features={domAnimation}>
-                        {children}
-                        <Suspense fallback={null}>
-                            <ScrollToHash />
-                        </Suspense>
-                        <DynamicCookieConsent />
-                        <SpeedInsights />
-                    </LazyMotion>
-                </NextIntlClientProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang={locale} className="scroll-smooth">
+      <body
+        className={`antialiased font-sans ${inter.variable} ${outfit.variable} select-none`}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <LazyMotion features={domAnimation}>
+            {children}
+            <Suspense fallback={null}>
+              <ScrollToHash />
+            </Suspense>
+            <DynamicCookieConsent />
+            <SpeedInsights />
+          </LazyMotion>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
 }
