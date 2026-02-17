@@ -10,7 +10,10 @@
     "start": "next start",
     "lint": "next lint",
     "deploy:vercel": "git push vercel main",
-    "analyze": "cross-env ANALYZE=true next build --webpack"
+    "analyze": "cross-env ANALYZE=true next build --webpack",
+    "generate:terms": "node scripts/generate-aszf.js",
+    "generate:privacy": "node scripts/generate-privacy.js",
+    "generate:docs": "node scripts/generate-aszf.js && node scripts/generate-privacy.js"
   },
   "browserslist": [
     "chrome >= 100",
