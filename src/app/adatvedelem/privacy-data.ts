@@ -100,8 +100,7 @@ export const privacyData = {
         {
             "title": "10. Záró rendelkezések",
             "content": [
-                "Az Adatkezelő fenntartja a jogot jelen adatkezelési tájékoztató módosítására. A módosítás a honlapon történő közzététellel lép hatályba.",
-                "Hatályos: 2026.02.09."
+                "Az Adatkezelő fenntartja a jogot jelen adatkezelési tájékoztató módosítására. A módosítás a honlapon történő közzététellel lép hatályba."
             ]
         }
     ]

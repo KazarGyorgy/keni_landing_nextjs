@@ -92,8 +92,7 @@ export const termsData = {
             "title": "11. Záró rendelkezések",
             "content": [
                 "11.1. Jelen ÁSZF-re a magyar jog rendelkezései irányadóak.",
-                "11.2. A Szolgáltató jogosult az ÁSZF-et egyoldalúan módosítani, amelyről a honlapon tájékoztatja az Ügyfeleket.",
-                "Hatályos: 2026.02.09."
+                "11.2. A Szolgáltató jogosult az ÁSZF-et egyoldalúan módosítani, amelyről a honlapon tájékoztatja az Ügyfeleket."
             ]
         }
     ]
