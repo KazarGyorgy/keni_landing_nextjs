@@ -8,6 +8,7 @@ import {
   EmailData,
 } from "@/lib/email-templates";
 import { getTranslations } from "next-intl/server";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 export interface ContactFormState {
   success: boolean;
@@ -68,11 +69,32 @@ export async function submitContactForm(
   const subjectKey = formData.get("subject") as string;
   const message = formData.get("message") as string;
 
+  const honeypot = formData.get("website") as string;
+  if (honeypot) {
+    return { success: true };
+  }
+
+  const loadTime = Number(formData.get("formLoadTime"));
+  const elapsed = Date.now() - loadTime;
+  if (elapsed < 3000) {
+    return { success: true };
+  }
+
   const subject = subjectKey ? t(`Contact.form.subjects.${subjectKey}`) : "";
 
   const errors: { [key: string]: string[] } = {};
   if (!name) errors.name = ["A név megadása kötelező."];
-  if (!phone) errors.phone = ["A telefonszám megadása kötelező."];
+  if (!phone) {
+    errors.phone = ["A telefonszám megadása kötelező."];
+  } else {
+    const isValid =
+      isValidPhoneNumber(phone, "HU") || isValidPhoneNumber(phone);
+    if (!isValid) {
+      errors.phone = [
+        "Kérjük érvényes telefonszámot adjon meg (pl.: +36 30 123 4567).",
+      ];
+    }
+  }
   if (!subjectKey) errors.subject = ["Kérjük válasszon témát."];
   if (!message) errors.message = ["Az üzenet megadása kötelező."];
 

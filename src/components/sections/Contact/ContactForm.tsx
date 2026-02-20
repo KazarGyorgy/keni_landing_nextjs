@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions/contact";
 import { HiArrowRight } from "react-icons/hi";
 import { useTranslations } from "next-intl";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 function SubmitButton() {
   const t = useTranslations("Contact");
@@ -55,6 +56,17 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
   const [state, formAction] = useActionState(submitContactForm, {
     success: false,
   });
+  const [mountTime] = useState(() => Date.now());
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [phoneTouched, setPhoneTouched] = useState(false);
+
+  const validatePhone = (value: string): string | null => {
+    if (!value) return "A telefonszám megadása kötelező.";
+    const valid = isValidPhoneNumber(value, "HU") || isValidPhoneNumber(value);
+    return valid
+      ? null
+      : "Kérjük érvényes telefonszámot adjon meg (pl.: +36 30 123 4567).";
+  };
 
   useEffect(() => {
     if (state.success) {
@@ -68,6 +80,15 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
 
   return (
     <form action={formAction} className="space-y-3">
+      <input type="hidden" name="formLoadTime" value={mountTime.toString()} />
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ display: "none" }}
+        aria-hidden="true"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label
@@ -98,10 +119,28 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
             id="phone"
             name="phone"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+            className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
+              phoneError ? "border-red-500" : "border-white/10"
+            } text-white placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors`}
             placeholder={t("form.phone_placeholder")}
-            aria-invalid={state?.errors?.phone ? "true" : "false"}
+            aria-invalid={
+              phoneError ? "true" : state?.errors?.phone ? "true" : "false"
+            }
+            onBlur={(e) => {
+              setPhoneTouched(true);
+              setPhoneError(validatePhone(e.target.value));
+            }}
+            onChange={(e) => {
+              if (phoneTouched) {
+                setPhoneError(validatePhone(e.target.value));
+              }
+            }}
           />
+          {(phoneError || state?.errors?.phone) && (
+            <p className="text-red-400 text-xs mt-1">
+              {phoneError ?? state?.errors?.phone?.[0]}
+            </p>
+          )}
         </div>
       </div>
 
@@ -192,7 +231,10 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
       <SubmitButton />
 
       {state?.message && !state.success && (
-        <div className="p-4 mb-4 text-sm text-red-400 rounded-lg bg-red-900/20" role="alert">
+        <div
+          className="p-4 mb-4 text-sm text-red-400 rounded-lg bg-red-900/20"
+          role="alert"
+        >
           {state.message}
         </div>
       )}
