@@ -23,6 +23,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
+    metadataBase: new URL("https://penzinfo.hu"),
     title: t("title"),
     description: t("description"),
     keywords: [
@@ -37,6 +38,8 @@ export async function generateMetadata({
     openGraph: {
       title: t("og.title"),
       description: t("og.description"),
+      url: "https://penzinfo.hu",
+      siteName: "PénzINFO",
       type: "website",
       locale: "hu_HU",
       images: [
