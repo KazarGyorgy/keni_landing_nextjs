@@ -42,14 +42,6 @@ export async function generateMetadata({
       siteName: "PénzINFO",
       type: "website",
       locale: "hu_HU",
-      images: [
-        {
-          url: "https://penzinfo.hu/img/og-image-opt.jpg",
-          width: 1200,
-          height: 630,
-          alt: "PénzINFO - Pénzügyi Tanácsadás",
-        },
-      ],
     },
     robots: {
       index: true,
