@@ -1,7 +1,7 @@
 import DynamicCookieConsent from "@/components/ui/common/DynamicCookieConsent";
 import ScrollToHash from "@/components/utils/ScrollToHash";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { LazyMotion, domAnimation } from "framer-motion";
 import type { Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
@@ -39,6 +39,14 @@ export async function generateMetadata({
       description: t("og.description"),
       type: "website",
       locale: "hu_HU",
+      images: [
+        {
+          url: "/img/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "PénzINFO - Pénzügyi Tanácsadás",
+        },
+      ],
     },
     robots: {
       index: true,
