@@ -44,7 +44,7 @@ export async function generateMetadata({
       locale: "hu_HU",
       images: [
         {
-          url: "/img/og-image.png",
+          url: "https://penzinfo.hu/img/og-image.png",
           width: 1200,
           height: 630,
           alt: "PénzINFO - Pénzügyi Tanácsadás",
