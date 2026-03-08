@@ -68,6 +68,7 @@ export async function submitContactForm(
   const phone = formData.get("phone") as string;
   const subjectKey = formData.get("subject") as string;
   const message = formData.get("message") as string;
+  const turnstileResponse = formData.get("cf-turnstile-response") as string;
 
   const honeypot = formData.get("website") as string;
   if (honeypot) {
@@ -100,6 +101,38 @@ export async function submitContactForm(
 
   if (Object.keys(errors).length > 0) {
     return { success: false, errors };
+  }
+
+  if (!turnstileResponse) {
+    // Silent fail if no turnstile token provided against bot requests
+    return { success: true };
+  }
+
+  // Verify Turnstile
+  try {
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.TURNSTILE_SECRET_KEY || "",
+          response: turnstileResponse,
+        }).toString(),
+      },
+    );
+
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      // Fake success to misdirect bots
+      return { success: true };
+    }
+  } catch (error) {
+    console.error("Turnstile verification error:", error);
+    // Fake success to misdirect bots
+    return { success: true };
   }
 
   const emailData: EmailData = { name, email, phone, subject, message };

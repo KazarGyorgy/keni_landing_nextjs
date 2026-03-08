@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions/contact";
 import { HiArrowRight } from "react-icons/hi";
@@ -225,6 +226,13 @@ export default function ContactForm({ onSuccess }: { onSuccess: () => void }) {
           className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors resize-none"
           placeholder={t("form.message_placeholder")}
           aria-invalid={state?.errors?.message ? "true" : "false"}
+        />
+      </div>
+
+      <div className="flex justify-center py-2">
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+          options={{ theme: "dark" }}
         />
       </div>
 
